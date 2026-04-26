@@ -133,6 +133,95 @@ export interface TopicNode {
   associatedStandards?: string[];
 }
 
+// --- STANDARDS GRAPH TYPES ---
+export type GraphRelationMode = 'sequential' | 'cross-grade' | 'hybrid';
+export type GraphGradeFilter = GradeLevel | 'all';
+
+export interface StandardsGraphTopic {
+  id: string;
+  title: string;
+  grade: GradeLevel;
+  strandCode: string;
+  strandTitle: string;
+  keywords: string[];
+}
+
+export interface StandardsGraphStandard {
+  code: string;
+  grade: GradeLevel;
+  topicId: string;
+  topicTitle: string;
+  strandCode: string;
+  strandTitle: string;
+  description: string;
+  keywords: string[];
+  sequenceOrder: number;
+  relationships: {
+    sequentialPrev: string[];
+    sequentialNext: string[];
+    crossGradeConceptLinks: string[];
+  };
+}
+
+export interface StandardsGraphDataset {
+  metadata: {
+    source: string;
+    generatedAt: string;
+    totalStandards: number;
+    totalTopics: number;
+    grades: GradeLevel[];
+  };
+  topics: StandardsGraphTopic[];
+  standards: StandardsGraphStandard[];
+}
+
+export interface StandardsGraphFilters {
+  grade: GraphGradeFilter;
+  relationMode: GraphRelationMode;
+  strandCode: string | 'all';
+  topicId: string | 'all';
+  includeTopicNodes: boolean;
+  includeStandardNodes: boolean;
+  searchText: string;
+}
+
+export type StandardsGraphNodeKind = 'topic' | 'standard';
+
+export interface StandardsGraphNodeView {
+  id: string;
+  kind: StandardsGraphNodeKind;
+  label: string;
+  grade: GradeLevel;
+  strandCode: string;
+  topicId?: string;
+  standardCode?: string;
+  description?: string;
+  value: number;
+  category: string;
+}
+
+export type StandardsGraphLinkKind =
+  | 'topic-membership'
+  | 'sequential'
+  | 'cross-grade';
+
+export interface StandardsGraphLinkView {
+  source: string;
+  target: string;
+  kind: StandardsGraphLinkKind;
+}
+
+export interface StandardsGraphViewModel {
+  nodes: StandardsGraphNodeView[];
+  links: StandardsGraphLinkView[];
+}
+
+export interface StandardsGraphFilterOptions {
+  grades: GradeLevel[];
+  strands: Array<{ code: string; title: string }>;
+  topics: StandardsGraphTopic[];
+}
+
 // --- DATABASE & AUTH TYPES ---
 
 export interface User {
