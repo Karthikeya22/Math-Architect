@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-04-23T20:05:00.000Z",
+  "method": "cost_first_with_quality_gates",
+  "inputs": {
+    "geminiReport": "reports/ab-eval-gemini.json",
+    "openaiReport": "reports/ab-eval-openai.json",
+    "benchmarkMatrix": "reports/benchmark-matrix.json"
+  },
+  "providerStatus": {
+    "gemini": {
+      "available": true,
+      "notes": "Passed 6/7 benchmark cases. Image task failed due non-JSON response format expectation in evaluator."
+    },
+    "openai": {
+      "available": false,
+      "notes": "All requests failed: OPENAI_API_KEY is not configured in runtime environment (.env has OPENAI_API_KEY=empty)."
+    }
+  },
+  "taskWinners": {
+    "quiz": {
+      "winnerProvider": "gemini",
+      "winnerModel": "gemini-3-flash-preview",
+      "reason": "Only provider passing all quality gates."
+    },
+    "analysis": {
+      "winnerProvider": "gemini",
+      "winnerModel": "gemini-3-flash-preview",
+      "reason": "Only provider passing all quality gates."
+    },
+    "slides": {
+      "winnerProvider": "gemini",
+      "winnerModel": "gemini-3-flash-preview",
+      "reason": "Only provider passing all quality gates."
+    },
+    "image": {
+      "winnerProvider": null,
+      "winnerModel": null,
+      "reason": "No provider passed in this benchmark run; OpenAI unavailable and evaluator image gate currently expects JSON."
+    }
+  },
+  "recommendedEnv": {
+    "AI_PROVIDER_QUIZ": "gemini",
+    "AI_PROVIDER_ANALYSIS": "gemini",
+    "AI_PROVIDER_SLIDES": "gemini",
+    "AI_PROVIDER_IMAGES": "gemini",
+    "AI_FALLBACK_ENABLED": "true"
+  }
+}

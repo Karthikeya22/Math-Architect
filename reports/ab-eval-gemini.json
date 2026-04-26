@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-04-23T20:00:20.695Z",
+  "baseUrl": "http://localhost:3000",
+  "providers": [
+    "gemini"
+  ],
+  "results": [
+    {
+      "ok": true,
+      "elapsedMs": 6770,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "quiz",
+      "caseId": "quiz-g3-place-value-text",
+      "schemaCompliance": true,
+      "visualRelevance": true,
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 8492,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "quiz",
+      "caseId": "quiz-g4-fractions-visual",
+      "schemaCompliance": true,
+      "visualRelevance": true,
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 3912,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "analysis",
+      "caseId": "analysis-g3-mixed-results",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 4000,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "analysis",
+      "caseId": "analysis-g5-fractions",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 7334,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "slides",
+      "caseId": "slides-g3-place-value",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 8553,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "slides",
+      "caseId": "slides-g4-fractions-visual",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": [
+        "visual"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 10260,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-image",
+      "task": "image",
+      "caseId": "image-fraction-model",
+      "schemaCompliance": false,
+      "visualRelevance": "n/a",
+      "qualityScore": 0,
+      "usage": null,
+      "estimatedCostUsd": null,
+      "gateFailures": [
+        "schema",
+        "schema",
+        "quality"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "provider": "gemini",
+      "total": 7,
+      "passes": 6,
+      "schemaPasses": 6,
+      "avgQualityScore": 0.8571428571428571,
+      "totalEstimatedCostUsd": 0,
+      "avgLatencyMs": 7046
+    }
+  ],
+  "taskWinners": {
+    "quiz": {
+      "winner": "gemini",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "gemini",
+        "passRate": 1,
+        "avgLatencyMs": 7631,
+        "totalCost": 0
+      }
+    },
+    "analysis": {
+      "winner": "gemini",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "gemini",
+        "passRate": 1,
+        "avgLatencyMs": 3956,
+        "totalCost": 0
+      }
+    },
+    "slides": {
+      "winner": "gemini",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "gemini",
+        "passRate": 1,
+        "avgLatencyMs": 7943.5,
+        "totalCost": 0
+      }
+    },
+    "image": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    }
+  }
+}

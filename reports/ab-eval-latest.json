@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-04-23T18:48:39.866Z",
+  "baseUrl": "http://localhost:3000",
+  "results": [
+    {
+      "caseId": "quiz-g3-numbers",
+      "ok": true,
+      "elapsedMs": 16563,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "quiz",
+      "schemaCompliance": true,
+      "visualRelevance": true
+    },
+    {
+      "caseId": "quiz-g3-numbers",
+      "ok": false,
+      "elapsedMs": 9,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz"
+    },
+    {
+      "caseId": "analysis-gaps",
+      "ok": true,
+      "elapsedMs": 4701,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "analysis",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a"
+    },
+    {
+      "caseId": "analysis-gaps",
+      "ok": false,
+      "elapsedMs": 8,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis"
+    },
+    {
+      "caseId": "slides-remediation",
+      "ok": true,
+      "elapsedMs": 6886,
+      "requestedProvider": "gemini",
+      "provider": "gemini",
+      "model": "gemini-3-flash-preview",
+      "task": "slides",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a"
+    },
+    {
+      "caseId": "slides-remediation",
+      "ok": false,
+      "elapsedMs": 6,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides"
+    }
+  ],
+  "summary": [
+    {
+      "provider": "gemini",
+      "total": 3,
+      "passes": 3,
+      "schemaPasses": 3,
+      "avgLatencyMs": 9383
+    },
+    {
+      "provider": "openai",
+      "total": 3,
+      "passes": 0,
+      "schemaPasses": 0,
+      "avgLatencyMs": 8
+    }
+  ]
+}

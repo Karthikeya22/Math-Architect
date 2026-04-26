@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-04-23T20:03:45.484Z",
+  "baseUrl": "http://localhost:3000",
+  "providers": [
+    "openai"
+  ],
+  "results": [
+    {
+      "ok": false,
+      "elapsedMs": 285,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g3-place-value-text",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 14,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 8,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g3-mixed-results",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 6,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g5-fractions",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 8,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g3-place-value",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 7,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 7,
+      "error": "OPENAI_API_KEY is not configured.",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "image",
+      "caseId": "image-fraction-model",
+      "gateFailures": [
+        "http_error"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "provider": "openai",
+      "total": 7,
+      "passes": 0,
+      "schemaPasses": 0,
+      "avgQualityScore": 0,
+      "totalEstimatedCostUsd": 0,
+      "avgLatencyMs": 48
+    }
+  ],
+  "taskWinners": {
+    "quiz": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "analysis": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "slides": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "image": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    }
+  }
+}

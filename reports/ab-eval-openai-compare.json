@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-04-25T05:42:00.823Z",
+  "baseUrl": "http://localhost:3000",
+  "providers": [
+    "openai"
+  ],
+  "results": [
+    {
+      "ok": false,
+      "elapsedMs": 793,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'quiz_schema': In context=('properties', 'questions', 'items'), 'required' is required to be supplied and to be an array including every key in properties. Missing 'visualIntent'.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g3-place-value-text",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 396,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'quiz_schema': In context=('properties', 'questions', 'items'), 'required' is required to be supplied and to be an array including every key in properties. Missing 'visualIntent'.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 258,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'analysis_schema': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Extra required key 'identifiedGaps' supplied.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g3-mixed-results",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 421,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'analysis_schema': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Extra required key 'identifiedGaps' supplied.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g5-fractions",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 166,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'slides_schema': In context=('properties', 'slides', 'items'), 'required' is required to be supplied and to be an array including every key in properties. Missing 'imagePrompt'.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g3-place-value",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 273,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'slides_schema': In context=('properties', 'slides', 'items'), 'required' is required to be supplied and to be an array including every key in properties. Missing 'imagePrompt'.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 29885,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "task": "image",
+      "caseId": "image-fraction-model",
+      "schemaCompliance": false,
+      "visualRelevance": "n/a",
+      "qualityScore": 0,
+      "usage": {
+        "input_tokens": 29,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 29
+        },
+        "output_tokens": 1568,
+        "output_tokens_details": {
+          "image_tokens": 1568,
+          "text_tokens": 0
+        },
+        "total_tokens": 1597
+      },
+      "estimatedCostUsd": 0.0009451499999999999,
+      "gateFailures": [
+        "schema",
+        "quality"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "provider": "openai",
+      "total": 7,
+      "passes": 0,
+      "schemaPasses": 0,
+      "avgQualityScore": 0,
+      "totalEstimatedCostUsd": 0.000945,
+      "avgLatencyMs": 4599
+    }
+  ],
+  "taskWinners": {
+    "quiz": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "analysis": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "slides": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "image": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    }
+  }
+}

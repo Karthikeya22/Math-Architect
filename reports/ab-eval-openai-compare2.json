@@ -1,0 +1,262 @@
+{
+  "generatedAt": "2026-04-25T06:12:48.654Z",
+  "baseUrl": "http://localhost:3000",
+  "providers": [
+    "openai"
+  ],
+  "results": [
+    {
+      "ok": true,
+      "elapsedMs": 7316,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "quiz",
+      "caseId": "quiz-g3-place-value-text",
+      "schemaCompliance": true,
+      "visualRelevance": true,
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 175,
+        "completion_tokens": 328,
+        "total_tokens": 503,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.00022304999999999997,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 15523,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "quiz",
+      "caseId": "quiz-g4-fractions-visual",
+      "schemaCompliance": true,
+      "visualRelevance": true,
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 417,
+        "total_tokens": 625,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.0002814,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 1885,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "analysis",
+      "caseId": "analysis-g3-mixed-results",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 122,
+        "completion_tokens": 68,
+        "total_tokens": 190,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.00005909999999999999,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 1262,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "analysis",
+      "caseId": "analysis-g5-fractions",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 118,
+        "completion_tokens": 55,
+        "total_tokens": 173,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.0000507,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 8888,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "slides",
+      "caseId": "slides-g3-place-value",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 133,
+        "completion_tokens": 455,
+        "total_tokens": 588,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.00029295,
+      "gateFailures": []
+    },
+    {
+      "ok": true,
+      "elapsedMs": 11061,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "task": "slides",
+      "caseId": "slides-g4-fractions-visual",
+      "schemaCompliance": true,
+      "visualRelevance": "n/a",
+      "qualityScore": 1,
+      "usage": {
+        "prompt_tokens": 136,
+        "completion_tokens": 529,
+        "total_tokens": 665,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "estimatedCostUsd": 0.00033779999999999997,
+      "gateFailures": [
+        "visual"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 50832,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "task": "image",
+      "caseId": "image-fraction-model",
+      "schemaCompliance": false,
+      "visualRelevance": "n/a",
+      "qualityScore": 0,
+      "usage": {
+        "input_tokens": 29,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 29
+        },
+        "output_tokens": 1568,
+        "output_tokens_details": {
+          "image_tokens": 1568,
+          "text_tokens": 0
+        },
+        "total_tokens": 1597
+      },
+      "estimatedCostUsd": 0.0009451499999999999,
+      "gateFailures": [
+        "schema",
+        "quality"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "provider": "openai",
+      "total": 7,
+      "passes": 6,
+      "schemaPasses": 6,
+      "avgQualityScore": 0.8571428571428571,
+      "totalEstimatedCostUsd": 0.00219,
+      "avgLatencyMs": 13824
+    }
+  ],
+  "taskWinners": {
+    "quiz": {
+      "winner": "openai",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "openai",
+        "passRate": 1,
+        "avgLatencyMs": 11419.5,
+        "totalCost": 0.00050445
+      }
+    },
+    "analysis": {
+      "winner": "openai",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "openai",
+        "passRate": 1,
+        "avgLatencyMs": 1573.5,
+        "totalCost": 0.00010979999999999999
+      }
+    },
+    "slides": {
+      "winner": "openai",
+      "rationale": "cost_first_with_quality_gates",
+      "metrics": {
+        "provider": "openai",
+        "passRate": 1,
+        "avgLatencyMs": 9974.5,
+        "totalCost": 0.00063075
+      }
+    },
+    "image": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    }
+  }
+}

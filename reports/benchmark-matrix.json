@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "description": "Low-cost benchmark matrix for provider evaluation",
+  "cases": [
+    {
+      "id": "quiz-g3-place-value-text",
+      "task": "quiz",
+      "requiresVisual": false,
+      "prompt": "Generate 3 Grade 3 multiple-choice questions on place value and number forms. Do not include image prompts unless strictly needed. Return strict JSON.",
+      "qualityChecklist": [
+        "Questions are grade-appropriate",
+        "Each question has exactly 4 options",
+        "Correct answer index points to valid option"
+      ]
+    },
+    {
+      "id": "quiz-g4-fractions-visual",
+      "task": "quiz",
+      "requiresVisual": true,
+      "prompt": "Generate 3 Grade 4 fraction questions where at least one question requires a visual model. Return strict JSON with visualIntent whenever imagePrompt is present.",
+      "qualityChecklist": [
+        "At least one question includes aligned visualIntent+imagePrompt",
+        "Visuals are directly related to question logic",
+        "Question/answer coherence maintained"
+      ]
+    },
+    {
+      "id": "analysis-g3-mixed-results",
+      "task": "analysis",
+      "requiresVisual": false,
+      "prompt": "Given a student solved 2 of 5 medium-difficulty place-value questions, return JSON with identifiedGaps, subSkills, confidenceScore, and summary.",
+      "qualityChecklist": [
+        "Includes identified gaps with actionable descriptions",
+        "Confidence score present",
+        "Summary is concise and instructional"
+      ]
+    },
+    {
+      "id": "analysis-g5-fractions",
+      "task": "analysis",
+      "requiresVisual": false,
+      "prompt": "Given a Grade 5 student missed most fraction equivalence items and all decimal conversion items, return JSON analysis focused on misconceptions and remediation priorities.",
+      "qualityChecklist": [
+        "Misconceptions align to provided performance",
+        "Subskills are specific and measurable",
+        "No missing required fields"
+      ]
+    },
+    {
+      "id": "slides-g3-place-value",
+      "task": "slides",
+      "requiresVisual": false,
+      "prompt": "Create 3 remedial slides for Grade 3 place value with clear vocabulary and instructional progression. Include imagePrompt only when necessary.",
+      "qualityChecklist": [
+        "Slides scaffold from easier to harder",
+        "Vocabulary is age-appropriate",
+        "Content aligns with remediation goal"
+      ]
+    },
+    {
+      "id": "slides-g4-fractions-visual",
+      "task": "slides",
+      "requiresVisual": true,
+      "prompt": "Create 3 remedial slides for Grade 4 fractions. At least one slide should use an aligned visual model prompt tied to vocabulary and objective.",
+      "qualityChecklist": [
+        "At least one slide uses instructional visual",
+        "Visual prompt matches slide objective",
+        "Vocabulary supports the concept"
+      ]
+    },
+    {
+      "id": "image-fraction-model",
+      "task": "image",
+      "requiresVisual": true,
+      "prompt": "A clean 2D rectangle divided into 8 equal parts with exactly 3 shaded blue parts, no text.",
+      "qualityChecklist": [
+        "Image data returned",
+        "Prompt is deterministic and specific"
+      ]
+    }
+  ]
+}

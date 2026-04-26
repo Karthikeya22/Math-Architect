@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-04-25T05:18:21.035Z",
+  "baseUrl": "http://localhost:3000",
+  "providers": [
+    "openai"
+  ],
+  "results": [
+    {
+      "ok": false,
+      "elapsedMs": 2152,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'quiz_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g3-place-value-text",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 223,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'quiz_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "quiz",
+      "caseId": "quiz-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 414,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'analysis_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g3-mixed-results",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 1220,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'analysis_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "analysis",
+      "caseId": "analysis-g5-fractions",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 196,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'slides_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g3-place-value",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 515,
+      "error": "OpenAI text error: 400 {\n  \"error\": {\n    \"message\": \"Invalid schema for response_format 'slides_schema': In context=(), 'additionalProperties' is required to be supplied and to be false.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"response_format\",\n    \"code\": null\n  }\n}",
+      "provider": "openai",
+      "requestedProvider": "openai",
+      "task": "slides",
+      "caseId": "slides-g4-fractions-visual",
+      "gateFailures": [
+        "http_error"
+      ]
+    },
+    {
+      "ok": false,
+      "elapsedMs": 26881,
+      "requestedProvider": "openai",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "task": "image",
+      "caseId": "image-fraction-model",
+      "schemaCompliance": false,
+      "visualRelevance": "n/a",
+      "qualityScore": 0,
+      "usage": {
+        "input_tokens": 29,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 29
+        },
+        "output_tokens": 1568,
+        "output_tokens_details": {
+          "image_tokens": 1568,
+          "text_tokens": 0
+        },
+        "total_tokens": 1597
+      },
+      "estimatedCostUsd": 0.0009451499999999999,
+      "gateFailures": [
+        "schema",
+        "quality"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "provider": "openai",
+      "total": 7,
+      "passes": 0,
+      "schemaPasses": 0,
+      "avgQualityScore": 0,
+      "totalEstimatedCostUsd": 0.000945,
+      "avgLatencyMs": 4514
+    }
+  ],
+  "taskWinners": {
+    "quiz": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "analysis": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "slides": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    },
+    "image": {
+      "winner": null,
+      "reason": "No provider passed quality gates."
+    }
+  }
+}
