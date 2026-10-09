@@ -1,17 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { AppState, Standard, Quiz, QuizResult, GapAnalysis, RemedialSlide, QuizConfig, User } from './types';
 import { generateQuiz, analyzeGaps, generateRemedialSlides } from './services/aiService';
+import { logAiQuizAttempt, logAiQuizGeneration } from './services/aiQuizLogService';
+import { saveGapAnalysisToServer, saveRemediationSlidesToServer } from './services/persistenceTelemetryService';
 import { dbService } from './services/dbService';
 import QuizGenerator from './components/QuizGenerator';
 import QuizTaker from './components/QuizTaker';
 import GapAnalysisComponent from './components/GapAnalysis';
 import RemedialSlides from './components/RemedialSlides';
 import AuthScreen from './components/AuthScreen';
-import { GraduationCap, LogOut, User as UserIcon } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import BrandMark from './components/BrandMark';
+import LoadingStage from './components/LoadingStage';
+import { LogOut, UserRound } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+
+const VisualGalleryRoute = React.lazy(() => import('./dev/VisualGalleryRoute'));
+const ScreensGalleryRoute = React.lazy(() => import('./dev/ScreensGalleryRoute'));
+const DiagramsGalleryRoute = React.lazy(() => import('./dev/DiagramsGalleryRoute'));
+
+type AppError = { title: string; message: string };
 
 function App() {
+  const reduceMotion = useReducedMotion();
   const [user, setUser] = useState<User | null>(null);
+  const [appError, setAppError] = useState<AppError | null>(null);
+  const [hashRoute, setHashRoute] = useState<string>(typeof window !== 'undefined' ? window.location.hash : '');
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onHashChange = () => setHashRoute(window.location.hash);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
   const [state, setState] = useState<AppState>({
     view: 'setup',
     selectedStandard: null,
@@ -21,7 +40,17 @@ function App() {
     slides: [],
     loading: false,
     loadingMessage: '',
+    currentGenerationId: null,
+    gapAnalysisId: null,
+    telemetryNotice: null,
   });
+  const [loadingStepIndex, setLoadingStepIndex] = useState(0);
+
+  const setupLoadingSteps = [
+    { text: 'Reading your selected standard…' },
+    { text: 'Designing aligned assessment prompts…' },
+    { text: 'Calibrating question difficulty and flow…' },
+  ] as const;
 
   // Initialize Session
   useEffect(() => {
@@ -57,6 +86,26 @@ function App() {
     return () => window.removeEventListener('click', handleGlobalClick);
   }, [user]);
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'pastel');
+  }, []);
+
+  useEffect(() => {
+    if (!state.loading) {
+      setLoadingStepIndex(0);
+      return;
+    }
+
+    const msg = state.loadingMessage.trim();
+    const stepCount =
+      /analyz|slide/i.test(msg) ? 3 : setupLoadingSteps.length;
+
+    const interval = setInterval(() => {
+      setLoadingStepIndex((prev) => (prev + 1) % stepCount);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [state.loading, state.loadingMessage, setupLoadingSteps.length]);
+
   const handleLogin = (loggedInUser: User) => {
     setUser(loggedInUser);
   };
@@ -69,46 +118,101 @@ function App() {
 
   const handleApiError = (error: any) => {
     console.error("AI API Error:", error);
-    let message = "An error occurred while communicating with the AI service.";
-    
-    const isQuotaError = 
-      error?.status === 429 || 
-      error?.code === 429 || 
-      error?.message?.includes('429') || 
+    const details =
+      typeof error?.message === 'string' && error.message.trim().length > 0
+        ? error.message.trim()
+        : '';
+
+    const isQuotaError =
+      error?.status === 429 ||
+      error?.code === 429 ||
+      error?.message?.includes('429') ||
       error?.message?.toLowerCase().includes('quota') ||
       error?.status === 'RESOURCE_EXHAUSTED';
 
+    const isTimeout =
+      /timed out after \d+ms/i.test(details) ||
+      error?.name === 'AbortError';
+
+    let next: AppError = {
+      title: 'The AI service did not respond',
+      message: 'Try again in a moment. If it keeps failing, generate fewer questions.',
+    };
+
     if (isQuotaError) {
-      message = "⚠️ API Rate Limit Exceeded. The system is busy or you have hit your quota. Please wait a moment and try again.";
+      next = {
+        title: 'AI rate limit reached',
+        message: 'The service is busy or the quota is used up. Wait a minute, then try again.',
+      };
+    } else if (isTimeout) {
+      const isServerQuizTimeout = /gemini quiz|openai quiz|quiz.*timed out/i.test(details);
+      next = {
+        title: 'Generation took too long',
+        message: import.meta.env.DEV
+          ? isServerQuizTimeout
+            ? 'Quiz text generation timed out on the server. Raise GENAI_QUIZ_TIMEOUT_MS in .env (for example 300000) or try fewer questions, then restart npm run dev.'
+            : 'Try fewer questions, set VITE_IMAGE_SELF_VALIDATION=false, or raise VITE_QUIZ_GEN_TIMEOUT_MS / GENAI_QUIZ_TIMEOUT_MS in .env, then restart the dev server.'
+          : 'Try again with fewer questions.',
+      };
     }
 
-    alert(message);
+    if (import.meta.env.DEV && details && !isQuotaError) {
+      next = { ...next, message: `${next.message}\n\nDetails: ${details}` };
+    }
+
+    setAppError(next);
     setState(prev => ({ ...prev, loading: false }));
   };
 
   const handleGenerateQuiz = async (standard: Standard, config: QuizConfig) => {
-    const modeLabel = config.mode === 'item-bank' ? 'Fetching Bank Items...' : 'Generating AI Questions...';
-    
     // Log Activity
     if (user) {
       dbService.logAction(user.id, 'QUIZ_GENERATE_START', { standard: standard.code, mode: config.mode });
     }
 
-    setState(prev => ({ 
-      ...prev, 
-      loading: true, 
-      loadingMessage: modeLabel, 
-      selectedStandard: standard 
+    setAppError(null);
+    setState((prev) => ({
+      ...prev,
+      loading: true,
+      loadingMessage: '',
+      selectedStandard: standard,
+      currentGenerationId: null,
+      gapAnalysisId: null,
     }));
 
     try {
       const quiz = await generateQuiz(standard, config);
-      setState(prev => ({ 
-        ...prev, 
-        loading: false, 
-        quiz, 
+
+      let currentGenerationId: string | null = null;
+      const genLog = await logAiQuizGeneration({
+        userId: user?.id ?? null,
+        standard,
+        config,
+        quiz,
+        providerMetadata: quiz.providerMetadata,
+        sessionMetadata: {
+          adaptiveEnabled: Boolean(config.adaptiveEnabled),
+          adaptivePolicy: config.adaptivePolicy || null,
+          sourcePolicy: config.sourcePolicy || null,
+          generatedAt: new Date().toISOString(),
+        },
+      });
+      currentGenerationId = genLog.generationId;
+      if (!genLog.generationId && genLog.error && import.meta.env.DEV) {
+        setState((prev) => ({
+          ...prev,
+          telemetryNotice: `Quiz telemetry (generation): ${genLog.error}`,
+        }));
+      }
+
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        quiz,
         view: 'quiz',
-        quizResults: [] // reset results
+        quizResults: [],
+        currentGenerationId,
+        gapAnalysisId: null,
       }));
     } catch (error) {
       handleApiError(error);
@@ -123,6 +227,35 @@ function App() {
       dbService.saveQuizAttempt(user.id, state.quiz, results);
     }
 
+    if (state.currentGenerationId) {
+      try {
+        const adaptivePath = results
+          .filter((result) => Boolean(result.nextDifficulty))
+          .map((result) => ({
+            from: String(result.difficulty),
+            to: String(result.nextDifficulty),
+            reason: result.adaptiveDecisionReason || 'none',
+            changed: Boolean(result.difficultyChanged),
+          }));
+        const att = await logAiQuizAttempt(state.currentGenerationId, results, user?.id ?? null, {
+          adaptiveEnabled: Boolean(state.quiz.config.adaptiveEnabled),
+          adaptivePath,
+          attemptMetadata: {
+            questionCount: results.length,
+            completedAt: new Date().toISOString(),
+          },
+        });
+        if (!att.ok && att.error && import.meta.env.DEV) {
+          setState((prev) => ({
+            ...prev,
+            telemetryNotice: `Quiz telemetry (attempt): ${att.error}`,
+          }));
+        }
+      } catch (e) {
+        console.error('Could not persist quiz attempt to Supabase:', e);
+      }
+    }
+
     setState(prev => ({ 
       ...prev, 
       loading: true, 
@@ -132,11 +265,28 @@ function App() {
 
     try {
       const analysis = await analyzeGaps(state.selectedStandard, state.quiz.questions, results);
-      setState(prev => ({ 
-        ...prev, 
-        loading: false, 
-        analysis, 
-        view: 'analysis' 
+      let gapAnalysisId: string | null = null;
+      if (user && state.currentGenerationId) {
+        const saved = await saveGapAnalysisToServer({
+          userId: user.id,
+          sessionId: state.currentGenerationId,
+          standardCode: state.selectedStandard.code,
+          analysis,
+        });
+        if (saved.ok === false) {
+          if (import.meta.env.DEV) {
+            console.warn("[telemetry] gap analysis save failed", saved.error);
+          }
+        } else {
+          gapAnalysisId = saved.id;
+        }
+      }
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        analysis,
+        view: 'analysis',
+        gapAnalysisId,
       }));
     } catch (error) {
       handleApiError(error);
@@ -157,12 +307,27 @@ function App() {
     }));
 
     try {
-      const slides = await generateRemedialSlides(state.selectedStandard, state.analysis);
-      setState(prev => ({ 
-        ...prev, 
-        loading: false, 
-        slides, 
-        view: 'remedial' 
+      const slides = await generateRemedialSlides(
+        state.selectedStandard,
+        state.analysis,
+        state.quiz?.questions ?? [],
+        state.quizResults,
+      );
+      if (user && state.gapAnalysisId) {
+        const rem = await saveRemediationSlidesToServer({
+          userId: user.id,
+          gapAnalysisId: state.gapAnalysisId,
+          slides,
+        });
+        if (rem.ok === false && import.meta.env.DEV) {
+          console.warn("[telemetry] remediation slides save failed", rem.error);
+        }
+      }
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        slides,
+        view: 'remedial',
       }));
     } catch (error) {
       handleApiError(error);
@@ -173,6 +338,7 @@ function App() {
     if (user) {
       dbService.logAction(user.id, 'VIEW_HOME', {});
     }
+    setAppError(null);
     setState({
       view: 'setup',
       selectedStandard: null,
@@ -182,8 +348,36 @@ function App() {
       slides: [],
       loading: false,
       loadingMessage: '',
+      currentGenerationId: null,
+      gapAnalysisId: null,
+      telemetryNotice: null,
     });
   };
+
+  // --- Dev-only fixture gallery (#/dev/visuals) ---
+  if (import.meta.env.DEV && hashRoute === '#/dev/visuals') {
+    return (
+      <React.Suspense fallback={<div style={{ padding: 24 }}>Loading visual gallery…</div>}>
+        <VisualGalleryRoute />
+      </React.Suspense>
+    );
+  }
+
+  if (import.meta.env.DEV && hashRoute.startsWith('#/dev/screens')) {
+    return (
+      <React.Suspense fallback={<div style={{ padding: 24 }}>Loading screens…</div>}>
+        <ScreensGalleryRoute route={hashRoute} />
+      </React.Suspense>
+    );
+  }
+
+  if (import.meta.env.DEV && (hashRoute === '#/dev/diagrams' || hashRoute === '#/dev/hairlines')) {
+    return (
+      <React.Suspense fallback={<div style={{ padding: 24 }}>Loading diagrams…</div>}>
+        <DiagramsGalleryRoute />
+      </React.Suspense>
+    );
+  }
 
   // --- Auth Gate ---
   if (!user) {
@@ -191,85 +385,110 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 cursor-pointer" 
+    <div className="min-h-dvh flex flex-col font-sans app-shell-bg" style={{ color: 'var(--text-primary)' }}>
+      <a href="#main-content" className="app-skip-link">
+        Skip to main content
+      </a>
+      <header className="app-shell-header sticky top-0 z-50">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <button
+            type="button"
+            className="flex items-center gap-2.5 rounded-xl"
             onClick={restart}
+            aria-label="Math Architect, go to studio home"
           >
-            <div className="bg-blue-600 p-2 rounded-lg">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 hidden md:block">
-              Florida B.E.S.T. Math Architect
-            </h1>
-            <h1 className="text-xl font-bold text-blue-700 md:hidden">Math Architect</h1>
-          </motion.div>
-          
-          <div className="flex items-center gap-4">
-             {state.selectedStandard && (
-              <div className="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full hidden sm:block">
+            <BrandMark />
+          </button>
+
+          <div className="flex items-center gap-3">
+            {state.selectedStandard && state.view !== 'setup' && (
+              <span className="app-shell-standard hidden sm:inline-block" translate="no">
                 {state.selectedStandard.code}
-              </div>
-             )}
-             
-             <div className="h-6 w-px bg-slate-200 mx-2 hidden sm:block"></div>
-             
-             <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2">
-                   <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                      <UserIcon className="w-4 h-4" />
-                   </div>
-                   <span className="text-sm font-bold text-slate-700 hidden sm:block">{user.fullName || user.username}</span>
-                </div>
-                <button 
-                  onClick={handleLogout}
-                  className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                  title="Logout"
-                >
-                  <LogOut className="w-5 h-5" />
-                </button>
-             </div>
+              </span>
+            )}
+
+            <div className="app-shell-userchip">
+              <span className="app-shell-avatar" aria-hidden="true">
+                <UserRound className="w-3.5 h-3.5" strokeWidth={1.75} />
+              </span>
+              <span className="text-sm font-semibold hidden sm:block pr-1" style={{ color: 'var(--text-primary)' }}>
+                {user.fullName || user.username}
+              </span>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="app-shell-icon-btn"
+                title="Sign out"
+                aria-label="Sign out"
+              >
+                <LogOut className="w-4 h-4" strokeWidth={1.75} />
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="flex-1 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full outline-none"
+      >
+        {(appError || (import.meta.env.DEV && state.telemetryNotice)) && (
+          <div className="space-y-2 mb-4" aria-live="polite">
+            {appError && (
+              <div className="studio-alert studio-alert--danger studio-alert--stack" role="alert">
+                <div className="studio-alert-body">
+                  <strong className="studio-alert-title">{appError.title}</strong>
+                  {appError.message}
+                </div>
+                <button type="button" onClick={() => setAppError(null)}>
+                  Dismiss
+                </button>
+              </div>
+            )}
+            {import.meta.env.DEV && state.telemetryNotice && (
+              <div className="studio-alert" role="status">
+                <span className="studio-alert-body">{state.telemetryNotice}</span>
+                <button type="button" onClick={() => setState((prev) => ({ ...prev, telemetryNotice: null }))}>
+                  Dismiss
+                </button>
+              </div>
+            )}
+          </div>
+        )}
         <AnimatePresence mode="wait">
           {state.loading ? (
-            <motion.div 
+            <motion.div
               key="loading"
-              initial={{ opacity: 0 }}
+              initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center h-[60vh]"
             >
-              <div className="relative w-24 h-24 mb-8">
-                <div className="absolute inset-0 border-4 border-slate-200 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
-              </div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-2">{state.loadingMessage}</h2>
-              <p className="text-slate-500">Powered by Gemini AI</p>
+              <LoadingStage
+                message={
+                  state.loadingMessage.trim()
+                    ? state.loadingMessage
+                    : setupLoadingSteps[loadingStepIndex].text
+                }
+                steps={setupLoadingSteps}
+                stepIndex={loadingStepIndex}
+              />
             </motion.div>
           ) : (
             <motion.div
               key={state.view}
-              initial={{ opacity: 0, y: 10 }}
+              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+              exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: -6 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             >
               {state.view === 'setup' && (
                 <QuizGenerator onGenerate={handleGenerateQuiz} isLoading={state.loading} />
               )}
 
               {state.view === 'quiz' && state.quiz && (
-                <QuizTaker quiz={state.quiz} onComplete={handleQuizComplete} />
+                <QuizTaker quiz={state.quiz} onComplete={handleQuizComplete} onHome={restart} />
               )}
 
               {state.view === 'analysis' && state.analysis && (
@@ -281,7 +500,7 @@ function App() {
               )}
 
               {state.view === 'remedial' && (
-                <RemedialSlides slides={state.slides} onRestart={restart} />
+                <RemedialSlides slides={state.slides} onRestart={restart} onHome={restart} />
               )}
             </motion.div>
           )}

@@ -1,0 +1,68 @@
+import type { MotionDiagramName, ScenePalette } from './types';
+
+export const SCENE_PALETTE: Record<MotionDiagramName, ScenePalette> = {
+  Atlas: {
+    hi: '#2563eb',
+    edge: '#1d4ed8',
+    mid: '#60a5fa',
+    lo: '#bfdbfe',
+    fill: '#dbeafe',
+    glow: 'rgba(37, 99, 235, 0.22)',
+  },
+  Pin: {
+    hi: '#7c3aed',
+    edge: '#6d28d9',
+    mid: '#a78bfa',
+    lo: '#ddd6fe',
+    fill: '#ede9fe',
+    glow: 'rgba(124, 58, 237, 0.2)',
+  },
+  Assemble: {
+    hi: '#0d9488',
+    edge: '#0f766e',
+    mid: '#2dd4bf',
+    lo: '#99f6e4',
+    fill: '#ccfbf1',
+    glow: 'rgba(13, 148, 136, 0.2)',
+  },
+  Probe: {
+    hi: '#d97706',
+    edge: '#b45309',
+    mid: '#fbbf24',
+    lo: '#fde68a',
+    fill: '#fef3c7',
+    glow: 'rgba(217, 119, 6, 0.22)',
+  },
+  Deck: {
+    hi: '#0284c7',
+    edge: '#0369a1',
+    mid: '#38bdf8',
+    lo: '#bae6fd',
+    fill: '#e0f2fe',
+    glow: 'rgba(2, 132, 199, 0.2)',
+  },
+  Gaps: {
+    hi: '#e11d48',
+    edge: '#be123c',
+    mid: '#fb7185',
+    lo: '#fecdd3',
+    fill: '#ffe4e6',
+    glow: 'rgba(225, 29, 72, 0.2)',
+  },
+  Lesson: {
+    hi: '#059669',
+    edge: '#047857',
+    mid: '#34d399',
+    lo: '#a7f3d0',
+    fill: '#d1fae5',
+    glow: 'rgba(5, 150, 105, 0.2)',
+  },
+  Blank: {
+    hi: '#4f46e5',
+    edge: '#4338ca',
+    mid: '#818cf8',
+    lo: '#c7d2fe',
+    fill: '#e0e7ff',
+    glow: 'rgba(79, 70, 229, 0.2)',
+  },
+};

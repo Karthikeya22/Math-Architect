@@ -1,124 +1,310 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { dbService } from '../services/dbService';
+import { createGuestOnServer, loginUserOnServer, registerUserOnServer } from '../services/userService';
 import { User } from '../types';
-import { GraduationCap, ArrowRight, UserPlus, LogIn, Lock } from 'lucide-react';
+import { ArrowRight, BookOpen, ChartColumn, Layers3, Pin, UserRound } from 'lucide-react';
+import BrandMark from './BrandMark';
+import { MotionDiagram } from './motion-diagrams';
 
 interface Props {
   onLogin: (user: User) => void;
 }
 
 const AuthScreen: React.FC<Props> = ({ onLogin }) => {
+  const reduceMotion = useReducedMotion();
   const [isLoginMode, setIsLoginMode] = useState(true);
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [guestBusy, setGuestBusy] = useState(false);
+  const formBusy = busy && !guestBusy;
+  const formId = useId();
+  const usernameId = `${formId}-username`;
+  const fullNameId = `${formId}-fullname`;
+  const errorId = `${formId}-error`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
     if (!username.trim()) {
-      setError('Username is required');
+      setError('Enter a username to continue.');
       return;
     }
 
+    setBusy(true);
     try {
-      let user: User;
       if (isLoginMode) {
-        user = dbService.login(username);
-      } else {
-        if (!fullName.trim()) {
-          setError('Full Name is required');
+        const remote = await loginUserOnServer(username.trim());
+        if (remote.ok === false) {
+          if (remote.status === 503) {
+            try {
+              const user = dbService.login(username.trim());
+              onLogin(user);
+            } catch (err: any) {
+              setError(err?.message || 'No account found with that username.');
+            }
+          } else {
+            setError(remote.error);
+          }
           return;
         }
-        user = dbService.register(username, fullName);
+        dbService.setSessionFromUser(remote.user);
+        onLogin(remote.user);
+        return;
       }
-      onLogin(user);
+
+      if (!fullName.trim()) {
+        setError('Enter your full name to create an account.');
+        return;
+      }
+
+      const reg = await registerUserOnServer(username.trim(), fullName.trim());
+      if (reg.ok === false) {
+        if (reg.status === 503) {
+          try {
+            const user = dbService.register(username.trim(), fullName.trim());
+            onLogin(user);
+          } catch (err: any) {
+            setError(err?.message || 'Registration failed.');
+          }
+        } else {
+          setError(reg.error);
+        }
+        return;
+      }
+      dbService.setSessionFromUser(reg.user);
+      onLogin(reg.user);
     } catch (err: any) {
-      setError(err.message || 'Authentication failed');
+      setError(err?.message || 'Sign-in failed. Try again.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleGuest = async () => {
+    setError('');
+    setBusy(true);
+    setGuestBusy(true);
+    try {
+      const guest = await createGuestOnServer();
+      if (guest.ok === false) {
+        if (guest.status === 503) {
+          const fallback: User = {
+            id: `guest_local_${Date.now()}`,
+            username: 'Guest',
+            fullName: 'Guest',
+            createdAt: Date.now(),
+            isGuest: true,
+          };
+          dbService.setSessionFromUser(fallback);
+          onLogin(fallback);
+        } else {
+          setError(guest.error);
+        }
+        return;
+      }
+      dbService.setSessionFromUser(guest.user);
+      onLogin(guest.user);
+    } catch (err: any) {
+      setError(err?.message || 'Could not start a guest session.');
+    } finally {
+      setBusy(false);
+      setGuestBusy(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
-        
-        {/* Header Branding */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-center text-white">
-          <div className="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-            <GraduationCap className="w-10 h-10 text-white" />
-          </div>
-          <h1 className="text-2xl font-bold mb-1">Florida Math Architect</h1>
-          <p className="text-blue-100 text-sm">AI-Powered Educational Platform</p>
-        </div>
+    <div className="auth-shell min-h-dvh relative">
+      <div className="auth-grain" aria-hidden="true" />
+      <a href="#auth-main" className="auth-skip-link">
+        Skip to sign in
+      </a>
 
-        {/* Form */}
-        <div className="p-8">
-          <div className="mb-6 flex gap-4 bg-slate-50 p-1 rounded-xl">
-             <button 
-               onClick={() => { setIsLoginMode(true); setError(''); }}
-               className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all ${isLoginMode ? 'bg-white shadow text-blue-600' : 'text-slate-500 hover:bg-slate-100'}`}
-             >
-               Login
-             </button>
-             <button 
-               onClick={() => { setIsLoginMode(false); setError(''); }}
-               className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all ${!isLoginMode ? 'bg-white shadow text-blue-600' : 'text-slate-500 hover:bg-slate-100'}`}
-             >
-               Register
-             </button>
+      <div className="auth-layout relative z-[1]">
+        <aside className="auth-aside" aria-label="Product overview">
+          <div className="auth-brand-row">
+            <BrandMark />
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-               <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Username</label>
-               <input 
-                 type="text" 
-                 value={username}
-                 onChange={e => setUsername(e.target.value)}
-                 className="w-full p-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all font-medium"
-                 placeholder="Enter your username"
-               />
-            </div>
-
-            {!isLoginMode && (
-              <div className="animate-slide-down">
-                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Full Name</label>
-                 <input 
-                   type="text" 
-                   value={fullName}
-                   onChange={e => setFullName(e.target.value)}
-                   className="w-full p-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all font-medium"
-                   placeholder="Enter your full name"
-                 />
-              </div>
-            )}
-
-            {error && (
-              <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg flex items-center gap-2">
-                 <Lock className="w-4 h-4" />
-                 {error}
-              </div>
-            )}
-
-            <button 
-              type="submit"
-              className="w-full py-3.5 bg-slate-900 text-white rounded-xl font-bold shadow-lg hover:bg-slate-800 transform hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4"
-            >
-              {isLoginMode ? (
-                 <> <LogIn className="w-4 h-4" /> Login to Dashboard </>
-              ) : (
-                 <> <UserPlus className="w-4 h-4" /> Create Account </>
-              )}
-            </button>
-          </form>
-          
-          <div className="mt-6 text-center">
-            <p className="text-xs text-slate-400">
-               Secure Database Connection • Local Persistence
+          <div className="auth-aside-copy">
+            <h1 className="auth-title text-balance">
+              Build assessments that match Florida math standards
+            </h1>
+            <p className="auth-lede text-pretty">
+              Choose a standard, generate a quiz, and follow gaps into short remedial slides—without leaving the
+              classroom workflow.
             </p>
           </div>
-        </div>
+
+          <MotionDiagram name="Atlas" width={380} plate="#eef0ff" desktopOnly className="auth-figure" />
+
+          <ul className="auth-feature-list">
+            <li>
+              <span className="auth-feature-icon auth-feature-icon--violet" aria-hidden="true">
+                <Pin className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              <div>
+                <p className="auth-feature-title">Pin a B.E.S.T. standard</p>
+                <p className="auth-feature-text">Browse the coherence map, then lock the benchmark you will teach.</p>
+              </div>
+            </li>
+            <li>
+              <span className="auth-feature-icon auth-feature-icon--sky" aria-hidden="true">
+                <Layers3 className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              <div>
+                <p className="auth-feature-title">Generate a quiz</p>
+                <p className="auth-feature-text">Aligned practice items with figures for the standard you pinned.</p>
+              </div>
+            </li>
+            <li>
+              <span className="auth-feature-icon auth-feature-icon--amber" aria-hidden="true">
+                <ChartColumn className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              <div>
+                <p className="auth-feature-title">Diagnose gaps</p>
+                <p className="auth-feature-text">See which skills slipped and what to reteach next.</p>
+              </div>
+            </li>
+            <li>
+              <span className="auth-feature-icon auth-feature-icon--emerald" aria-hidden="true">
+                <BookOpen className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              <div>
+                <p className="auth-feature-title">Open remedial slides</p>
+                <p className="auth-feature-text">Short, gap-focused slides for the next small-group lesson.</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+
+        <main id="auth-main" className="auth-main">
+          <motion.section
+            className="auth-card"
+            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            aria-labelledby="auth-heading"
+          >
+            <div className="auth-card-brand">
+              <BrandMark size="compact" />
+            </div>
+            <header className="auth-card-header">
+              <h2 id="auth-heading" className="auth-card-title">
+                {isLoginMode ? 'Start a classroom session' : 'Create your account'}
+              </h2>
+              <p className="auth-card-subtitle">
+                {isLoginMode
+                  ? 'Sign in with your username, or continue as guest on this device.'
+                  : 'Save quiz and remediation progress when the server is connected.'}
+              </p>
+            </header>
+
+            <div className="auth-mode-toggle" role="tablist" aria-label="Account mode">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={isLoginMode}
+                onClick={() => {
+                  setIsLoginMode(true);
+                  setError('');
+                }}
+                className={`auth-mode-btn ${isLoginMode ? 'is-active' : ''}`}
+              >
+                Sign in
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={!isLoginMode}
+                onClick={() => {
+                  setIsLoginMode(false);
+                  setError('');
+                }}
+                className={`auth-mode-btn ${!isLoginMode ? 'is-active' : ''}`}
+              >
+                Register
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="auth-form" noValidate>
+              <div className="auth-field">
+                <label htmlFor={usernameId} className="auth-label">
+                  Username
+                </label>
+                <input
+                  id={usernameId}
+                  type="text"
+                  name="username"
+                  autoComplete="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="app-input auth-input"
+                  placeholder="e.g. mgarcia"
+                  spellCheck={false}
+                  autoCapitalize="none"
+                  disabled={busy}
+                  aria-invalid={Boolean(error) && !username.trim()}
+                  aria-describedby={error ? errorId : undefined}
+                />
+              </div>
+
+              {!isLoginMode && (
+                <div className="auth-field animate-slide-down">
+                  <label htmlFor={fullNameId} className="auth-label">
+                    Full name
+                  </label>
+                  <input
+                    id={fullNameId}
+                    type="text"
+                    name="fullName"
+                    autoComplete="name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="app-input auth-input"
+                    placeholder="e.g. Maya Garcia"
+                    disabled={busy}
+                  />
+                </div>
+              )}
+
+              {error && (
+                <div id={errorId} className="auth-error" role="alert">
+                  {error}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={busy}
+                className="auth-submit app-btn-primary"
+              >
+                <span>{formBusy ? (isLoginMode ? 'Signing in…' : 'Creating account…') : isLoginMode ? 'Sign in' : 'Create account'}</span>
+                {!formBusy && <ArrowRight className="w-4 h-4" strokeWidth={2} aria-hidden="true" />}
+              </button>
+            </form>
+
+            <div className="auth-divider" role="separator" aria-label="or">
+              <span>or</span>
+            </div>
+
+            <button
+              type="button"
+              disabled={busy}
+              onClick={handleGuest}
+              className="auth-guest app-btn-secondary"
+            >
+              <UserRound className="w-4 h-4" strokeWidth={1.75} aria-hidden="true" />
+              {guestBusy ? 'Starting guest session…' : 'Continue as guest'}
+            </button>
+
+            <p className="auth-footnote">
+              Guest sessions stay on this device. Registered accounts sync when the server is connected.
+            </p>
+          </motion.section>
+        </main>
       </div>
     </div>
   );

@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +25,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local Gemini / quiz smoke artifacts (see src/integration/gradeQuizImages.smoke.test.ts)
+smoke-output/
+
+# Supabase CLI local link state
+supabase/.temp/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local agent / critique tooling (not product source)
+.agents/
+.claude/
+.impeccable/
+skills-lock.json
+
+# Accidental Windows path artifacts
+%USERPROFILE%/

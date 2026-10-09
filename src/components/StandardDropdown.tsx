@@ -7,14 +7,25 @@ interface StandardDropdownProps {
   value: string;
   onChange: (value: string) => void;
   disabled?: boolean;
+  id?: string;
+  placeholder?: string;
 }
 
-export function StandardDropdown({ standards, value, onChange, disabled }: StandardDropdownProps) {
+export function StandardDropdown({
+  standards,
+  value,
+  onChange,
+  disabled,
+  id,
+  placeholder = 'Choose a benchmark',
+}: StandardDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredStandard, setHoveredStandard] = useState<Standard | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const selected = standards.find((s) => s.code === value);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -26,11 +37,23 @@ export function StandardDropdown({ standards, value, onChange, disabled }: Stand
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen]);
+
   const handleMouseEnter = (standard: Standard) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
       setHoveredStandard(standard);
-    }, 1000); // 1 second delay requested by user
+    }, 1000);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -46,68 +69,78 @@ export function StandardDropdown({ standards, value, onChange, disabled }: Stand
     onChange(code);
     setIsOpen(false);
     handleMouseLeave();
+    triggerRef.current?.focus();
   };
 
   return (
-    <div className="relative w-full" ref={containerRef}>
+    <div className="relative w-full min-w-0" ref={containerRef}>
       <button
+        ref={triggerRef}
+        id={id}
         type="button"
         disabled={disabled}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 font-medium disabled:opacity-50 text-left focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="app-input studio-select-trigger"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
       >
-        <span className="block truncate">
-          {value || "Select..."}
+        <span className={`block truncate ${value ? 'font-mono' : 'studio-select-placeholder'}`} translate={value ? 'no' : undefined}>
+          {value || placeholder}
         </span>
-        <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0" />
+        <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: 'var(--text-secondary)' }} aria-hidden />
       </button>
 
       {isOpen && (
         <>
-          <div className="absolute z-50 mt-1 w-full bg-white border border-slate-200 rounded-xl shadow-lg max-h-60 overflow-y-auto">
+          <div className="studio-menu" role="listbox" aria-label="Standards">
             {standards.length === 0 ? (
-              <div className="p-3 text-sm text-slate-500 text-center">No standards available</div>
+              <div className="studio-menu-empty">No standards match these filters.</div>
             ) : (
               <ul className="py-1">
-                {standards.map((s) => (
-                  <li
-                    key={s.code}
-                    className={`relative cursor-pointer select-none py-2 pl-4 pr-9 hover:bg-blue-50 ${value === s.code ? 'text-blue-900 bg-blue-50/50' : 'text-slate-700'}`}
-                    onClick={() => handleSelect(s.code)}
-                    onMouseEnter={() => handleMouseEnter(s)}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <span className={`block truncate ${value === s.code ? 'font-semibold' : 'font-normal'}`}>
-                      {s.code}
-                    </span>
-                    
-                    {value === s.code && (
-                      <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-blue-600">
-                        <Check className="w-4 h-4" />
-                      </span>
-                    )}
-                  </li>
-                ))}
+                {standards.map((s) => {
+                  const isSelected = value === s.code;
+                  return (
+                    <li key={s.code} role="presentation">
+                      <button
+                        type="button"
+                        role="option"
+                        aria-selected={isSelected}
+                        className={`studio-menu-option ${isSelected ? 'is-selected' : ''}`}
+                        onClick={() => handleSelect(s.code)}
+                        onMouseEnter={() => handleMouseEnter(s)}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                        title={s.description}
+                      >
+                        <span className="font-mono truncate" translate="no">
+                          {s.code}
+                        </span>
+                        {isSelected && <Check className="w-4 h-4 shrink-0" aria-hidden />}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>
-          
-          {/* Tooltip rendered outside overflow container to prevent clipping */}
+
           {hoveredStandard && (
-            <div 
-              className="fixed w-80 p-4 bg-slate-800 text-white text-sm rounded-xl shadow-2xl z-[9999] pointer-events-none border border-slate-700 transition-opacity duration-200"
-              style={{ 
-                left: Math.min(mousePos.x + 15, window.innerWidth - 340), // keep on screen horizontally
-                top: Math.min(mousePos.y + 15, window.innerHeight - 150) // keep on screen vertically
+            <div
+              className="studio-tooltip"
+              style={{
+                left: Math.min(mousePos.x + 15, window.innerWidth - 340),
+                top: Math.min(mousePos.y + 15, window.innerHeight - 150),
               }}
             >
-              <strong className="block mb-2 text-blue-300 text-base">{hoveredStandard.code}</strong>
-              <p className="leading-relaxed opacity-90">{hoveredStandard.description}</p>
+              <strong className="studio-tooltip-code" translate="no">
+                {hoveredStandard.code}
+              </strong>
+              <p>{hoveredStandard.description}</p>
             </div>
           )}
         </>
       )}
+      {selected && <span className="sr-only-live">{selected.description}</span>}
     </div>
   );
 }

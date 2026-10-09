@@ -1,6 +1,25 @@
 import React from 'react';
 import { GapAnalysis as GapAnalysisType, GapType } from '../types';
-import { AlertTriangle, Brain, Calculator, Wrench, BarChart2, BookOpen, Target, AlertCircle, Info, CheckCircle2 } from 'lucide-react';
+import {
+  AlertTriangle,
+  Brain,
+  Calculator,
+  Wrench,
+  BarChart2,
+  BookOpen,
+  Target,
+  ListChecks,
+  Route,
+  FileSearch,
+  CheckCircle2,
+  XCircle,
+  Users,
+  User,
+  Gauge,
+} from 'lucide-react';
+import { StandardPracticeLinks } from './StandardPracticeLinks';
+import { MotionDiagram } from './motion-diagrams';
+import { MathHtml } from './MathHtml';
 
 interface Props {
   analysis: GapAnalysisType;
@@ -8,206 +27,416 @@ interface Props {
   isLoadingSlides: boolean;
 }
 
+const DIFFICULTY_ROWS = ['Hard', 'Medium', 'Easy'] as const;
+
+const EVIDENCE_SOURCE_LABELS: Record<string, string> = {
+  standard: 'This standard',
+  strand: 'Same strand',
+  adjacent_grade: 'Adjacent grade',
+  inferred: 'Inferred',
+};
+
+const humanize = (value: string) => {
+  const text = value.replaceAll('_', ' ').trim();
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+};
+
 const GapAnalysis: React.FC<Props> = ({ analysis, onStartRemediation, isLoadingSlides }) => {
-  const getIcon = (type: GapType) => {
+  const attemptRows = analysis.attemptRows || [];
+  const questionDiagnostics = analysis.questionDiagnostics || [];
+  const teacherActions = analysis.teacherActions || [];
+  const studentActions = analysis.studentActions || [];
+  const reliabilityFlags = analysis.reliabilityFlags || [];
+  const hasGaps = analysis.identifiedGaps.length > 0;
+
+  const gapIcon = (type: GapType) => {
     switch (type) {
-      case GapType.Conceptual: return <Brain className="w-6 h-6 text-purple-600" />;
-      case GapType.Procedural: return <Wrench className="w-6 h-6 text-orange-600" />;
-      case GapType.Computational: return <Calculator className="w-6 h-6 text-red-600" />;
-      default: return <AlertTriangle className="w-6 h-6 text-slate-600" />;
+      case GapType.Conceptual:
+        return <Brain className="w-5 h-5" strokeWidth={1.75} aria-hidden />;
+      case GapType.Procedural:
+        return <Wrench className="w-5 h-5" strokeWidth={1.75} aria-hidden />;
+      case GapType.Computational:
+        return <Calculator className="w-5 h-5" strokeWidth={1.75} aria-hidden />;
+      default:
+        return <AlertTriangle className="w-5 h-5" strokeWidth={1.75} aria-hidden />;
     }
   };
 
-  const getColor = (type: GapType) => {
+  const gapTone = (type: GapType) => {
     switch (type) {
-      case GapType.Conceptual: return "bg-purple-50 border-purple-100 text-purple-900";
-      case GapType.Procedural: return "bg-orange-50 border-orange-100 text-orange-900";
-      case GapType.Computational: return "bg-red-50 border-red-100 text-red-900";
-      default: return "bg-slate-50 border-slate-100 text-slate-900";
+      case GapType.Conceptual:
+        return 'gap-card--conceptual';
+      case GapType.Procedural:
+        return 'gap-card--procedural';
+      case GapType.Computational:
+        return 'gap-card--computational';
+      default:
+        return '';
     }
   };
 
-  const getScoreColor = (correct: number, total: number) => {
-    const percentage = correct / total;
-    if (percentage >= 0.8) return 'text-green-600';
-    if (percentage >= 0.5) return 'text-yellow-600';
-    return 'text-red-600';
+  const skillTone = (correct: number, total: number) => {
+    const ratio = total > 0 ? correct / total : 0;
+    if (ratio >= 0.8) return 'success';
+    if (ratio >= 0.5) return 'warning';
+    return 'danger';
   };
 
-  const getProgressBarColor = (correct: number, total: number) => {
-    const percentage = correct / total;
-    if (percentage >= 0.8) return 'bg-green-500';
-    if (percentage >= 0.5) return 'bg-yellow-500';
-    return 'bg-red-500';
-  };
+  const reliability = (() => {
+    const score = analysis.confidenceScore;
+    if (score >= 85) {
+      return {
+        label: 'High reliability',
+        tone: 'success',
+        description: 'Errors follow a consistent pattern, so the diagnosis below is well supported.',
+      };
+    }
+    if (score >= 60) {
+      return {
+        label: 'Medium reliability',
+        tone: 'warning',
+        description: 'Some patterns showed up, but errors varied. Remediation will help confirm the gaps.',
+      };
+    }
+    return {
+      label: 'Low reliability',
+      tone: 'neutral',
+      description: 'Errors look random or like guessing. Collect another quiz before acting on this diagnosis.',
+    };
+  })();
 
-  // Determine confidence level properties
-  const getConfidenceLevel = (score: number) => {
-    if (score >= 85) return { 
-      label: "High Reliability", 
-      color: "text-emerald-600", 
-      bg: "bg-emerald-50",
-      icon: <CheckCircle2 className="w-4 h-4 text-emerald-600" />,
-      description: "Consistent error patterns detected. The AI is highly certain about the diagnosed gaps." 
-    };
-    if (score >= 60) return { 
-      label: "Medium Reliability", 
-      color: "text-amber-600", 
-      bg: "bg-amber-50",
-      icon: <Info className="w-4 h-4 text-amber-600" />,
-      description: "Some patterns identified, but errors varied. Remediation is recommended to clarify understanding." 
-    };
-    return { 
-      label: "Low Reliability", 
-      color: "text-slate-500", 
-      bg: "bg-slate-50",
-      icon: <AlertTriangle className="w-4 h-4 text-slate-500" />,
-      description: "Errors appear random or due to guessing. The specific gap diagnosis requires more data." 
-    };
-  };
-
-  const confidence = getConfidenceLevel(analysis.confidenceScore);
-  const radius = 36;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (analysis.confidenceScore / 100) * circumference;
+  const correctCount = attemptRows.filter((row) => row.isCorrect).length;
+  const ctaStatus = isLoadingSlides
+    ? 'Building slides for the gaps above…'
+    : hasGaps
+      ? `${analysis.identifiedGaps.length} gap${analysis.identifiedGaps.length === 1 ? '' : 's'} ready for a remedial lesson.`
+      : 'No gaps were diagnosed, so there is nothing to build slides for.';
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8 animate-fade-in">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-2">Learning Gap Analysis</h2>
-        <p className="text-slate-500">AI-Diagnosis based on your quiz performance for standard {analysis.standardCode}</p>
+    <div className="analysis-page">
+      <header className="analysis-hero app-hero-band">
+        <div className="app-hero-band-copy">
+          <h1 className="app-page-title">Gap analysis</h1>
+          <p className="app-page-lede">
+            What this quiz shows about{' '}
+            <span className="app-badge app-badge--accent app-badge--mono" translate="no">
+              {analysis.standardCode}
+            </span>
+            {attemptRows.length > 0 && (
+              <>
+                {' '}
+                ·{' '}
+                <span className="tabular-nums">
+                  {correctCount} of {attemptRows.length} correct
+                </span>
+              </>
+            )}
+          </p>
+        </div>
+        <MotionDiagram name="Gaps" width={112} plate="#f2edfd" desktopOnly className="motion-diagram--compact" />
+      </header>
+
+      <div className="analysis-overview">
+        <section className="app-section" aria-labelledby="analysis-summary-heading">
+          <h2 id="analysis-summary-heading" className="app-section-head">
+            <span className="app-icon-tile" aria-hidden="true">
+              <BarChart2 className="w-4 h-4" strokeWidth={1.75} />
+            </span>
+            Summary
+          </h2>
+          <p className="analysis-prose">
+            {hasGaps
+              ? analysis.summary
+              : 'This quiz did not surface a clear skill gap. Collect another sample before reteaching, or return to the studio to pin a different standard.'}
+          </p>
+        </section>
+
+        <section className="app-section analysis-reliability" aria-labelledby="analysis-reliability-heading">
+          <h2 id="analysis-reliability-heading" className="app-section-head">
+            <span className="app-icon-tile app-icon-tile--amber" aria-hidden="true">
+              <Gauge className="w-4 h-4" strokeWidth={1.75} />
+            </span>
+            Reliability
+          </h2>
+          <div className="analysis-reliability-score">
+            <span className="analysis-reliability-value tabular-nums">{analysis.confidenceScore}%</span>
+            <span className={`app-badge ${reliability.tone === 'neutral' ? '' : `app-badge--${reliability.tone}`}`}>
+              {reliability.label}
+            </span>
+          </div>
+          <div
+            className="analysis-meter"
+            role="meter"
+            aria-label="Diagnosis reliability"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={analysis.confidenceScore}
+          >
+            <div className="analysis-meter-fill" style={{ width: `${Math.max(0, Math.min(100, analysis.confidenceScore))}%` }} />
+          </div>
+          <p className="analysis-note">{reliability.description}</p>
+          {reliabilityFlags.length > 0 && (
+            <ul className="studio-alert analysis-flags">
+              {reliabilityFlags.map((flag, idx) => (
+                <li key={`rf-${idx}`}>{flag}</li>
+              ))}
+            </ul>
+          )}
+        </section>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        {/* Expanded Confidence Score Card */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-          <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-slate-200 via-blue-500 to-slate-200 opacity-50"></div>
-          
-          <div className="relative w-28 h-28 mb-4 group-hover:scale-105 transition-transform duration-300">
-            <svg className="w-full h-full transform -rotate-90">
-              <circle cx="56" cy="56" r={radius} stroke="currentColor" strokeWidth="8" fill="transparent" className="text-slate-100" />
-              <circle cx="56" cy="56" r={radius} stroke="currentColor" strokeWidth="8" fill="transparent" strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" className="text-blue-600 transition-all duration-1000 ease-out" />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-2xl font-bold text-slate-900">{analysis.confidenceScore}%</span>
-              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Reliability</span>
+      <section className="analysis-block" aria-labelledby="analysis-gaps-heading">
+        <h2 id="analysis-gaps-heading" className="app-section-head app-section-head--lg">
+          <span className="app-icon-tile app-icon-tile--violet" aria-hidden="true">
+            <Target className="w-4 h-4" strokeWidth={1.75} />
+          </span>
+          Diagnosed gaps
+        </h2>
+
+        {!hasGaps ? (
+          <div className="app-section analysis-empty">
+            <CheckCircle2 className="w-6 h-6 quiz-result-icon--ok" strokeWidth={1.75} aria-hidden />
+            <div>
+              <p className="analysis-empty-title">No significant gaps</p>
+              <p className="analysis-note">This quiz shows solid command of the standard. Try the extra practice below to stretch further.</p>
             </div>
           </div>
-          
-          <div className={`flex items-center gap-2 mb-3 px-3 py-1 rounded-full ${confidence.bg}`}>
-            {confidence.icon}
-            <h3 className={`text-sm font-bold uppercase tracking-wider ${confidence.color}`}>
-              {confidence.label}
-            </h3>
-          </div>
-        </div>
-        
-        <div className="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-            <BarChart2 className="w-5 h-5 text-blue-500" />
-            Performance Summary
-          </h3>
-          <p className="text-slate-600 leading-relaxed text-lg">{analysis.summary}</p>
-        </div>
-      </div>
-
-      {/* Sub-skills Section */}
-      {analysis.subSkills && analysis.subSkills.length > 0 && (
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <h3 className="text-lg font-semibold text-slate-800 mb-6 flex items-center gap-2">
-            <Target className="w-5 h-5 text-indigo-500" />
-            Skill Breakdown
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {analysis.subSkills.map((skill, idx) => (
-              <div key={idx} className="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:border-blue-200 transition-colors">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 className="font-bold text-slate-700">{skill.name}</h4>
-                    <p className="text-xs text-slate-500 mt-1">{skill.description}</p>
-                  </div>
-                  <span className={`text-lg font-bold ${getScoreColor(skill.correctCount, skill.totalCount)}`}>
-                    {skill.correctCount}/{skill.totalCount}
-                  </span>
-                </div>
-                {/* Progress bar */}
-                <div className="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-                  <div 
-                    className={`h-full rounded-full ${getProgressBarColor(skill.correctCount, skill.totalCount)} transition-all duration-1000`}
-                    style={{ width: `${(skill.correctCount / skill.totalCount) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="space-y-4">
-        <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-          <AlertCircle className="w-5 h-5 text-red-500" />
-          Diagnosed Learning Gaps
-        </h3>
-        
-        {analysis.identifiedGaps.length === 0 ? (
-          <div className="p-8 bg-green-50 rounded-2xl border border-green-100 text-center">
-            <p className="text-green-800 font-medium text-lg">No significant gaps identified! Great job mastering this standard.</p>
-          </div>
         ) : (
-          <div className="grid gap-4">
+          <div className="analysis-gap-list">
             {analysis.identifiedGaps.map((gap, idx) => (
-              <div key={idx} className={`p-6 rounded-2xl border flex flex-col md:flex-row gap-4 ${getColor(gap.gapType)}`}>
-                <div className="flex-shrink-0 mt-1">
-                   <div className="bg-white/80 p-3 rounded-full h-fit shadow-sm backdrop-blur-sm">
-                    {getIcon(gap.gapType)}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <h4 className="font-bold text-lg">{gap.gapType}</h4>
-                    {gap.relatedQuestions.map(qIdx => (
-                      <span key={qIdx} className="px-2 py-0.5 bg-white/60 rounded text-xs font-bold uppercase tracking-wide border border-black/5">
-                        Q{qIdx + 1}
+              <article key={idx} className={`gap-card ${gapTone(gap.gapType)}`}>
+                <div className="gap-card-icon">{gapIcon(gap.gapType)}</div>
+                <div className="min-w-0 flex-1">
+                  <div className="gap-card-head">
+                    <h3 className="gap-card-title">{gap.gapType}</h3>
+                    {gap.relatedQuestions.length > 0 && (
+                      <span className="gap-card-questions">
+                        From{' '}
+                        {gap.relatedQuestions.map((qIdx) => (
+                          <span key={qIdx} className="app-badge app-badge--mono">
+                            Q{qIdx + 1}
+                          </span>
+                        ))}
                       </span>
-                    ))}
+                    )}
                   </div>
-                  <p className="opacity-90 mb-4 leading-relaxed">{gap.description}</p>
-                  
+                  <p className="analysis-prose">{gap.description}</p>
                   {gap.misconception && (
-                    <div className="bg-white/60 p-4 rounded-xl border border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-wider opacity-60 flex items-center gap-1 mb-1">
-                        <AlertTriangle className="w-3 h-3" />
-                        Detected Misconception
-                      </span>
-                      <p className="font-medium italic">"{gap.misconception}"</p>
+                    <div className="gap-card-misconception">
+                      <p className="gap-card-misconception-label">Likely misconception</p>
+                      <p>{gap.misconception}</p>
                     </div>
                   )}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         )}
-      </div>
+      </section>
 
-      <div className="flex justify-center pt-8 pb-12">
-        <button
-          onClick={onStartRemediation}
-          disabled={isLoadingSlides || analysis.identifiedGaps.length === 0}
-          className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transform transition-all disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center gap-3 border border-emerald-400/20"
-        >
-          {isLoadingSlides ? (
-            <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-              Building Personalized Lesson Plan...
-            </>
-          ) : (
-            <>
-              <BookOpen className="w-6 h-6" />
-              Generate Remedial Slides
-            </>
-          )}
-        </button>
+      {analysis.subSkills && analysis.subSkills.length > 0 && (
+        <section className="app-section" aria-labelledby="analysis-skills-heading">
+          <h2 id="analysis-skills-heading" className="app-section-head">
+            <span className="app-icon-tile app-icon-tile--teal" aria-hidden="true">
+              <ListChecks className="w-4 h-4" strokeWidth={1.75} />
+            </span>
+            Skill breakdown
+          </h2>
+          <div className="analysis-skill-grid">
+            {analysis.subSkills.map((skill, idx) => {
+              const tone = skillTone(skill.correctCount, skill.totalCount);
+              const pct = skill.totalCount > 0 ? (skill.correctCount / skill.totalCount) * 100 : 0;
+              return (
+                <div key={idx} className="app-inset analysis-skill">
+                  <div className="analysis-skill-head">
+                    <div className="min-w-0">
+                      <h3 className="analysis-skill-name">{skill.name}</h3>
+                      <p className="analysis-note">{skill.description}</p>
+                    </div>
+                    <span className={`analysis-skill-score analysis-skill-score--${tone} tabular-nums`}>
+                      {skill.correctCount}/{skill.totalCount}
+                    </span>
+                  </div>
+                  <div
+                    className="analysis-meter"
+                    role="meter"
+                    aria-label={`${skill.name}: ${skill.correctCount} of ${skill.totalCount} correct`}
+                    aria-valuemin={0}
+                    aria-valuemax={skill.totalCount}
+                    aria-valuenow={skill.correctCount}
+                  >
+                    <div className={`analysis-meter-fill analysis-meter-fill--${tone}`} style={{ width: `${pct}%` }} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {hasGaps && (teacherActions.length > 0 || studentActions.length > 0) && (
+        <div className="analysis-actions-grid">
+          <section className="app-section" aria-labelledby="analysis-teacher-heading">
+            <h2 id="analysis-teacher-heading" className="app-section-head">
+              <span className="app-icon-tile app-icon-tile--rose" aria-hidden="true">
+                <Users className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              What to reteach
+            </h2>
+            <ul className="analysis-list">
+              {teacherActions.length > 0
+                ? teacherActions.map((action, idx) => <li key={`ta-${idx}`}>{action}</li>)
+                : <li>No urgent reteach priorities.</li>}
+            </ul>
+          </section>
+          <section className="app-section" aria-labelledby="analysis-student-heading">
+            <h2 id="analysis-student-heading" className="app-section-head">
+              <span className="app-icon-tile app-icon-tile--rose" aria-hidden="true">
+                <User className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              Student next steps
+            </h2>
+            <ul className="analysis-list">
+              {studentActions.length > 0
+                ? studentActions.map((action, idx) => <li key={`sa-${idx}`}>{action}</li>)
+                : <li>No immediate intervention needed.</li>}
+            </ul>
+          </section>
+        </div>
+      )}
+
+      {attemptRows.length > 0 && (
+        <section className="app-section" aria-labelledby="analysis-path-heading">
+          <h2 id="analysis-path-heading" className="app-section-head">
+            <span className="app-icon-tile app-icon-tile--sky" aria-hidden="true">
+              <Route className="w-4 h-4" strokeWidth={1.75} />
+            </span>
+            Difficulty path
+          </h2>
+          <p className="app-section-sub">The difficulty of each question in the order it was answered.</p>
+          <div className="analysis-path" aria-hidden>
+            {DIFFICULTY_ROWS.map((level) => (
+              <React.Fragment key={level}>
+                <span className="analysis-path-level">{level}</span>
+                <div className="analysis-path-row" style={{ gridTemplateColumns: `repeat(${attemptRows.length}, minmax(1.75rem, 1fr))` }}>
+                  {attemptRows.map((row, idx) => (
+                    <span key={`${row.questionId}-${idx}-${level}`} className="analysis-path-cell">
+                      {row.difficultyPresented === level && (
+                        <span className={`analysis-path-dot ${row.isCorrect ? 'is-correct' : 'is-incorrect'}`} />
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+          <ol className="analysis-path-list">
+            {attemptRows.map((row) => (
+              <li key={`${row.questionId}-chip`} className="app-badge">
+                <span className="font-mono">Q{row.attemptOrder}</span>
+                <span>{row.difficultyPresented}</span>
+                {row.isCorrect ? (
+                  <CheckCircle2 className="w-3.5 h-3.5 quiz-result-icon--ok" aria-hidden />
+                ) : (
+                  <XCircle className="w-3.5 h-3.5 quiz-result-icon--bad" aria-hidden />
+                )}
+                <span className="sr-only">{row.isCorrect ? 'correct' : 'incorrect'}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="analysis-legend">
+            <span className="analysis-path-dot is-correct" aria-hidden /> Correct
+            <span className="analysis-path-dot is-incorrect" aria-hidden /> Incorrect
+          </p>
+        </section>
+      )}
+
+      {questionDiagnostics.length > 0 && (
+        <details className="app-section analysis-evidence">
+          <summary className="analysis-evidence-summary">
+            <span className="app-section-head m-0">
+              <span className="app-icon-tile" aria-hidden="true">
+                <FileSearch className="w-4 h-4" strokeWidth={1.75} />
+              </span>
+              Per-question evidence
+            </span>
+            <span className="app-badge app-badge--mono">{questionDiagnostics.length}</span>
+          </summary>
+          <div className="analysis-evidence-list">
+            {questionDiagnostics.map((diagnostic) => {
+              const attempt = attemptRows.find((item) => item.attemptOrder === diagnostic.attemptOrder);
+              return (
+                <article key={`diag-${diagnostic.attemptOrder}`} className="app-inset">
+                  <div className="analysis-evidence-badges">
+                    <span className="app-badge app-badge--mono">Q{diagnostic.attemptOrder}</span>
+                    <span className="app-badge">{attempt?.difficultyPresented || 'Unknown difficulty'}</span>
+                    <span className="app-badge">{humanize(diagnostic.errorType)}</span>
+                    <span className="app-badge">
+                      {humanize(diagnostic.confidenceLabel)} confidence,{' '}
+                      <span className="tabular-nums">{diagnostic.confidenceScore}%</span>
+                    </span>
+                  </div>
+                  <dl className="analysis-evidence-fields">
+                    <dt>Likely misconception</dt>
+                    <dd>{diagnostic.misconception}</dd>
+                    <dt>Evidence from</dt>
+                    <dd>{EVIDENCE_SOURCE_LABELS[diagnostic.evidenceSource] ?? humanize(diagnostic.evidenceSource)}</dd>
+                    {attempt && (
+                      <>
+                        <dt>Answer</dt>
+                        <dd className="math-html">
+                          Chose <MathHtml text={attempt.selectedOptionText} className="inline" />, correct was{' '}
+                          <MathHtml text={attempt.correctOptionText} className="inline" />
+                        </dd>
+                      </>
+                    )}
+                    {attempt?.adaptiveDecisionReason && (
+                      <>
+                        <dt>Adaptive step</dt>
+                        <dd>{humanize(attempt.adaptiveDecisionReason)}</dd>
+                      </>
+                    )}
+                  </dl>
+                </article>
+              );
+            })}
+          </div>
+        </details>
+      )}
+
+      <StandardPracticeLinks
+        standardCode={analysis.standardCode}
+        title="Extra practice for this standard"
+        subtitle={analysis.standardCode}
+        maxVisible={8}
+        collapsible={false}
+      />
+
+      <div className="studio-actionbar" role="region" aria-label="Remedial lesson">
+        <div className="studio-actionbar-status" aria-live="polite">
+          <span className="studio-actionbar-hint">{ctaStatus}</span>
+        </div>
+        <div className="studio-actionbar-actions">
+          <button
+            type="button"
+            onClick={onStartRemediation}
+            disabled={isLoadingSlides || !hasGaps}
+            aria-busy={isLoadingSlides}
+            className="coherence-atlas-btn-primary studio-generate-btn"
+          >
+            {isLoadingSlides ? (
+              <>
+                <span className="app-spinner" aria-hidden />
+                Building slides…
+              </>
+            ) : (
+              <>
+                <BookOpen className="w-4 h-4" strokeWidth={2} aria-hidden />
+                Build remedial slides
+              </>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

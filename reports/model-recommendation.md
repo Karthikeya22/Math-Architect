@@ -1,65 +1,60 @@
-# Cost-First Provider Recommendation
+# OpenAI-First Model Recommendation
 
-Generated from:
-- `reports/benchmark-matrix.json`
-- `reports/ab-eval-gemini.json`
-- `reports/ab-eval-openai.json`
-- `reports/ab-eval-comparison.json`
+Updated after the verified-figures / remedial-slides cutover (2026-10-08).
 
-## Executive Summary
+Earlier A/B runs in this folder that reported “OpenAI unavailable” are obsolete: the API key is valid, and the default stack is OpenAI for every task.
 
-- Cost-first selection with quality gates chooses **Gemini** for all text tasks in the current environment.
-- OpenAI benchmark runs failed at runtime because `OPENAI_API_KEY` resolves as empty in `.env`.
-- Winner config has been applied as all-Gemini with fallback disabled to prevent cross-provider failures.
+## Executive summary
 
-## Gate Results
-
-### Gemini
-- Total cases: 7
-- Passes: 6
-- Pass rate: 85.7%
-- Schema pass rate: 85.7%
-- Avg latency: 7046 ms
-- Total estimated cost from usage telemetry: 0 (usage not returned in current Gemini response payload)
-
-### OpenAI
-- Total cases: 7
-- Passes: 0
-- Pass rate: 0%
-- Failure reason: `OPENAI_API_KEY is not configured.` for all cases
-- Avg latency: 48 ms (failed fast)
-
-## Winner By Task
-
-| Task | Winner | Model | Reason |
+| Task | Provider | Model | Notes |
 |---|---|---|---|
-| quiz | gemini | gemini-3-flash-preview | Only provider passing quality/schema gates |
-| analysis | gemini | gemini-3-flash-preview | Only provider passing quality/schema gates |
-| slides | gemini | gemini-3-flash-preview | Only provider passing quality/schema gates |
-| image | none (provisional) | n/a | No passing provider in isolated benchmark; OpenAI unavailable and evaluator expects JSON gates not ideal for raw image checks |
+| quiz | openai | `gpt-5.4` | Strict JSON quiz payloads |
+| analysis | openai | `gpt-5.4-mini` | Gap analysis |
+| slides | openai | `gpt-5.5` | Six-slide remedial blueprint + talking points |
+| figure brief | openai | `gpt-5.4-mini` | Illustration director |
+| vision | openai | `gpt-5.4-mini` | Figure verifier (sees the image) |
+| image | openai | `gpt-image-2` | Landscape figures (`1536x1024` for 16:9) |
 
-## Applied Runtime Configuration
+`AI_FALLBACK_ENABLED=false`. Gemini remains in the repo as an env-selectable alternate, not the default.
 
-Current selected settings in `.env`:
-- `AI_PROVIDER_QUIZ=gemini`
-- `AI_PROVIDER_ANALYSIS=gemini`
-- `AI_PROVIDER_SLIDES=gemini`
-- `AI_PROVIDER_IMAGES=gemini`
+## Evidence (run 2)
+
+Preflight (`scripts/verify_openai_pipeline.ts after-run2`):
+- `GET /v1/models` → 137 models, including gpt-5.4 / gpt-5.5 / gpt-image-2
+- Tiny completion on `gpt-5.4-mini` → ok (~1.4s)
+- Low-quality `gpt-image-2` render → ok (~8s)
+
+Figure samples (brief → image → vision, one retry):
+- **4/6 verified** including exact-count stars and the ladder geometry item
+- 2 rejected (place-value blocks, number-line tick precision) — client path falls back to SVG or no figure
+- Rough cost for the sample set ≈ **$0.38** (planning estimate, not billing)
+
+Quiz image smoke (`SMOKE_OUT_DIR=after-run2-quiz`):
+- K, G3, G5, HS geometry: **7 verified**, **1 skipped** (place-value item where any faithful figure would leak the answer)
+
+Remedial slides smoke + browser E2E on `MA.4.FR.2.1`:
+- Six-slide blueprint with gap labels and teacher talking points
+- Slide figures verified in parallel; failed figures become text-led layouts (no spinner)
+- PDF/PPTX export buttons present; PPTX includes AI images and speaker notes
+
+## Applied runtime configuration
+
+Representative `.env` settings (do not commit `.env`):
+- `AI_PROVIDER_*=openai`
 - `AI_FALLBACK_ENABLED=false`
+- `OPENAI_QUIZ_MODEL=gpt-5.4`
+- `OPENAI_SLIDES_MODEL=gpt-5.5`
+- `OPENAI_ANALYSIS_MODEL` / vision / figure_brief → `gpt-5.4-mini`
+- `OPENAI_IMAGE_MODEL=gpt-image-2`
+- `OPENAI_IMAGE_QUALITY=medium`
+- `FIGURE_VERIFY=true`
 
-## End-to-End Verification
+## Decision gate
 
-Validated app flow in browser:
-- Quiz generation: PASS
-- Quiz completion to analysis: PASS
-- Analysis rendering: PASS
-- Remediation entry logic: PASS (button disabled when no gaps identified)
+Exact-count and geometry items verified at an acceptable rate in run 2. **Do not** restore SVG-first for those types unless a later run shows a sustained low pass rate; ask before changing the policy.
 
-## Rollout Guidance
+## Rollout guidance
 
-1. Keep all-Gemini in production until OpenAI key configuration is fixed and validated.
-2. After key fix, rerun:
-   - `npm run ab:evaluate -- --provider=gemini --suffix=gemini`
-   - `npm run ab:evaluate -- --provider=openai --suffix=openai`
-3. Recompute winners with cost-first rule and re-enable fallback only after both providers pass baseline gates.
-4. For image benchmarking, use an image-specific quality check (binary image returned + human relevance check), not JSON schema gating.
+1. Keep OpenAI-first in local/prod until a deliberate provider A/B says otherwise.
+2. Re-run `npx tsx scripts/verify_openai_pipeline.ts` after model or prompt changes.
+3. Only set `AI_FALLBACK_ENABLED=true` after both providers pass the same gates.

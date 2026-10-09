@@ -1,0 +1,8997 @@
+[
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.M.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.1",
+    "target": "MA.K.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.2",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.2",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.2",
+    "target": "MA.K.M.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.2",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.2",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.3",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.4",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.4",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.4",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.1.4",
+    "target": "MA.K.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.1",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.2",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.2",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.2.3",
+    "target": "MA.K.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.1",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.NSO.3.2",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.1",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.2",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.2",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.2",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.2",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.2",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.3",
+    "target": "MA.K.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.3",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.3",
+    "target": "MA.K.M.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.3",
+    "target": "MA.K.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.1.3",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.AR.2.1",
+    "target": "MA.K.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.1",
+    "target": "MA.K.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.1",
+    "target": "MA.K.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.1",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.1",
+    "target": "MA.K.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.2",
+    "target": "MA.K.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.2",
+    "target": "MA.K.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.2",
+    "target": "MA.K.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.2",
+    "target": "MA.K.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.2",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.3",
+    "target": "MA.K.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.3",
+    "target": "MA.K.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.M.1.3",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.1",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.1",
+    "target": "MA.K.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.2",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.2",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.2",
+    "target": "MA.K.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.2",
+    "target": "MA.K.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.3",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.3",
+    "target": "MA.K.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.3",
+    "target": "MA.K.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.4",
+    "target": "MA.K.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.GR.1.4",
+    "target": "MA.K.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.K.DP.1.1",
+    "target": "MA.K.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.1",
+    "target": "MA.1.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.2",
+    "target": "MA.1.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.3",
+    "target": "MA.1.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.4",
+    "target": "MA.1.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.1.4",
+    "target": "MA.1.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.1",
+    "target": "MA.1.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.2",
+    "target": "MA.1.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.3",
+    "target": "MA.1.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.4",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.4",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.4",
+    "target": "MA.1.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.4",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.5",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.NSO.2.5",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.FR.1.1",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.FR.1.1",
+    "target": "MA.1.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.1",
+    "target": "MA.1.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.1",
+    "target": "MA.1.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.1",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.1",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.M.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.1.2",
+    "target": "MA.1.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.1",
+    "target": "MA.1.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.1",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.1",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.2",
+    "target": "MA.1.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.2",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.2",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.2",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.2",
+    "target": "MA.1.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.AR.2.3",
+    "target": "MA.1.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.1",
+    "target": "MA.1.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.1",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.1",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.1",
+    "target": "MA.1.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.1",
+    "target": "MA.1.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.1.2",
+    "target": "MA.1.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.1",
+    "target": "MA.1.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.2",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.3",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.3",
+    "target": "MA.1.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.3",
+    "target": "MA.1.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.M.2.3",
+    "target": "MA.1.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.GR.1.3",
+    "target": "MA.1.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.GR.1.3",
+    "target": "MA.1.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.GR.1.4",
+    "target": "MA.1.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.DP.1.1",
+    "target": "MA.1.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.DP.1.1",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.DP.1.2",
+    "target": "MA.1.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.1.DP.1.2",
+    "target": "MA.1.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.1",
+    "target": "MA.2.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.1",
+    "target": "MA.2.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.2",
+    "target": "MA.2.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.2",
+    "target": "MA.2.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.3",
+    "target": "MA.2.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.4",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.4",
+    "target": "MA.2.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.1.4",
+    "target": "MA.2.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.1",
+    "target": "MA.2.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.1",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.1",
+    "target": "MA.2.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.1",
+    "target": "MA.2.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.2",
+    "target": "MA.2.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.2",
+    "target": "MA.2.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.2",
+    "target": "MA.2.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.2",
+    "target": "MA.2.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.3",
+    "target": "MA.2.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.3",
+    "target": "MA.2.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.4",
+    "target": "MA.2.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.NSO.2.4",
+    "target": "MA.2.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.1.1",
+    "target": "MA.2.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.1.1",
+    "target": "MA.2.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.1.1",
+    "target": "MA.2.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.1.1",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.2.1",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.2.2",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.3.1",
+    "target": "MA.2.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.3.1",
+    "target": "MA.2.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.3.1",
+    "target": "MA.2.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.3.2",
+    "target": "MA.2.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.AR.3.2",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.1.1",
+    "target": "MA.2.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.1.2",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.1.2",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.1.3",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.1.3",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.2.1",
+    "target": "MA.2.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.2.2",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.M.2.2",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.1",
+    "target": "MA.2.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.2",
+    "target": "MA.2.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.2",
+    "target": "MA.2.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.3",
+    "target": "MA.2.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.3",
+    "target": "MA.2.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.1.3",
+    "target": "MA.2.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.2.1",
+    "target": "MA.2.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.2.1",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.2.2",
+    "target": "MA.2.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.2.2",
+    "target": "MA.2.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.GR.2.2",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.DP.1.1",
+    "target": "MA.1.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.DP.1.2",
+    "target": "MA.2.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.DP.1.2",
+    "target": "MA.2.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.1",
+    "target": "MA.3.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.2",
+    "target": "MA.3.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.2",
+    "target": "MA.3.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.3",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.3",
+    "target": "MA.3.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.3",
+    "target": "MA.3.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.3",
+    "target": "MA.3.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.4",
+    "target": "MA.3.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.1.4",
+    "target": "MA.3.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.1",
+    "target": "MA.3.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.1",
+    "target": "MA.3.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.1",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.2",
+    "target": "MA.3.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.3",
+    "target": "MA.3.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.NSO.2.4",
+    "target": "MA.3.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.1",
+    "target": "MA.3.FR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.1",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.1",
+    "target": "MA.3.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.1",
+    "target": "MA.3.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.2",
+    "target": "MA.3.FR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.2",
+    "target": "MA.3.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.2",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.2",
+    "target": "MA.3.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.3",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.3",
+    "target": "MA.3.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.1.3",
+    "target": "MA.3.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.2.1",
+    "target": "MA.3.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.2.1",
+    "target": "MA.3.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.FR.2.2",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.1",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.1",
+    "target": "MA.3.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.1.2",
+    "target": "MA.3.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.1",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.1",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.1",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.2",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.2",
+    "target": "MA.3.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.3",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.3",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.2.3",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.1",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.1",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.3",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.AR.3.3",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.1",
+    "target": "MA.3.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.1.2",
+    "target": "MA.3.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.2.1",
+    "target": "MA.3.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.2.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.M.2.2",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.1.1",
+    "target": "MA.3.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.1.2",
+    "target": "MA.3.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.1.2",
+    "target": "MA.3.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.1.3",
+    "target": "MA.3.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.1.3",
+    "target": "MA.3.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.1",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.2",
+    "target": "MA.3.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.3",
+    "target": "MA.3.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.3",
+    "target": "MA.3.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.3",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.3",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.3",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.4",
+    "target": "MA.3.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.4",
+    "target": "MA.3.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.4",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.4",
+    "target": "MA.3.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.GR.2.4",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.DP.1.1",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.DP.1.1",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.DP.1.1",
+    "target": "MA.3.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.DP.1.2",
+    "target": "MA.3.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.3.DP.1.2",
+    "target": "MA.3.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.1",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.2",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.3",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.4",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.5",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.5",
+    "target": "MA.4.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.5",
+    "target": "MA.4.NSO.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.5",
+    "target": "MA.4.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.1.5",
+    "target": "MA.4.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.1",
+    "target": "MA.4.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.1",
+    "target": "MA.4.FR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.2",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.2",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.2",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.2",
+    "target": "MA.4.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.2",
+    "target": "MA.4.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.3",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.3",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.3",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.3",
+    "target": "MA.4.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.3",
+    "target": "MA.4.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.4",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.4",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.4",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.4",
+    "target": "MA.4.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.4",
+    "target": "MA.4.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.5",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.5",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.5",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.5",
+    "target": "MA.4.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.5",
+    "target": "MA.4.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.6",
+    "target": "MA.4.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.6",
+    "target": "MA.4.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.6",
+    "target": "MA.4.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.6",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.6",
+    "target": "MA.4.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.NSO.2.7",
+    "target": "MA.4.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.1",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.1",
+    "target": "MA.4.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.1",
+    "target": "MA.4.NSO.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.1",
+    "target": "MA.4.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.NSO.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.2",
+    "target": "MA.4.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.3",
+    "target": "MA.4.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.4",
+    "target": "MA.4.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.4",
+    "target": "MA.4.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.1.4",
+    "target": "MA.4.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.1",
+    "target": "MA.4.FR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.1",
+    "target": "MA.4.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.2",
+    "target": "MA.4.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.3",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.4",
+    "target": "MA.4.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.FR.2.4",
+    "target": "MA.4.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.1",
+    "target": "MA.4.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.1",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.1",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.2",
+    "target": "MA.4.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.2",
+    "target": "MA.4.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.2",
+    "target": "MA.4.FR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.2",
+    "target": "MA.4.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.3",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.3",
+    "target": "MA.4.FR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.1.3",
+    "target": "MA.4.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.2.1",
+    "target": "MA.4.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.2.2",
+    "target": "MA.4.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.3.1",
+    "target": "MA.4.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.3.2",
+    "target": "MA.4.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.3.2",
+    "target": "MA.4.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.AR.3.2",
+    "target": "MA.4.M.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.1.1",
+    "target": "MA.4.FR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.1.1",
+    "target": "MA.4.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.1.1",
+    "target": "MA.4.FR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.1.1",
+    "target": "MA.4.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.1.2",
+    "target": "MA.4.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.2.1",
+    "target": "MA.4.M.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.M.2.2",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.1",
+    "target": "MA.4.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.1",
+    "target": "MA.4.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.2",
+    "target": "MA.4.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.2",
+    "target": "MA.4.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.3",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.3",
+    "target": "MA.4.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.1.3",
+    "target": "MA.4.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.1",
+    "target": "MA.4.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.GR.2.2",
+    "target": "MA.4.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.1",
+    "target": "MA.4.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.1",
+    "target": "MA.4.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.1",
+    "target": "MA.4.FR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.1",
+    "target": "MA.4.FR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.2",
+    "target": "MA.4.FR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.3",
+    "target": "MA.4.NSO.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.3",
+    "target": "MA.4.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.3",
+    "target": "MA.4.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.4.DP.1.3",
+    "target": "MA.4.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.1",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.2",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.3",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.4",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.4",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.4",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.4",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.4",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.5",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.5",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.5",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.5",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.1.5",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.1",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.1",
+    "target": "MA.5.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.1",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.2",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.2",
+    "target": "MA.5.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.2",
+    "target": "MA.5.FR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.2",
+    "target": "MA.5.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.2",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.3",
+    "target": "MA.5.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.4",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.NSO.2.5",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.1.1",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.1.1",
+    "target": "MA.5.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.1.1",
+    "target": "MA.5.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.1.1",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.1",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.1",
+    "target": "MA.5.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.1",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.2",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.2",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.2",
+    "target": "MA.5.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.2",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.3",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.3",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.3",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.4",
+    "target": "MA.5.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.FR.2.4",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.1",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.1",
+    "target": "MA.5.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.1",
+    "target": "MA.5.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.1",
+    "target": "MA.5.GR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.1",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.2",
+    "target": "MA.5.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.2",
+    "target": "MA.5.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.2",
+    "target": "MA.5.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.2",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.2",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.3",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.1.3",
+    "target": "MA.5.FR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.1",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.1",
+    "target": "MA.5.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.1",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.1",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.1",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.2",
+    "target": "MA.5.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.2",
+    "target": "MA.5.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.2",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.2",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.2",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.FR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.3",
+    "target": "MA.5.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.4",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.4",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.4",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.2.4",
+    "target": "MA.5.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.3.1",
+    "target": "MA.5.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.3.1",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.AR.3.2",
+    "target": "MA.5.GR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.1.1",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.M.2.1",
+    "target": "MA.5.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.FR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.FR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.FR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.NSO.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.NSO.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.2.1",
+    "target": "MA.5.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.1",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.2",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.3",
+    "target": "MA.5.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.3",
+    "target": "MA.5.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.3",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.3",
+    "target": "MA.5.M.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.3.3",
+    "target": "MA.5.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.4.1",
+    "target": "MA.5.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.4.2",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.4.2",
+    "target": "MA.5.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.GR.4.2",
+    "target": "MA.5.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.1",
+    "target": "MA.5.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.1",
+    "target": "MA.5.GR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.1",
+    "target": "MA.5.GR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.1",
+    "target": "MA.5.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.2",
+    "target": "MA.5.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.5.DP.1.2",
+    "target": "MA.5.FR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.NSO.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.DP.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.1",
+    "target": "MA.6.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.2",
+    "target": "MA.6.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.3",
+    "target": "MA.6.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.1.4",
+    "target": "MA.6.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.1",
+    "target": "MA.6.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.2",
+    "target": "MA.6.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.2",
+    "target": "MA.6.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.2",
+    "target": "MA.6.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.2",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.2",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.DP.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.2.3",
+    "target": "MA.6.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.AR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.NSO.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.1",
+    "target": "MA.6.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.2",
+    "target": "MA.6.AR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.2",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.2",
+    "target": "MA.6.NSO.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.3",
+    "target": "MA.6.NSO.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.4",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.4",
+    "target": "MA.6.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.4",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.5",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.5",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.3.5",
+    "target": "MA.6.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.1",
+    "target": "MA.6.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.1",
+    "target": "MA.6.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.1",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.1",
+    "target": "MA.6.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.NSO.4.2",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.1",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.2",
+    "target": "MA.6.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.2",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.2",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.2",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.3",
+    "target": "MA.6.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.3",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.3",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.3",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.3",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.4",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.1.4",
+    "target": "MA.6.NSO.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.1",
+    "target": "MA.6.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.1",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.1",
+    "target": "MA.6.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.2",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.2",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.NSO.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.3",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.4",
+    "target": "MA.6.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.4",
+    "target": "MA.6.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.4",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.2.4",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.1",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.2",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.2",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.2",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.3",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.3",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.3",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.3",
+    "target": "MA.6.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.3",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.4",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.4",
+    "target": "MA.6.NSO.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.4",
+    "target": "MA.6.NSO.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.4",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.4",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.1",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.1",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.1",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.1",
+    "target": "MA.6.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.2",
+    "target": "MA.6.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.2",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.2",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.2",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.2",
+    "target": "MA.6.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.NSO.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.1.3",
+    "target": "MA.6.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.1",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.1",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.1",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.1",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.2",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.2",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.2",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.2",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.3",
+    "target": "MA.6.NSO.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.4",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.4",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.4",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.GR.2.4",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.1",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.2",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.2",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.2",
+    "target": "MA.6.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.2",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.2",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.3",
+    "target": "MA.6.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.3",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.3",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.4",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.5",
+    "target": "MA.6.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.5",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.5",
+    "target": "MA.6.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.6",
+    "target": "MA.6.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.6",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.DP.1.6",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.1",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.1",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.1",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.DP.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.1.2",
+    "target": "MA.7.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.1",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.DP.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.2",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.NSO.2.3",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.1.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.1.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.1.2",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.1.2",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.2.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.2.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.2.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.1",
+    "target": "MA.7.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.2",
+    "target": "MA.7.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.3.3",
+    "target": "MA.7.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.2",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.3",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.3",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.3",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.3",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.4",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.912.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.AR.4.5",
+    "target": "MA.7.DP.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.2",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.2",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.2",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.2",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.3",
+    "target": "MA.7.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.4",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.4",
+    "target": "MA.7.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.4",
+    "target": "MA.7.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.4",
+    "target": "MA.7.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.5",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.1.5",
+    "target": "MA.7.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.1",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.1",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.1",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.2",
+    "target": "MA.7.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.GR.2.3",
+    "target": "MA.7.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.1",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.2",
+    "target": "MA.7.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.2",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.2",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.3",
+    "target": "MA.7.AR.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.3",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.3",
+    "target": "MA.7.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.3",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.3",
+    "target": "MA.7.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.4",
+    "target": "MA.7.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.4",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.4",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.1.5",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.1",
+    "target": "MA.7.DP.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.1",
+    "target": "MA.7.NSO.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.1",
+    "target": "MA.7.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.2",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.2",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.3",
+    "target": "MA.7.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.3",
+    "target": "MA.7.DP.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.4",
+    "target": "MA.7.DP.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.4",
+    "target": "MA.7.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.7.DP.2.4",
+    "target": "MA.7.DP.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.1",
+    "target": "MA.8.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.1",
+    "target": "MA.8.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.1",
+    "target": "MA.8.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.2",
+    "target": "MA.8.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.2",
+    "target": "MA.8.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.3",
+    "target": "MA.8.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.3",
+    "target": "MA.8.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.4",
+    "target": "MA.8.NSO.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.4",
+    "target": "MA.8.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.5",
+    "target": "MA.8.NSO.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.5",
+    "target": "MA.8.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.6",
+    "target": "MA.8.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.6",
+    "target": "MA.8.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.7",
+    "target": "MA.8.NSO.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.NSO.1.7",
+    "target": "MA.8.NSO.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.1",
+    "target": "MA.8.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.1",
+    "target": "MA.8.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.1",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.2",
+    "target": "MA.8.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.2",
+    "target": "MA.8.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.2",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.3",
+    "target": "MA.8.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.3",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.3",
+    "target": "MA.8.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.1.3",
+    "target": "MA.8.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.1",
+    "target": "MA.8.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.2",
+    "target": "MA.8.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.2",
+    "target": "MA.8.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.3",
+    "target": "MA.8.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.3",
+    "target": "MA.8.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.3",
+    "target": "MA.8.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.2.3",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.1",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.1",
+    "target": "MA.8.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.1",
+    "target": "MA.8.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.2",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.2",
+    "target": "MA.8.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.2",
+    "target": "MA.8.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.2",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.2",
+    "target": "MA.8.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.3",
+    "target": "MA.8.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.3",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.3",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.3",
+    "target": "MA.8.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.4",
+    "target": "MA.8.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.4",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.4",
+    "target": "MA.8.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.3.5",
+    "target": "MA.8.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.1",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.1",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.1",
+    "target": "MA.8.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.1",
+    "target": "MA.8.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.2",
+    "target": "MA.8.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.2",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.2",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.2",
+    "target": "MA.8.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.2",
+    "target": "MA.8.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.3",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.3",
+    "target": "MA.8.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.3",
+    "target": "MA.8.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.AR.4.3",
+    "target": "MA.8.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.1",
+    "target": "MA.8.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.1",
+    "target": "MA.8.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.1",
+    "target": "MA.8.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.1",
+    "target": "MA.8.AR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.2",
+    "target": "MA.8.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.2",
+    "target": "MA.8.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.2",
+    "target": "MA.8.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.3",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.3",
+    "target": "MA.8.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.F.1.3",
+    "target": "MA.8.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.1",
+    "target": "MA.8.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.1",
+    "target": "MA.8.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.1",
+    "target": "MA.8.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.1",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.2",
+    "target": "MA.8.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.2",
+    "target": "MA.8.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.2",
+    "target": "MA.8.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.2",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.3",
+    "target": "MA.8.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.3",
+    "target": "MA.8.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.4",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.5",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.1.6",
+    "target": "MA.8.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.1",
+    "target": "MA.8.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.1",
+    "target": "MA.8.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.2",
+    "target": "MA.8.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.2",
+    "target": "MA.8.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.3",
+    "target": "MA.8.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.3",
+    "target": "MA.8.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.4",
+    "target": "MA.8.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.GR.2.4",
+    "target": "MA.8.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.1",
+    "target": "MA.8.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.1",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.2",
+    "target": "MA.8.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.2",
+    "target": "MA.8.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.AR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.1.3",
+    "target": "MA.8.AR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.2.2",
+    "target": "MA.8.DP.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.2.2",
+    "target": "MA.8.DP.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.8.DP.2.3",
+    "target": "MA.8.DP.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.1",
+    "target": "MA.912.AR.8.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.1",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.AR.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.AR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.2",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.AR.7.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.AR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.AR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.3",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.4",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.4",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.6",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.6",
+    "target": "MA.912.AR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.6",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.1",
+    "target": "MA.912.AR.3.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.2",
+    "target": "MA.912.AR.3.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.3",
+    "target": "MA.912.F.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.3",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.3",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.4",
+    "target": "MA.912.F.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.4",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.4",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.5",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.5",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.AR.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.7",
+    "target": "MA.912.AR.3.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.9",
+    "target": "MA.912.AR.8.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.1.9",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.1",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.1",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.1",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.F.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.FL.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.2",
+    "target": "MA.912.FL.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.3",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.4",
+    "target": "MA.912.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.4",
+    "target": "MA.912.F.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.4",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.F.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.AR.9.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.5",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.6",
+    "target": "MA.912.AR.9.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.6",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.6",
+    "target": "MA.912.AR.9.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.6",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.6",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.7",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.7",
+    "target": "MA.912.AR.9.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.7",
+    "target": "MA.912.AR.9.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.7",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.8",
+    "target": "MA.912.AR.9.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.8",
+    "target": "MA.912.AR.9.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.8",
+    "target": "MA.912.AR.9.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.8",
+    "target": "MA.912.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.2.8",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.1",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.1",
+    "target": "MA.912.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.1",
+    "target": "MA.912.AR.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.5",
+    "target": "MA.912.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.5",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.5",
+    "target": "MA.912.AR.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.6",
+    "target": "MA.912.AR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.6",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.6",
+    "target": "MA.912.AR.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.7",
+    "target": "MA.912.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.7",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.7",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.8",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.8",
+    "target": "MA.912.AR.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.8",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.1",
+    "target": "MA.912.AR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.1",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.1",
+    "target": "MA.912.F.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.1",
+    "target": "MA.912.F.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.2",
+    "target": "MA.912.AR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.2",
+    "target": "MA.912.AR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.2",
+    "target": "MA.912.AR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.3",
+    "target": "MA.912.F.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.3",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.3",
+    "target": "MA.912.F.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.4.4",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.AR.8.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.AR.7.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.NSO.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.2",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.3",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.3",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.3",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.3",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.4",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.4",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.4",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.4",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.5",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.5",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.5",
+    "target": "MA.912.DP.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.5",
+    "target": "MA.912.FL.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.6",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.6",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.6",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.F.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.AR.10.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.7",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.8",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.F.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.NSO.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.NSO.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.5.9",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.7.1",
+    "target": "MA.912.AR.8.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.7.1",
+    "target": "MA.912.NSO.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.7.1",
+    "target": "MA.912.AR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.8.1",
+    "target": "MA.912.AR.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.8.1",
+    "target": "MA.912.AR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.8.1",
+    "target": "MA.912.AR.7.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.1",
+    "target": "MA.912.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.1",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.1",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.1",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.4",
+    "target": "MA.912.AR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.4",
+    "target": "MA.912.AR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.6",
+    "target": "MA.912.AR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.6",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.6",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.6",
+    "target": "MA.912.AR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.6",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.AR.10.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.F.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.AR.10.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.9.10",
+    "target": "MA.912.FL.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.10.1",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.10.1",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.10.2",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.10.2",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.1",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.2",
+    "target": "MA.912.F.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.2",
+    "target": "MA.912.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.2",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.2",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.3",
+    "target": "MA.912.FL.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.3",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.5",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.5",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.8",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.8",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.1",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.1",
+    "target": "MA.912.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.1",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.1",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.2",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.3",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.3",
+    "target": "MA.912.AR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.3",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.3",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.4",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.F.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.2.5",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.2",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.4",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.4",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.6",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.6",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.6",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.6",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.6",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.7",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.7",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.7",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.7",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.3.7",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.2",
+    "target": "MA.912.FL.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.2",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.2",
+    "target": "MA.912.FL.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.2",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.4.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.1.3",
+    "target": "MA.912.FL.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.AR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.1",
+    "target": "MA.912.AR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.2",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.2",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.2",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.2",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.NSO.1.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.AR.10.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.AR.10.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.NSO.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.3",
+    "target": "MA.912.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.4",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.4",
+    "target": "MA.912.AR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.4",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.4",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.4",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.5",
+    "target": "MA.912.FL.3.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.5",
+    "target": "MA.912.FL.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.7",
+    "target": "MA.912.FL.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.7",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.7",
+    "target": "MA.912.AR.10.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.8",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.8",
+    "target": "MA.912.FL.3.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.9",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.9",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.9",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.10",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.11",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.3.11",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.1",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.1",
+    "target": "MA.912.FL.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.1",
+    "target": "MA.912.FL.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.1",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.1",
+    "target": "MA.912.FL.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.2",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.2",
+    "target": "MA.912.FL.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.2",
+    "target": "MA.912.FL.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.2",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.2",
+    "target": "MA.912.FL.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.3",
+    "target": "MA.912.FL.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.4",
+    "target": "MA.912.FL.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.5",
+    "target": "MA.912.FL.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.5",
+    "target": "MA.912.FL.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.5",
+    "target": "MA.912.FL.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.6",
+    "target": "MA.912.FL.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.6",
+    "target": "MA.912.FL.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.4.6",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.5.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.LT.4.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.LT.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.6.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.6.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.1",
+    "target": "MA.912.T.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.GR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.LT.4.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.LT.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.T.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.2",
+    "target": "MA.912.T.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.LT.4.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.LT.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.T.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.GR.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.3",
+    "target": "MA.912.T.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.4",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.4",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.4",
+    "target": "MA.912.LT.4.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.4",
+    "target": "MA.912.LT.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.5",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.5",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.5",
+    "target": "MA.912.LT.4.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.5",
+    "target": "MA.912.LT.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.6",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.1.6",
+    "target": "MA.912.GR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.1",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.1",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.1",
+    "target": "MA.912.GR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.2",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.2",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.2",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.2",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.3",
+    "target": "MA.912.GR.6.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.3",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.3",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.4",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.4",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.4",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.5",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.5",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.5",
+    "target": "MA.912.GR.6.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.5",
+    "target": "MA.912.GR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.6",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.6",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.7",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.7",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.8",
+    "target": "MA.912.GR.6.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.8",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.8",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.1",
+    "target": "MA.912.GR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.1",
+    "target": "MA.912.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.2",
+    "target": "MA.912.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.2",
+    "target": "MA.912.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.2",
+    "target": "MA.912.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.2",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.3",
+    "target": "MA.912.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.3",
+    "target": "MA.912.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.3",
+    "target": "MA.912.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.3",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.4",
+    "target": "MA.912.GR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.3.4",
+    "target": "MA.912.T.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.1",
+    "target": "MA.912.GR.1.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.2",
+    "target": "MA.912.GR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.2",
+    "target": "MA.912.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.3",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.3",
+    "target": "MA.912.GR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.3",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.4",
+    "target": "MA.912.T.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.4",
+    "target": "MA.912.GR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.4",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.5",
+    "target": "MA.912.T.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.4.6",
+    "target": "MA.912.T.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.LT.4.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.GR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.1",
+    "target": "MA.912.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.LT.4.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.GR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.2",
+    "target": "MA.912.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.3",
+    "target": "MA.912.GR.6.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.3",
+    "target": "MA.912.LT.4.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.4",
+    "target": "MA.912.GR.6.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.4",
+    "target": "MA.912.GR.1.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.4",
+    "target": "MA.912.LT.4.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.5",
+    "target": "MA.912.GR.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.5",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.5.5",
+    "target": "MA.912.GR.6.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.1",
+    "target": "MA.912.GR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.2",
+    "target": "MA.912.GR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.3",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.4",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.4",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.4",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.4",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.4",
+    "target": "MA.912.GR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.2.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.6.5",
+    "target": "MA.912.GR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.2",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.2",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.2",
+    "target": "MA.912.GR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.2",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.3",
+    "target": "MA.912.GR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.3",
+    "target": "MA.912.GR.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.3",
+    "target": "MA.912.GR.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.7.3",
+    "target": "MA.912.GR.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.1",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.1",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.1",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.1",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.1",
+    "target": "MA.912.GR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.2",
+    "target": "MA.912.GR.6.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.2",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.2",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.3",
+    "target": "MA.912.GR.7.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.3",
+    "target": "MA.912.GR.7.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.3",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.3",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.3",
+    "target": "MA.912.GR.6.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.4",
+    "target": "MA.912.GR.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.4",
+    "target": "MA.912.GR.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.4",
+    "target": "MA.912.GR.4.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.T.1.4",
+    "target": "MA.912.GR.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.1",
+    "target": "MA.912.DP.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.2",
+    "target": "MA.912.DP.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.3",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.3",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.3",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.3",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.3",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.4",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.4",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.1.4",
+    "target": "MA.912.DP.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.1",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.1",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.4",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.4",
+    "target": "MA.912.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.4",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.5",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.5",
+    "target": "MA.912.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.5",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.5",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.5",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.6",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.6",
+    "target": "MA.912.DP.1.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.6",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.6",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.6",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.7",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.8",
+    "target": "MA.912.DP.5.11",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.8",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.8",
+    "target": "MA.912.DP.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.8",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.1",
+    "target": "MA.912.DP.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.1",
+    "target": "MA.912.DP.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.1",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.2",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.3",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.4",
+    "target": "MA.912.DP.5.11",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.4",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.4",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.4",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.4.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.4.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.3.5",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.1",
+    "target": "MA.912.LT.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.1",
+    "target": "MA.912.LT.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.1",
+    "target": "MA.912.LT.5.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.5",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.5",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.7",
+    "target": "MA.912.LT.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.4.7",
+    "target": "MA.912.LT.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.1",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.5",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.6",
+    "target": "MA.912.DP.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.6",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.3.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.3.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.3.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.5.11",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.1",
+    "target": "MA.912.DP.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.1",
+    "target": "MA.912.LT.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.1",
+    "target": "MA.912.LT.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.1",
+    "target": "MA.912.LT.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.3",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.3",
+    "target": "MA.912.GR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.3",
+    "target": "MA.912.GR.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.3",
+    "target": "MA.912.GR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.4",
+    "target": "MA.912.DP.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.4",
+    "target": "MA.912.LT.5.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.4",
+    "target": "MA.912.LT.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.5",
+    "target": "MA.912.LT.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.5",
+    "target": "MA.912.LT.5.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.8",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.8",
+    "target": "MA.912.GR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.8",
+    "target": "MA.912.GR.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.8",
+    "target": "MA.912.GR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.9",
+    "target": "MA.912.LT.5.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.10",
+    "target": "MA.912.GR.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.10",
+    "target": "MA.912.GR.2.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.10",
+    "target": "MA.912.GR.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.4.10",
+    "target": "MA.912.GR.2.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.4",
+    "target": "MA.912.DP.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.4",
+    "target": "MA.912.DP.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.4",
+    "target": "MA.912.LT.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.5",
+    "target": "MA.912.DP.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.5",
+    "target": "MA.912.DP.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.6",
+    "target": "MA.912.LT.4.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.LT.5.6",
+    "target": "MA.912.LT.4.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.4",
+    "target": "MA.912.F.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.4",
+    "target": "MA.912.AR.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.AR.3.4",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.FR.1.1",
+    "target": "MA.2.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.2.FR.1.2",
+    "target": "MA.2.M.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.NSO.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.NSO.3.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.NSO.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.NSO.2.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.6.AR.3.5",
+    "target": "MA.6.AR.2.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.6",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.6",
+    "target": "MA.912.AR.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.6",
+    "target": "MA.912.AR.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.6",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.F.1.6",
+    "target": "MA.912.AR.5.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.7",
+    "target": "MA.912.AR.5.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.7",
+    "target": "MA.912.AR.5.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.NSO.1.7",
+    "target": "MA.912.AR.5.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.1",
+    "target": "MA.912.AR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.1",
+    "target": "MA.912.FL.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.1",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.1",
+    "target": "MA.912.AR.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.1",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.F.3.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.AR.5.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.AR.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.DP.2.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.DP.2.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.AR.2.5",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.2",
+    "target": "MA.912.DP.2.9",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.3",
+    "target": "MA.912.DP.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.4",
+    "target": "MA.912.FL.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.5",
+    "target": "MA.912.FL.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.5",
+    "target": "MA.912.FL.3.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.5",
+    "target": "MA.912.FL.4.4",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.6",
+    "target": "MA.912.FL.3.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.6",
+    "target": "MA.912.FL.3.7",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.6",
+    "target": "MA.912.FL.1.1",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.FL.2.6",
+    "target": "MA.912.AR.9.10",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.9",
+    "target": "MA.912.GR.1.2",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.GR.2.9",
+    "target": "MA.912.GR.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.9",
+    "target": "MA.912.AR.5.5MA",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.9",
+    "target": "MA.912.AR.5.3",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.9",
+    "target": "MA.912.F.1.6",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.9",
+    "target": "MA.912.F.1.8",
+    "type": "horizontal_alignment"
+  },
+  {
+    "source": "MA.912.DP.2.9",
+    "target": "MA.912.AR.5.4",
+    "type": "horizontal_alignment"
+  }
+]

@@ -71,6 +71,11 @@ class DatabaseService {
     return sessionStr ? JSON.parse(sessionStr) : null;
   }
 
+  /** Persist session after server-backed login/register/guest. */
+  setSessionFromUser(user: User) {
+    localStorage.setItem(DB_KEYS.SESSION, JSON.stringify(user));
+  }
+
   private createSession(user: User) {
     localStorage.setItem(DB_KEYS.SESSION, JSON.stringify(user));
   }
@@ -105,6 +110,20 @@ class DatabaseService {
 
     localStorage.setItem(DB_KEYS.LOGS, JSON.stringify(logs));
     console.debug(`[DB] Logged: ${action}`, metadata);
+
+    void (async () => {
+      try {
+        await fetch("/api/activity-events", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            events: [{ userId, action, metadata: metadata ?? {} }],
+          }),
+        });
+      } catch {
+        /* offline or server down */
+      }
+    })();
   }
 
   private getLogs(): LogEntry[] {
