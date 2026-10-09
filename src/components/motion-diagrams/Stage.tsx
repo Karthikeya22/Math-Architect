@@ -19,6 +19,8 @@ export function useDiagramMotion(): SceneMotion {
 
 type StageProps = {
   play?: boolean;
+  /** When true, diagram tracks pointer across the viewport (not just the stage). */
+  followCursor?: boolean;
   palette: ScenePalette;
   plate?: string;
   className?: string;
@@ -29,6 +31,7 @@ const springCfg = { stiffness: 120, damping: 18, mass: 0.6 };
 
 export const DiagramStage: React.FC<StageProps> = ({
   play = false,
+  followCursor = false,
   palette,
   plate = '#ffffff',
   className = '',
@@ -55,6 +58,27 @@ export const DiagramStage: React.FC<StageProps> = ({
     }
   }, [reduceMotion, rawX, rawY]);
 
+  useEffect(() => {
+    if (reduceMotion || play || !followCursor) return;
+
+    const onMove = (e: PointerEvent) => {
+      const el = rootRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const halfW = Math.max(r.width / 2, window.innerWidth * 0.35);
+      const halfH = Math.max(r.height / 2, window.innerHeight * 0.35);
+      const nx = (e.clientX - cx) / halfW;
+      const ny = (e.clientY - cy) / halfH;
+      rawX.set(Math.max(-1, Math.min(1, nx)));
+      rawY.set(Math.max(-1, Math.min(1, ny)));
+    };
+
+    window.addEventListener('pointermove', onMove, { passive: true });
+    return () => window.removeEventListener('pointermove', onMove);
+  }, [reduceMotion, play, followCursor, rawX, rawY]);
+
   useAnimationFrame((t) => {
     if (reduceMotion || !play) return;
     const ang = t / 1800;
@@ -63,7 +87,7 @@ export const DiagramStage: React.FC<StageProps> = ({
   });
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (reduceMotion || play) return;
+    if (reduceMotion || play || followCursor) return;
     const el = rootRef.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
@@ -74,7 +98,7 @@ export const DiagramStage: React.FC<StageProps> = ({
   };
 
   const onPointerLeave = () => {
-    if (reduceMotion || play) return;
+    if (reduceMotion || play || followCursor) return;
     rawX.set(0);
     rawY.set(0);
   };

@@ -44,6 +44,7 @@ type Props = {
   width: number;
   plate?: string;
   play?: boolean;
+  followCursor?: boolean;
   decorative?: boolean;
   desktopOnly?: boolean;
   label?: string;
@@ -55,6 +56,7 @@ const MotionDiagram: React.FC<Props> = ({
   width,
   plate = '#ffffff',
   play = false,
+  followCursor = false,
   decorative = true,
   desktopOnly = false,
   label,
@@ -73,7 +75,7 @@ const MotionDiagram: React.FC<Props> = ({
       aria-hidden={decorative || undefined}
       aria-label={decorative ? undefined : label}
     >
-      <DiagramStage play={play} palette={palette} plate={plate}>
+      <DiagramStage play={play} followCursor={followCursor} palette={palette} plate={plate}>
         <Scene />
       </DiagramStage>
     </div>

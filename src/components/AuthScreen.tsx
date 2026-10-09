@@ -3,13 +3,19 @@ import { motion, useReducedMotion } from 'motion/react';
 import { dbService } from '../services/dbService';
 import { createGuestOnServer, loginUserOnServer, registerUserOnServer } from '../services/userService';
 import { User } from '../types';
-import { ArrowRight, BookOpen, ChartColumn, Layers3, Pin, UserRound } from 'lucide-react';
+import { ArrowRight, UserRound } from 'lucide-react';
 import BrandMark from './BrandMark';
 import { MotionDiagram } from './motion-diagrams';
 
 interface Props {
   onLogin: (user: User) => void;
 }
+
+const POINTS = [
+  'Pin a Florida B.E.S.T. standard from the coherence map',
+  'Generate an aligned quiz with classroom-ready figures',
+  'Diagnose gaps and open short remedial slides',
+];
 
 const AuthScreen: React.FC<Props> = ({ onLogin }) => {
   const reduceMotion = useReducedMotion();
@@ -116,7 +122,7 @@ const AuthScreen: React.FC<Props> = ({ onLogin }) => {
   };
 
   return (
-    <div className="auth-shell min-h-dvh relative">
+    <div className="auth-shell relative">
       <div className="auth-grain" aria-hidden="true" />
       <a href="#auth-main" className="auth-skip-link">
         Skip to sign in
@@ -132,52 +138,21 @@ const AuthScreen: React.FC<Props> = ({ onLogin }) => {
             <h1 className="auth-title text-balance">
               Build assessments that match Florida math standards
             </h1>
-            <p className="auth-lede text-pretty">
-              Choose a standard, generate a quiz, and follow gaps into short remedial slides—without leaving the
-              classroom workflow.
-            </p>
+            <ul className="auth-points">
+              {POINTS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
 
-          <MotionDiagram name="Atlas" width={380} plate="#eef0ff" desktopOnly className="auth-figure" />
-
-          <ul className="auth-feature-list">
-            <li>
-              <span className="auth-feature-icon auth-feature-icon--violet" aria-hidden="true">
-                <Pin className="w-4 h-4" strokeWidth={1.75} />
-              </span>
-              <div>
-                <p className="auth-feature-title">Pin a B.E.S.T. standard</p>
-                <p className="auth-feature-text">Browse the coherence map, then lock the benchmark you will teach.</p>
-              </div>
-            </li>
-            <li>
-              <span className="auth-feature-icon auth-feature-icon--sky" aria-hidden="true">
-                <Layers3 className="w-4 h-4" strokeWidth={1.75} />
-              </span>
-              <div>
-                <p className="auth-feature-title">Generate a quiz</p>
-                <p className="auth-feature-text">Aligned practice items with figures for the standard you pinned.</p>
-              </div>
-            </li>
-            <li>
-              <span className="auth-feature-icon auth-feature-icon--amber" aria-hidden="true">
-                <ChartColumn className="w-4 h-4" strokeWidth={1.75} />
-              </span>
-              <div>
-                <p className="auth-feature-title">Diagnose gaps</p>
-                <p className="auth-feature-text">See which skills slipped and what to reteach next.</p>
-              </div>
-            </li>
-            <li>
-              <span className="auth-feature-icon auth-feature-icon--emerald" aria-hidden="true">
-                <BookOpen className="w-4 h-4" strokeWidth={1.75} />
-              </span>
-              <div>
-                <p className="auth-feature-title">Open remedial slides</p>
-                <p className="auth-feature-text">Short, gap-focused slides for the next small-group lesson.</p>
-              </div>
-            </li>
-          </ul>
+          <MotionDiagram
+            name="Atlas"
+            width={420}
+            plate="#eef0ff"
+            followCursor
+            desktopOnly
+            className="auth-figure"
+          />
         </aside>
 
         <main id="auth-main" className="auth-main">
@@ -193,11 +168,11 @@ const AuthScreen: React.FC<Props> = ({ onLogin }) => {
             </div>
             <header className="auth-card-header">
               <h2 id="auth-heading" className="auth-card-title">
-                {isLoginMode ? 'Start a classroom session' : 'Create your account'}
+                {isLoginMode ? 'Sign in' : 'Create account'}
               </h2>
               <p className="auth-card-subtitle">
                 {isLoginMode
-                  ? 'Sign in with your username, or continue as guest on this device.'
+                  ? 'Use your username, or continue as guest on this device.'
                   : 'Save quiz and remediation progress when the server is connected.'}
               </p>
             </header>
@@ -276,12 +251,16 @@ const AuthScreen: React.FC<Props> = ({ onLogin }) => {
                 </div>
               )}
 
-              <button
-                type="submit"
-                disabled={busy}
-                className="auth-submit app-btn-primary"
-              >
-                <span>{formBusy ? (isLoginMode ? 'Signing in…' : 'Creating account…') : isLoginMode ? 'Sign in' : 'Create account'}</span>
+              <button type="submit" disabled={busy} className="auth-submit app-btn-primary">
+                <span>
+                  {formBusy
+                    ? isLoginMode
+                      ? 'Signing in…'
+                      : 'Creating account…'
+                    : isLoginMode
+                      ? 'Sign in'
+                      : 'Create account'}
+                </span>
                 {!formBusy && <ArrowRight className="w-4 h-4" strokeWidth={2} aria-hidden="true" />}
               </button>
             </form>
@@ -301,7 +280,7 @@ const AuthScreen: React.FC<Props> = ({ onLogin }) => {
             </button>
 
             <p className="auth-footnote">
-              Guest sessions stay on this device. Registered accounts sync when the server is connected.
+              Guest sessions stay on this device. Registered accounts sync when connected.
             </p>
           </motion.section>
         </main>
