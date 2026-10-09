@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build && esbuild server.ts --platform=node --packages=external --external:node-geogebra --external:puppeteer --bundle --format=cjs --outfile=dist/server.cjs",
+    "build": "vite build && esbuild server.ts --platform=node --packages=external --external:node-geogebra --external:puppeteer --bundle --format=esm --outfile=dist/server.mjs",
     "preview": "vite preview",
     "lint": "tsc --noEmit && vite build --mode development",
-    "start": "node dist/server.cjs",
+    "start": "node dist/server.mjs",
     "ab:evaluate": "node scripts/run-ab-eval.mjs",
     "test": "vitest run",
     "extract:standards": "tsx scripts/extract-best-standards.ts",

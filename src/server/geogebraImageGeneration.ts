@@ -5,24 +5,43 @@
  * Server-only renderer via node-geogebra (headless Chromium).
  */
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 
-const require = createRequire(import.meta.url);
-const { GGBPool } = require('node-geogebra') as {
-  GGBPool: new (opts?: { plotters?: number; ggb?: string; perspective?: string }) => {
-    ready(): Promise<void>;
-    getGGBPlotter(): Promise<{
-      evalGGBScript(script: string[], width?: number, height?: number): Promise<void>;
-      export64(format: string): Promise<string>;
-      release(): Promise<void>;
-    }>;
-    release(): Promise<void>;
-  };
+type GGBPlotter = {
+  evalGGBScript(script: string[], width?: number, height?: number): Promise<void>;
+  export64(format: string): Promise<string>;
+  release(): Promise<void>;
 };
+
+type GGBPoolInstance = {
+  ready(): Promise<void>;
+  getGGBPlotter(): Promise<GGBPlotter>;
+  release(): Promise<void>;
+};
+
+type GGBPoolCtor = new (opts?: { plotters?: number; ggb?: string; perspective?: string }) => GGBPoolInstance;
+
+declare const __filename: string | undefined;
+
+let GGBPoolClass: GGBPoolCtor | null = null;
+
+/** Lazy so bundled server startup never calls createRequire when GeoGebra is off. */
+function loadGGBPoolClass(): GGBPoolCtor {
+  if (GGBPoolClass) return GGBPoolClass;
+  const modulePath =
+    typeof __filename === 'string' && __filename.length > 0
+      ? __filename
+      : fileURLToPath(import.meta.url);
+  const req = createRequire(modulePath);
+  const mod = req('node-geogebra') as { GGBPool: GGBPoolCtor };
+  GGBPoolClass = mod.GGBPool;
+  return GGBPoolClass;
+}
 
 const MAX_COMMANDS = 120;
 const MAX_COMMAND_LEN = 500;
 
-let pool: InstanceType<typeof GGBPool> | null = null;
+let pool: GGBPoolInstance | null = null;
 let poolReady: Promise<void> | null = null;
 
 export const isGeoGebraRenderEnabled = (env: NodeJS.ProcessEnv = process.env): boolean => {
@@ -32,8 +51,9 @@ export const isGeoGebraRenderEnabled = (env: NodeJS.ProcessEnv = process.env): b
   return env.NODE_ENV !== 'production';
 };
 
-const getPool = (): InstanceType<typeof GGBPool> => {
+const getPool = (): GGBPoolInstance => {
   if (!pool) {
+    const GGBPool = loadGGBPoolClass();
     pool = new GGBPool({ plotters: 4, ggb: 'local', perspective: 'G' });
     poolReady = pool.ready();
   }

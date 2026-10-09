@@ -12,7 +12,7 @@ import { registerRoutes } from "./http/registerRoutes.ts";
 
 export async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
   console.log("Provider router version: hybrid-v3 (quiz visual soft-sanitize + structure repair)");
 
   app.use(cors());
