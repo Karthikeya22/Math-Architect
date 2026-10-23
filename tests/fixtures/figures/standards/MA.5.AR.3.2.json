@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.5.AR.3.2",
+  "grade": "5",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Part A: Identify which values are incorrect and complete the table correctly. Part B: Extend your table to show the outputs for x = 10, 11 and 12.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

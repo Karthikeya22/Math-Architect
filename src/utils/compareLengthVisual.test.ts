@@ -13,7 +13,7 @@ describe('compareLengthVisual', () => {
       options: ['The red block train', 'The blue block train', 'They are the same length', 'The green block train'],
       correctAnswerIndex: 0,
       explanation: 'The red train has 3 blocks. The blue train has 5 blocks.',
-      visualSpec: null as { visualType: string } | null,
+      visualSpec: null as any,
       imagePrompt: 'rainbow trains',
     };
     reconcileColoredBlockTrainsFromStem(question);

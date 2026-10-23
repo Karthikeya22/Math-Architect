@@ -20,6 +20,8 @@ export const parseQuestionFigureBody = (body: any): FigureInput | null => {
     correctAnswerIndex: Number.isInteger(question.correctAnswerIndex) ? question.correctAnswerIndex : undefined,
     visualIntent: str(question.visualIntent) || undefined,
     imagePrompt: str(question.imagePrompt) || undefined,
+    visualSpec:
+      question.visualSpec && typeof question.visualSpec === "object" ? question.visualSpec : undefined,
   };
 };
 

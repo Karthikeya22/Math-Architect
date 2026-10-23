@@ -1,0 +1,53 @@
+{
+  "standardCode": "MA.4.NSO.1.3",
+  "grade": "4",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Provide students with 1 number cube. Students will roll the number cube 5 times creating the greatest 5-digit number possible. When the number cube is rolled the first time, the student must choose where to place the number rolled and continue rolling the number cube until all five spaces are filled. Whoever creates the greatest number wins.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [
+      "5 red + 5 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 5 red + 5 blue.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "5 red + 5 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 5,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1847
+  }
+}

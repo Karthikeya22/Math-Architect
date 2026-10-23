@@ -1,5 +1,6 @@
 import type { Question, SolutionStep, VisualSpec } from '../types';
 import { parseColoredBlockTrains } from './compareLengthVisual';
+import { hasUsableQuizFigure } from './hasUsableQuizFigure';
 import { countFilledTenFrame, normalizeTenFrameCells } from './reconcileMakeTenQuestion';
 import { extractTenFrameAdditionOperands } from './tenFrameAdditionVisual';
 
@@ -52,8 +53,54 @@ const arrayRowValues = (
   return out;
 };
 
-const isValidAiSteps = (steps: SolutionStep[] | undefined): steps is SolutionStep[] =>
-  Array.isArray(steps) && steps.length >= 2 && steps.every((s) => s.title?.trim() && s.body?.trim());
+const isValidAiSteps = (
+  steps: SolutionStep[] | undefined,
+  question: Question,
+  figureShown: boolean,
+): steps is SolutionStep[] => {
+  if (!Array.isArray(steps) || steps.length < 2) return false;
+  if (!steps.every((s) => s.title?.trim() && s.body?.trim())) return false;
+
+  const stem = String(question.text || '');
+  const allText = steps.map((step) => `${step.title} ${step.body}`).join(' ');
+  // Steps that walk through a picture the student cannot see describe a different item.
+  if (!figureShown && /\b(?:shaded|picture|figure|diagram|shown below)\b/i.test(allText)) return false;
+  // A step that counts colored dots only makes sense when the stem itself
+  // describes that visual. Otherwise the model has drifted onto a different
+  // problem (e.g. counting 5 + 3 dots to answer a gallon/quart conversion).
+  const mentionsCountVisual = /\b(?:dots?|red|blue|green|yellow|orange|purple)\b/i.test(allText);
+  const stemHasCountVisual = /\b(?:dots?|counters?|ten[- ]?frame|array|rows?|columns?|red|blue|green|yellow|orange|purple)\b/i.test(
+    stem,
+  );
+  if (mentionsCountVisual && !stemHasCountVisual) return false;
+
+  return true;
+};
+
+/** Value of an answer like "2.07", "7/100" or "2 7/100"; null when it is not a plain number. */
+const parseAnswerValue = (text: string): number | null => {
+  const t = String(text || '').replace(/,/g, '').trim();
+  let m = t.match(/^(-?\d+)\s+(\d+)\s*\/\s*(\d+)$/);
+  if (m && Number(m[3])) return Number(m[1]) + Number(m[2]) / Number(m[3]);
+  m = t.match(/^(-?\d+)\s*\/\s*(\d+)$/);
+  if (m && Number(m[2])) return Number(m[1]) / Number(m[2]);
+  return /^-?\d+(?:\.\d+)?$/.test(t) ? Number(t) : null;
+};
+
+/** A whole-number count answer ("7", "8 dots"); null for "7 halves", "3/4", words, etc. */
+const countAnswerValue = (text: string): number | null => {
+  const t = String(text || '').trim();
+  if (!/^\d+(?:\s+[a-z]+)?$/i.test(t)) return null;
+  if (/\b(?:halves|thirds|fourths|fifths|sixths|sevenths|eighths|ninths|tenths|twelfths|hundredths)\b/i.test(t)) return null;
+  return Number(t.match(/^\d+/)![0]);
+};
+
+const firstNumericValue = (text: string): number | null => {
+  const match = String(text || '').replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  if (!match) return null;
+  const value = Number(match[0]);
+  return Number.isFinite(value) ? value : null;
+};
 
 const buildArrayModelAdditionSteps = (
   question: Question,
@@ -73,6 +120,10 @@ const buildArrayModelAdditionSteps = (
     question.options[question.correctAnswerIndex] != null
       ? String(question.options[question.correctAnswerIndex])
       : String(total);
+  const answerValue = firstNumericValue(correctText);
+  // The rows may depict an intermediate product, not the sum the question asks
+  // for. Never conclude "5 + 3 = 8 ... so the answer is 7 quarts".
+  if (answerValue !== null && answerValue !== total) return null;
 
   const base = cloneSpec(spec);
   return [
@@ -113,6 +164,13 @@ const buildArrayModelCompareSteps = (
   const label1 = colors[1] ? colorLabel(colors[1]) : 'Second train';
   const longerIdx = counts[0] >= counts[1] ? 0 : 1;
   const correctText = String(question.options[question.correctAnswerIndex] ?? '');
+  const answerValue = firstNumericValue(correctText);
+  if (answerValue !== null) {
+    const difference = Math.abs(counts[0] - counts[1]);
+    if (answerValue !== counts[0] && answerValue !== counts[1] && answerValue !== difference) {
+      return null;
+    }
+  }
 
   const base = cloneSpec(spec);
   return [
@@ -156,8 +214,13 @@ const buildTenFrameSteps = (question: Question, spec: VisualSpec): SolutionStep[
     return out;
   };
 
+  // Counting scripts only explain items whose answer IS a count the frame shows.
+  const answerValue = countAnswerValue(correctText);
+  if (answerValue === null) return null;
+
   if (operands && operands.first + operands.second <= 10) {
     const total = operands.first + operands.second;
+    if (answerValue !== total) return null;
     return [
       {
         title: 'Start with the first group',
@@ -176,6 +239,8 @@ const buildTenFrameSteps = (question: Question, spec: VisualSpec): SolutionStep[
       },
     ];
   }
+
+  if (answerValue !== filled && answerValue !== empty) return null;
 
   if (filled > 0 && empty > 0) {
     return [
@@ -220,6 +285,10 @@ const buildFractionSteps = (question: Question, spec: VisualSpec): SolutionStep[
   if (!Number.isFinite(total) || !Number.isFinite(shaded) || total < 1) return null;
 
   const correctText = String(question.options[question.correctAnswerIndex] ?? '');
+  // "Count the shaded parts" only explains items whose answer IS the shaded fraction
+  // (not 2 7/100 = 2.07, not a conversion or comparison).
+  const answer = parseAnswerValue(correctText);
+  if (answer === null || Math.abs(answer - shaded / total) > 1e-9) return null;
   const base = cloneSpec(spec);
 
   return [
@@ -242,12 +311,16 @@ const buildFractionSteps = (question: Question, spec: VisualSpec): SolutionStep[
   ];
 };
 
-const buildFallbackSteps = (question: Question): SolutionStep[] => {
+// No per-step visualSpec here: the walkthrough shows the published figure on the
+// last step by itself, and re-drawing the spec could differ from what was published.
+const buildFallbackSteps = (question: Question, figureShown: boolean): SolutionStep[] => {
   const explanation = String(question.explanation || '').trim();
   const sentences = explanation
     .split(/(?<=[.!?])\s+/)
     .map((s) => s.trim())
-    .filter((s) => s.length > 8);
+    .filter((s) => s.length > 8)
+    // No picture on screen: drop sentences that point at one.
+    .filter((s) => figureShown || !/\b(?:look at the|shown|picture|figure|diagram|shaded)\b/i.test(s));
 
   const correctText = String(question.options[question.correctAnswerIndex] ?? '');
 
@@ -255,7 +328,6 @@ const buildFallbackSteps = (question: Question): SolutionStep[] => {
     return sentences.slice(0, 4).map((body, idx) => ({
       title: idx === 0 ? 'Read the problem' : idx === sentences.length - 1 ? 'Check your answer' : `Step ${idx + 1}`,
       body,
-      ...(idx === sentences.length - 1 && question.visualSpec ? { visualSpec: question.visualSpec } : {}),
     }));
   }
 
@@ -266,7 +338,7 @@ const buildFallbackSteps = (question: Question): SolutionStep[] => {
     },
     {
       title: 'Work it out',
-      body: explanation || 'Use the figure and what you know to solve the problem.',
+      body: explanation || (figureShown ? 'Use the figure and what you know to solve the problem.' : 'Use what you know to solve the problem.'),
     },
   ];
 
@@ -274,7 +346,6 @@ const buildFallbackSteps = (question: Question): SolutionStep[] => {
     steps.push({
       title: 'The answer',
       body: `The correct choice is ${correctText}. ${explanation}`.trim(),
-      ...(question.visualSpec ? { visualSpec: question.visualSpec } : {}),
     });
   }
 
@@ -288,6 +359,9 @@ const buildSingleRowArraySteps = (question: Question, spec: VisualSpec): Solutio
   const base = cloneSpec(spec);
   const stem = String(question.text || '');
   const isSubtract = /\b(fly|flies|left|remain|take away|subtract)\b/i.test(stem);
+  const answerValue = countAnswerValue(correctText);
+  // The row is the start count (subtract) or the answer itself (count); anything else is a different problem.
+  if (answerValue === null || (isSubtract ? answerValue >= count : answerValue !== count)) return null;
   if (isSubtract) {
     return [
       {
@@ -356,80 +430,21 @@ const buildDeterministicVisualWalkthrough = (question: Question): SolutionStep[]
     if (fracSteps) return fracSteps;
   }
 
-  if (spec?.visualType === 'table') {
-    const tableSteps = buildTablePlaceValueSteps(question, spec);
-    if (tableSteps) return tableSteps;
-  }
-
-  if (spec?.visualType === 'number_line') {
-    const lineSteps = buildNumberLineSteps(question, spec);
-    if (lineSteps) return lineSteps;
-  }
-
   return null;
 };
 
-const buildTablePlaceValueSteps = (question: Question, spec: VisualSpec): SolutionStep[] | null => {
-  const columns = (spec.columns || []).map(String);
-  const rows = spec.rows || [];
-  if (!columns.length || !rows.length) return null;
-  const digits = rows[0] || [];
-  const correctText = String(question.options[question.correctAnswerIndex] ?? '');
-  const base = cloneSpec(spec);
-  return [
-    {
-      title: 'Read each place',
-      body: `The chart shows ${columns.join(', ')}. Read the digit in each column.`,
-      visualSpec: base,
-    },
-    {
-      title: 'Build the number',
-      body: `Put the digits together: ${digits.join('') !== digits.join(', ') ? digits.join(', ') : digits.join(' ')}.`,
-      visualSpec: base,
-    },
-    {
-      title: 'Choose the answer',
-      body: correctText
-        ? `The correct choice is ${correctText}.`
-        : question.explanation || 'Pick the option that matches the place-value chart.',
-      visualSpec: base,
-    },
-  ];
-};
-
-const buildNumberLineSteps = (question: Question, spec: VisualSpec): SolutionStep[] | null => {
-  const min = Number(spec.min);
-  const max = Number(spec.max);
-  if (!Number.isFinite(min) || !Number.isFinite(max)) return null;
-  const correctText = String(question.options[question.correctAnswerIndex] ?? '');
-  const base = cloneSpec(spec);
-  return [
-    {
-      title: 'Find the values on the line',
-      body: `The number line runs from ${min} to ${max}. Locate the values named in the question.`,
-      visualSpec: base,
-    },
-    {
-      title: 'Use the distances',
-      body: 'Compare how far apart the values are to decide which number matches the question.',
-      visualSpec: base,
-    },
-    {
-      title: 'Choose the answer',
-      body: correctText
-        ? `The correct choice is ${correctText}.`
-        : question.explanation || 'Pick the option that matches what you found on the number line.',
-    },
-  ];
-};
-
 export const buildStudentSolutionWalkthrough = (question: Question): SolutionStep[] => {
-  const deterministic = buildDeterministicVisualWalkthrough(question);
-  if (deterministic) return deterministic;
-
-  if (isValidAiSteps(question.solutionSteps)) {
-    return question.solutionSteps.slice(0, 5);
+  // Figure-based scripts only when the student can actually see that figure.
+  const figureShown = hasUsableQuizFigure(question);
+  if (figureShown) {
+    const deterministic = buildDeterministicVisualWalkthrough(question);
+    if (deterministic) return deterministic;
   }
 
-  return buildFallbackSteps(question);
+  if (isValidAiSteps(question.solutionSteps, question, figureShown)) {
+    // AI step drawings are never validated against the stem; drop them.
+    return question.solutionSteps.slice(0, 5).map(({ visualSpec: _unused, ...step }) => step);
+  }
+
+  return buildFallbackSteps(question, figureShown);
 };

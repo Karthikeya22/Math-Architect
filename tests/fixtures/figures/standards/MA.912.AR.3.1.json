@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.912.AR.3.1",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Given the figure below, write an equation that could be used to determine the length and width of the rectangle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of rectangle.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "rectangle"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 277
+  }
+}

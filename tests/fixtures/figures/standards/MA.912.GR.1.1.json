@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.GR.1.1",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "A team of architects is designing a new public park in your city. The park will feature various intersecting paths, walkways, and recreational areas. To ensure the park's design is aesthetically pleasing and functional, the architects need to understand the relationships between angles formed by the paths and walkways. A team of architects is designing a new public park in your city. The park will feature various intersecting paths, walkways, and recreational areas. To ensure the park's design is aesthetically pleasing and functional, the architects need to understand the relationships between angles formed by the paths and walkways. You are part of a group of junior architects assisting the design team. Your task is to analyze the angle relationships formed by the intersecting paths and walkways in the park. You will explore how different angle pairs relate to each other and how they influence the overall layout and usability of the park. Label paths and walkways in the park and their intersections. Measure and classify the angles formed by the intersecting paths and walkways. Explore the relationships between different angle pairs (vertical, adjacent, corresponding angles, alternate interior angles, alternate exterior angles, same-side interior). Determine how these angle relationships can inform the design of directional signage within the park.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

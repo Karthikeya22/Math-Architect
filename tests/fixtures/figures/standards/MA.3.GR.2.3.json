@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.3.GR.2.3",
+  "grade": "3",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "How many feet of fence is needed for Nia’s backyard? Geometric Reasoning Solve problems involving the perimeter and area of rectangles.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

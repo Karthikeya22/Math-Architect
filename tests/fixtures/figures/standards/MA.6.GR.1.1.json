@@ -1,0 +1,51 @@
+{
+  "standardCode": "MA.6.GR.1.1",
+  "grade": "6",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Extend previous understanding of the coordinate plane to plot rational number ordered pairs in all four quadrants and on both axes. Identify the x- or y-axis as the line of reflection when two ordered pairs have an opposite x- or y-coordinate.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "4 red + 2 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 4 red + 2 blue.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "4 red + 2 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 4,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1437
+  }
+}

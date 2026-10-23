@@ -158,7 +158,12 @@ const barModelHints = (band: FigureHintGradeBand): string[] => {
   return ['Interpret each segment label in the tape diagram.', 'Use segment lengths to compare the quantities shown.'];
 };
 
+const PLACE_COLUMN = /^(?:ones|tens|hundreds|thousands|tenths|hundredths|thousandths)$/i;
+
 const tableOrChartHints = (spec: VisualSpec, band: FigureHintGradeBand): string[] => {
+  if ((spec.columns || []).some((c) => PLACE_COLUMN.test(String(c).trim()))) {
+    return ['Find each digit the question names in the chart.', 'Notice which place each of those digits is in.', 'Count how many places apart they are.'];
+  }
   const hasCategories = Array.isArray(spec.categories) && spec.categories.length > 0;
   if (band === 'K' || band === 'G12') {
     return hasCategories

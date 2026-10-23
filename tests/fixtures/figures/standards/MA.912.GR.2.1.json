@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.GR.2.1",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Describe the transformations mapping polygon A onto polygon B and polygon C onto polygon B. Instructional Task 3 A single rotation mapped quadrilateral ABCD onto quadrilateral A'B'C'D. Part A. What is the center of the rotation? Part B. If the rotation is counterclockwise, what is the measure of the angle of rotation? Part C. Can you identify another transformation that maps quadrilateral ABCD onto quadrilateral A'B'C'D? If so, describe the transformation. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Geometric Reasoning Apply properties of transformations to describe congruence or similarity.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

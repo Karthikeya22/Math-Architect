@@ -1,0 +1,52 @@
+{
+  "standardCode": "MA.912.F.1.5",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Consider three linear functions, f(x), g(x) and h(x): Compare the three linear functions and draw conclusions about their behavior and characteristics. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Functions Understand, compare and analyze properties of functions.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "3 red + 3 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 3 red + 3 blue.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "3 red + 3 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 3,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1227
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.LT.4.6",
+  "grade": "912",
+  "strand": "Logic and Discrete Theory",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Apply methods of direct and indirect proof and determine whether a logical argument is valid.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Logic standard uses a Venn diagram, set diagram, or truth table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

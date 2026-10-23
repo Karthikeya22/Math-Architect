@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.T.1.6",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Prove the Double-Angle, Half-Angle, Angle Sum and Difference formulas for sine, cosine, and tangent. Apply these formulas to solve problems.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

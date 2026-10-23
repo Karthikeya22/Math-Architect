@@ -18,8 +18,11 @@ export type QuestionVisualRecord = {
   visual?: string;
 };
 
-export const prepareQuestionVisualFields = (question: QuestionVisualRecord): void => {
-  applyQuestionVisualReconcilers(question);
+export const prepareQuestionVisualFields = (
+  question: QuestionVisualRecord,
+  { reconcile = true }: { reconcile?: boolean } = {},
+): void => {
+  if (reconcile) applyQuestionVisualReconcilers(question);
 
   if (!question.visualSpec || typeof question.visualSpec !== 'object') return;
 

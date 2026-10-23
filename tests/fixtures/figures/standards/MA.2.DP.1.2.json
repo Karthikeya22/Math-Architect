@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.2.DP.1.2",
+  "grade": "2",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Enrichment Task 1 Adjust the graph from Instructional Task 1 where you can adjust the scale for each book to equal 10. The images could also be adjusted to show half of a book (to show the value of 5). Have students answer the same questions.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

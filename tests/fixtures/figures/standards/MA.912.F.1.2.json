@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.912.F.1.2",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "The original value of a painting is $9,000 and the value increases by 7% each year. The value of the painting can be described by the function V(t) = 9000(1 + 0.07)t, where t is the time in years since 1984 and V(t) is the value of the painting. Part A. Create a table of values that corresponds to this function. Part B. Graph the function.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Ones",
+      "Tenths",
+      "Hundredths",
+      "Thousandths"
+    ],
+    "rows": [
+      [
+        "0",
+        "0",
+        "7",
+        "0"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1654
+  }
+}

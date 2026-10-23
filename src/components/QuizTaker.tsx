@@ -45,7 +45,6 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
   const [startTime, setStartTime] = useState(Date.now());
   const [showFeedback, setShowFeedback] = useState(false);
   const [showFigure, setShowFigure] = useState(true);
-  const [figureSource, setFigureSource] = useState<'primary' | 'geogebra'>('primary');
 
   const questionBank = quiz.questions;
   const activeQuestionIndex = adaptiveEnabled
@@ -64,13 +63,7 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
       !hasUsableImageDataUrl(question.generatedImageBase64) &&
       question.visualSpec?.visualType === 'table';
     setShowFigure(!isTableSvg);
-    setFigureSource('primary');
   }, [activeQuestionIndex, question?.generatedImageBase64, question?.visual, question?.visualSpec?.visualType, question]);
-
-  const hasPrimaryFigure =
-    hasUsableImageDataUrl(question?.generatedImageBase64) || hasUsableSvgMarkup(question?.visual);
-  const hasGeoGebraFigure = hasUsableImageDataUrl(question?.geogebraImageBase64);
-  const showFigureSourceToggle = hasPrimaryFigure && hasGeoGebraFigure;
 
   const handleSelect = (idx: number) => {
     if (showFeedback) return;
@@ -261,14 +254,6 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
   );
 
   const renderFigureContent = () => {
-    if (figureSource === 'geogebra' && hasGeoGebraFigure) {
-      return (
-        <>
-          <img src={question.geogebraImageBase64} alt="GeoGebra figure for this question" />
-          <p className="quiz-figure-credit">GeoGebra, non-commercial educational use</p>
-        </>
-      );
-    }
     if (useStructuredSvgPrimary) {
       return (
         <motion.div
@@ -279,9 +264,6 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
     }
     if (question.generatedImageBase64) {
       return <img src={question.generatedImageBase64} alt="Figure for this question" />;
-    }
-    if (hasGeoGebraFigure && !hasPrimaryFigure) {
-      return <img src={question.geogebraImageBase64} alt="GeoGebra figure for this question" />;
     }
     return <div className="svg-visual-container flex items-center justify-center p-2" dangerouslySetInnerHTML={{ __html: processQuizSvg(question.visual || '') || '' }} />;
   };
@@ -401,24 +383,6 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
                       <span>Figure</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      {showFigureSourceToggle && (
-                        <div className="quiz-segment-toggle" role="group" aria-label="Figure source">
-                          <button
-                            type="button"
-                            onClick={() => setFigureSource('primary')}
-                            aria-pressed={figureSource === 'primary'}
-                          >
-                            Standard
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setFigureSource('geogebra')}
-                            aria-pressed={figureSource === 'geogebra'}
-                          >
-                            GeoGebra
-                          </button>
-                        </div>
-                      )}
                       <button
                         type="button"
                         onClick={() => setShowFigure((v) => !v)}
@@ -431,7 +395,7 @@ const QuizTaker: React.FC<Props> = ({ quiz, onComplete, onHome }) => {
                   </div>
                   {showFigure ? (
                     <>
-                      <div className="quiz-figure-frame" key={`figure-${activeQuestionIndex}-${figureSource}`}>
+                      <div className="quiz-figure-frame" key={`figure-${activeQuestionIndex}`}>
                         {renderFigureContent()}
                       </div>
                       {figureHints.length > 0 && (

@@ -1,0 +1,38 @@
+{
+  "standardCode": "MA.4.AR.3.2",
+  "grade": "4",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Part A. A pattern follows the rule “multiply by 2” and starts with the number 5. What is the 6th number in the pattern?",
+  "options": [
+    "10",
+    "13",
+    "80",
+    "160",
+    "All the numbers are multiples of 5.",
+    "All the numbers are multiples of 2.",
+    "The numbers alternate between odd and even.",
+    "The numbers all have 5 in the ones place."
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

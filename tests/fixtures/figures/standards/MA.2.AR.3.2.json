@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.2.AR.3.2",
+  "grade": "2",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Part A. Draw three triangles in each of the groups below. Part B. Create an array to represent the total amount of triangles. Part C. Write a repeated addition equation to show the total number of triangles. Algebraic Reasoning Develop an understanding of multiplication.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

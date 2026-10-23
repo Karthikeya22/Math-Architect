@@ -4,7 +4,8 @@ import { CheckCircle, Lightbulb, XCircle } from 'lucide-react';
 import type { Question, SolutionStep } from '../types';
 import { MathHtml } from './MathHtml';
 import { processQuizSvg } from '../utils/processQuizSvg';
-import { renderDeterministicVisualSvg } from '../utils/visualSpec';
+import { renderVerifiedVisualSvg } from '../utils/verifiedVisual';
+import { hasUsableQuizFigure } from '../utils/hasUsableQuizFigure';
 
 interface Props {
   question: Question;
@@ -23,15 +24,22 @@ const StepVisual: React.FC<{
 
   const svgHtml = useMemo(() => {
     if (step.visualSpec) {
-      return processQuizSvg(renderDeterministicVisualSvg(step.visualSpec) || undefined);
+      const verified = renderVerifiedVisualSvg(
+        step.visualSpec,
+        `${step.title || ''} ${step.body || ''}`,
+      );
+      return verified.svg ? processQuizSvg(verified.svg) : null;
     }
-    if (isLast && question.visual) {
+    if (isLast && question.visual && hasUsableQuizFigure(question)) {
       return processQuizSvg(question.visual);
     }
     return null;
-  }, [step.visualSpec, isLast, question.visual]);
+  }, [step.visualSpec, step.title, step.body, isLast, question]);
 
-  const imageSrc = isLast && !step.visualSpec ? question.generatedImageBase64 : undefined;
+  const imageSrc =
+    isLast && !step.visualSpec && hasUsableQuizFigure(question)
+      ? question.generatedImageBase64
+      : undefined;
 
   if (svgHtml) {
     return (

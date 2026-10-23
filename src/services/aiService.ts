@@ -5,12 +5,13 @@ import { buildFigureHints } from '../utils/buildFigureHints';
 import { normalizeQuizMathCopy } from '../utils/normalizeQuizMathCopy';
 import { normalizeVisualSpec } from '../utils/visualSpec';
 import { applyQuestionVisualReconcilers } from '../utils/reconcileVisualFromStem';
-import { prepareQuestionVisualFields, renderPreparedDeterministicVisual } from '../utils/prepareQuestionVisual';
+import { prepareQuestionVisualFields } from '../utils/prepareQuestionVisual';
 import { getPreferredVisualPolicy } from '../utils/standardVisualPreferences';
-import { buildGeoGebraCommandsFromQuestion } from '../utils/buildGeoGebraCommandsFromQuestion';
-import { generateGeoGebraImage, isGeoGebraVisualsEnabled } from './geogebraService';
 import { REMEDIAL_DECK_SCHEMA, buildMissedQuestionDigest, buildRemedialDeckPrompt, normalizeRemedialDeck } from '../utils/remedialDeck';
+import { formatLcLearningComponentsForPrompt } from '../lc/learningComponents';
+import { getLcSkillPromptPack } from '../lc/skills';
 import type { RemedialSlide, SolutionStep } from '../types';
+import { dropFigurePointer } from '../utils/dropFigurePointer';
 
 type Schema = Record<string, any>;
 
@@ -94,21 +95,12 @@ const questionSchema: Schema = {
     solutionSteps: {
       type: Type.ARRAY,
       description:
-        "3-5 student-facing solution steps with title, body, and optional visualSpec for intermediate figure states. Do not reveal the final answer in step 1. feedbackGuidance is for teachers only.",
+        "3-5 student-facing solution steps with title and body. Do not reveal the final answer in step 1. feedbackGuidance is for teachers only.",
       items: {
         type: Type.OBJECT,
         properties: {
           title: { type: Type.STRING },
           body: { type: Type.STRING },
-          visualSpec: {
-            type: Type.OBJECT,
-            properties: {
-              visualType: { type: Type.STRING },
-              values: { type: Type.ARRAY, items: { type: Type.INTEGER } },
-              shapeName: { type: Type.STRING },
-              shapes: { type: Type.ARRAY, items: { type: Type.STRING } },
-            },
-          },
         },
         required: ["title", "body"],
       },
@@ -129,6 +121,8 @@ const questionSchema: Schema = {
       type: Type.OBJECT,
       description:
         "Optional backup drawing for countable models only: ten_frame, number_line, fraction_bar, array_model, area_model, fraction_circle, bar_model, clock_face, line_plot, table, bar_chart—each with the fields required for that visualType.",
+      // Kept small on purpose: expanding it (2026-10-22) made gemini-3.8-flash stuff
+      // fields into one string and emit off-topic items. Figures are reconciled from the stem.
       properties: {
         visualType: { type: Type.STRING },
         values: { type: Type.ARRAY, items: { type: Type.INTEGER } },
@@ -253,16 +247,27 @@ const generateContentViaServerOnce = async (payload: GeneratePayload) => {
 const generateContentViaServer = async (payload: GeneratePayload) =>
   generateContentViaServerOnce(payload);
 
-export type FigureStatus = 'verified' | 'unverified' | 'rejected' | 'skipped' | 'error';
+export type FigureStatus = 'verified' | 'unverified' | 'rejected' | 'skipped' | 'needs_review' | 'error';
 
 export type FigureResponse = {
   status: FigureStatus;
   image?: string;
+  svg?: string;
+  visualPath?: string;
   attempts: number;
   issues: string[];
+  coverage?: {
+    required: string[];
+    present: string[];
+    missing: string[];
+    leaks?: string[];
+    pct: number;
+  };
+  /** Spec the server actually drew (extracted from the question); replaces the quiz model's guess. */
+  visualSpec?: ReturnType<typeof normalizeVisualSpec>;
 };
 
-const FIGURE_STATUSES: readonly FigureStatus[] = ['verified', 'unverified', 'rejected', 'skipped', 'error'];
+const FIGURE_STATUSES: readonly FigureStatus[] = ['verified', 'unverified', 'rejected', 'skipped', 'needs_review', 'error'];
 
 /** Brief + up to two renders + two vision checks, so this is well above a single image call. */
 const resolveFigureClientTimeoutMs = (): number => {
@@ -295,11 +300,25 @@ export const requestFigure = async (
         : `Figure request failed (HTTP ${res.status}).`;
       return { status: 'error', attempts: 0, issues: [message] };
     }
+    const coverage =
+      data.coverage && typeof data.coverage === 'object'
+        ? {
+            required: Array.isArray(data.coverage.required) ? data.coverage.required.map(String) : [],
+            present: Array.isArray(data.coverage.present) ? data.coverage.present.map(String) : [],
+            missing: Array.isArray(data.coverage.missing) ? data.coverage.missing.map(String) : [],
+            leaks: Array.isArray(data.coverage.leaks) ? data.coverage.leaks.map(String) : undefined,
+            pct: Number.isFinite(Number(data.coverage.pct)) ? Number(data.coverage.pct) : 0,
+          }
+        : undefined;
     return {
       status: data.status,
       image: typeof data.image === 'string' && data.image.startsWith('data:image/') ? data.image : undefined,
+      svg: typeof data.svg === 'string' && /<svg[\s>]/i.test(data.svg) ? data.svg : undefined,
+      visualPath: typeof data.visualPath === 'string' && data.visualPath.trim() ? data.visualPath.trim() : undefined,
       attempts: Number.isFinite(Number(data.attempts)) ? Number(data.attempts) : 0,
       issues: Array.isArray(data.issues) ? data.issues.map(String) : [],
+      coverage,
+      visualSpec: data.visualSpec ? normalizeVisualSpec(data.visualSpec) ?? undefined : undefined,
     };
   } catch (error) {
     const message = error instanceof DOMException && error.name === 'AbortError'
@@ -402,6 +421,8 @@ export const generateQuiz = async (standard: any, config: any): Promise<any> => 
   const contextPurpose = (standard.purposeAndStrategies || []).slice(0, 4).join('\n- ');
   const contextMisconceptions = (standard.misconceptions || []).slice(0, 4).join('\n- ');
   const contextTieredInstruction = (standard.tieredInstruction || []).slice(0, 4).join('\n- ');
+  const lcLearningComponents = formatLcLearningComponentsForPrompt(String(standard.code || ''));
+  const lcSkillPack = getLcSkillPromptPack('quiz');
 
   // ai_freedom never reads question_materials, so the call is pure latency.
   // Skip it; otherwise issue the fetch immediately so it overlaps the rest of
@@ -455,6 +476,9 @@ export const generateQuiz = async (standard: any, config: any): Promise<any> => 
     - ${contextMisconceptions || 'None provided'}
     Tiered Instruction Supports:
     - ${contextTieredInstruction || 'None provided'}
+    Skill targets for this standard (use silently; do not name any external source to the student):
+    ${lcLearningComponents || 'None listed — stay faithful to the standard description and clarifications above.'}
+    ${lcSkillPack}
 
     **CONFIGURATION:**
     - Difficulty: ${config.difficulty}
@@ -480,10 +504,11 @@ export const generateQuiz = async (standard: any, config: any): Promise<any> => 
     6. Set sourceType for each question according to source policy.
     7. If sourceType is "bank", generatedByAi should be "false". Otherwise use "true".
     8. Explanations: vocabulary and length must match TARGET AUDIENCE (${standard.grade}); avoid jargon above that band.
-    9. Include solutionSteps (3-5 items): each has a short title and body that walks a ${standard.grade} student through solving the problem step by step. Use visualSpec on steps when a partial figure helps (e.g. count one group before showing both). Step bodies must not name the correct option letter until the final step.
+    9. Include solutionSteps (3-5 items): each has a short title and body that walks a ${standard.grade} student through solving the problem step by step, using the stem's own numbers. Step bodies must not name the correct option letter until the final step.
 
     **VISUAL RULES:**
     A separate figure designer draws each question's picture from the question text alone, so the stem must state every quantity, label and position the picture needs.
+    The figure is dropped whenever it cannot be drawn exactly, so every question and its solutionSteps must make complete sense with no picture: never open with "Look at the ..." and never say "shown", "below" or "in the picture".
     - visualIntent: one sentence on what the student should look at in the figure.
     - figureHints: 1-3 short imperative lines on how a ${standard.grade} student reads the figure. Never reveal counts, totals or the correct option.
     - imagePrompt (optional): one sentence on what the figure should show, using only facts from the stem.
@@ -602,9 +627,7 @@ export const generateQuiz = async (standard: any, config: any): Promise<any> => 
             strictRewritePass: pass,
             sourcePolicyDowngraded: effectiveSourcePolicy !== sourcePolicy,
             disableStrictRetry: true,
-            // One provider call per batch — server structure repair handles bad JSON;
-            // fallback can chain two 60–120s calls inside one HTTP request and trip the client timeout.
-            disableFallback: true,
+            // Cross-provider fallback follows AI_FALLBACK_ENABLED (OpenAI quota → Gemini).
             quizBatchStart: batchStart,
             quizBatchCount: questionsInBatch,
           },
@@ -657,65 +680,80 @@ export const generateQuiz = async (standard: any, config: any): Promise<any> => 
 
   if (normalizedQuestions.length > 0) {
     const tImages = performance.now();
-    const attachGeoGebraVisual = async (question: any): Promise<void> => {
-      if (!isGeoGebraVisualsEnabled()) return;
-      try {
-        const ggbCommands = buildGeoGebraCommandsFromQuestion(question);
-        if (!ggbCommands?.length) return;
-        const ggbImage = await generateGeoGebraImage(ggbCommands);
-        if (ggbImage) {
-          question.geogebraImageBase64 = `data:image/png;base64,${ggbImage}`;
-        }
-      } catch {
-        /* fall through — primary visual unchanged */
-      }
-    };
 
     const processQuestion = async (question: any) => {
-      try {
-        prepareQuestionVisualFields(question);
+      prepareQuestionVisualFields(question);
+      question.visual = '';
+      delete question.geogebraImageBase64;
+
+      const figure = await requestFigure('/api/figures/question', {
+        grade: standard.grade,
+        standardCode: standard.code,
+        question: {
+          text: question.text,
+          options: question.options,
+          correctAnswerIndex: question.correctAnswerIndex,
+          visualIntent: question.visualIntent,
+          imagePrompt: question.imagePrompt,
+          visualSpec: question.visualSpec,
+        },
+      });
+      question.figureStatus = figure.status;
+      question.figureIssues = figure.issues;
+      if (figure.coverage) question.figureCoverage = figure.coverage;
+
+      if (figure.status === 'needs_review') {
+        // Never show a partial or unverified figure. Teachers see the reason;
+        // students get the text-only item.
         question.visual = '';
-
-        const figure = await requestFigure('/api/figures/question', {
-          grade: standard.grade,
-          standardCode: standard.code,
-          question: {
-            text: question.text,
-            options: question.options,
-            correctAnswerIndex: question.correctAnswerIndex,
-            visualIntent: question.visualIntent,
-            imagePrompt: question.imagePrompt,
-          },
-        });
-        question.figureStatus = figure.status;
-        question.figureIssues = figure.issues;
-
-        if (figure.image && (figure.status === 'verified' || figure.status === 'unverified')) {
-          question.generatedImageBase64 = figure.image;
-          question.visualPath = figure.attempts > 1 ? 'openai_image_retry' : 'openai_image';
-          return;
-        }
-
-        if (figure.status === 'skipped') {
-          question.visualPath = 'figure_skipped';
-          question.figureHints = [];
-          return;
-        }
-
-        console.warn(
-          `[figure] ${figure.status} for "${String(question.text || '').slice(0, 80)}": ${figure.issues.join(' | ')}`,
-        );
-        const fallbackSvg = renderPreparedDeterministicVisual(question);
-        if (fallbackSvg) {
-          question.visual = fallbackSvg;
-          question.visualPath = 'fallback_svg';
-          return;
-        }
-        question.visualPath = 'figure_rejected';
+        delete question.generatedImageBase64;
+        question.visualPath = 'figure_needs_review';
         question.figureHints = [];
-      } finally {
-        await attachGeoGebraVisual(question);
+        question.text = dropFigurePointer(question.text);
+        console.warn(
+          `[figure] needs_review for "${String(question.text || '').slice(0, 80)}": ${figure.issues.join(' | ')}`,
+        );
+        return;
       }
+
+      if (
+        typeof figure.svg === 'string' &&
+        /<svg[\s>]/i.test(figure.svg) &&
+        (!figure.coverage || figure.coverage.pct === 100)
+      ) {
+        question.visual = figure.svg;
+        question.visualPath = figure.visualPath || 'deterministic_svg';
+        if (figure.visualSpec) {
+          // Hints and explanation scripts must describe the figure that was drawn.
+          question.visualSpec = figure.visualSpec;
+          question.figureHints = [];
+        }
+        return;
+      }
+
+      if (figure.image && (figure.status === 'verified' || figure.status === 'unverified')) {
+        question.generatedImageBase64 = figure.image;
+        question.visualPath =
+          figure.visualPath ||
+          (figure.attempts > 1 ? 'openai_image_retry' : 'openai_image');
+        return;
+      }
+
+      if (figure.status === 'skipped') {
+        question.visualPath = figure.visualPath || 'figure_skipped';
+        question.figureHints = [];
+        question.text = dropFigurePointer(question.text);
+        return;
+      }
+
+      console.warn(
+        `[figure] ${figure.status} for "${String(question.text || '').slice(0, 80)}": ${figure.issues.join(' | ')}`,
+      );
+      question.visual = '';
+      delete question.generatedImageBase64;
+      question.visualPath = 'figure_needs_review';
+      question.figureHints = [];
+      question.text = dropFigurePointer(question.text);
     };
 
     await runWithConcurrency(normalizedQuestions, FIGURE_CONCURRENCY, processQuestion);
@@ -852,7 +890,6 @@ export const generateRemedialSlides = async (
       standardCode: standard.code,
       grade: standard.grade,
       missedQuestionCount: missed.length,
-      disableFallback: true,
     },
   });
 

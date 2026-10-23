@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.K.NSO.2.2",
+  "grade": "K",
+  "strand": "Number Sense and Operations",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Represent whole numbers from 10 to 20, using a unit of ten and a group of ones, with objects, drawings and expressions or equations.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

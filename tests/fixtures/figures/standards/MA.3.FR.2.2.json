@@ -1,0 +1,42 @@
+{
+  "standardCode": "MA.3.FR.2.2",
+  "grade": "3",
+  "strand": "Fractions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Select all the fractions that are equivalent to a one-half. a. 35",
+  "options": [
+    "35",
+    "36",
+    "58",
+    "510",
+    "56",
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "fraction_bar",
+    "values": [],
+    "rows": [],
+    "shadedParts": 1,
+    "totalParts": 2
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 336
+  }
+}

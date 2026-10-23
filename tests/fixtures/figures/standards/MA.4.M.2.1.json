@@ -1,0 +1,82 @@
+{
+  "standardCode": "MA.4.M.2.1",
+  "grade": "4",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "After lunch, Billy walked the dog for 17 minutes and then immediately after, did his chores for 58 minutes. If he finished his chores at 12:15 p.m., what time did he start walking the dog?",
+  "options": [
+    "1:30 p.m.",
+    "1:13 p.m.",
+    "11:17 a.m.",
+    "11:00 a.m."
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [
+      "17 red + 15 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 17 red + 15 blue.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "17 red + 15 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 17,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 5501
+  }
+}

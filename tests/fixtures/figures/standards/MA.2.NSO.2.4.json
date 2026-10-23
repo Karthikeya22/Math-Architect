@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.2.NSO.2.4",
+  "grade": "2",
+  "strand": "Number Sense and Operations",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes the use of manipulatives, number lines, drawings or properties of operations or place value.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

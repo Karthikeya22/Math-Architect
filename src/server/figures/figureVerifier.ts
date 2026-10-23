@@ -1,4 +1,5 @@
 import type { FigureBrief, FigureInput, FigureVerdict, GenerateFn } from "./types.ts";
+import { isMeasuringInstrument } from "./instruments.ts";
 
 export const FIGURE_VERDICT_SCHEMA = {
   type: "OBJECT",
@@ -41,12 +42,19 @@ export const buildVerifierPrompt = (input: FigureInput, brief: FigureBrief): str
         ]
       : [`Slide title: ${clean(input.title)}`, input.visualDescription ? `Intended visual: ${clean(input.visualDescription)}` : ""];
 
+  const instrumentScale = isMeasuringInstrument(
+    `${input.kind === "question" ? input.text : input.title} ${input.kind === "slide" ? input.visualDescription || "" : input.visualIntent || ""} ${brief.subject} ${brief.mustShow.join(" ")}`,
+  );
+
   return [
     `You are a strict reviewer of figures for ${input.grade} math ${input.kind === "slide" ? "lesson slides" : "assessment questions"}.`,
     ...context,
     "The figure was supposed to show:",
     ...brief.mustShow.map((item) => `- ${item}`),
     brief.labels.length ? `Allowed text labels: ${brief.labels.map((l) => `"${l}"`).join(", ")}` : "Allowed text: none.",
+    instrumentScale
+      ? "The printed numerals, tick marks and unit symbols of the measuring instrument are part of the scale the student reads, so they are always allowed and are not stray text."
+      : "",
     "",
     "First describe what is actually in the image in `observed`: count every object type one by one, describe partitions and shading, and for every marked angle, label or point say exactly where it sits (which line, which side of which line, between which lines, which segment). List every piece of visible text in `visibleText`.",
     "Then judge:",
@@ -55,9 +63,9 @@ export const buildVerifierPrompt = (input: FigureInput, brief: FigureBrief): str
     "- relationshipsCorrect: every position and geometric relationship the question or brief requires is drawn exactly (for example alternate interior angles are between the parallel lines on opposite sides of the transversal; a segment label sits on that segment). Judge from the drawing, not from the labels.",
     "- labelsCorrect: required labels are present, correctly placed and spelled.",
     input.kind === "question"
-      ? "- revealsAnswer: the figure states or shows the answer outright (a written answer value, a filled-in result, a marked choice)."
+      ? `- revealsAnswer: the figure states or shows the answer outright (a written answer value, a filled-in result, a marked choice). ${instrumentScale ? "A numeral printed on the instrument scale is the data being read, not the answer written out." : ""}`
       : "- revealsAnswer: always false for lesson slides.",
-    "- hasExtraOrGarbledText: there is text that is not in the allowed labels, or any text is misspelled or garbled.",
+    `- hasExtraOrGarbledText: there is text that is not in the allowed labels${instrumentScale ? " and not part of the instrument scale" : ""}, or any text is misspelled or garbled.`,
     "List each concrete problem in `issues` as a short fix instruction (empty when everything is right).",
   ]
     .filter(Boolean)
@@ -75,10 +83,14 @@ export const verdictFromRaw = (raw: any, kind: FigureInput["kind"]): FigureVerdi
     [raw?.hasExtraOrGarbledText === false, "Figure has extra or garbled text."],
   ];
   const failed = checks.filter(([ok]) => !ok).map(([, message]) => message);
+  const visibleText = (Array.isArray(raw?.visibleText) ? raw.visibleText : [])
+    .map(clean)
+    .filter(Boolean);
   return {
     pass: failed.length === 0,
     issues: failed.length === 0 ? [] : issues.length ? issues : failed,
     observed: clean(raw?.observed),
+    visibleText,
   };
 };
 

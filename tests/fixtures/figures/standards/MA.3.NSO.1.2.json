@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.3.NSO.1.2",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Decompose the following number in two different ways: 6,905. Determine what number is shown below.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

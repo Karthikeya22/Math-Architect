@@ -29,7 +29,7 @@ describe('buildTenFrameAdditionArrayValues', () => {
 
 describe('reconcileTenFrameAdditionFromStem', () => {
   it('builds a deterministic array_model instead of sending the item to image generation', () => {
-    const question = {
+    const question: any = {
       text: 'Look at the dots in the ten-frame. What is 4 + 5?',
       options: ['7', '8', '9', '10'],
       correctAnswerIndex: 2,

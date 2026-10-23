@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.2.GR.2.2",
+  "grade": "2",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Within this benchmark, the expectation is not to use a formula to find perimeter.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

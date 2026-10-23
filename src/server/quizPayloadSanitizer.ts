@@ -141,20 +141,26 @@ export const sanitizeQuizPayloadVisuals = (payload: unknown): SanitizationResult
         const next: SolutionStep = { title, body };
         if (step.visualSpec && typeof step.visualSpec === 'object') {
           const stepSpec = { ...(step.visualSpec as VisualSpec) };
-          const stepSchemaError = validateQuestionVisualSpec(stepSpec);
-          if (stepSchemaError) {
-            perQ.push(`solutionSteps visualSpec: ${stepSchemaError}`);
+          const questionVisualType = (question.visualSpec as VisualSpec | undefined)?.visualType;
+          const isCountingVisual = stepSpec.visualType === 'ten_frame' || stepSpec.visualType === 'array_model';
+          if (isCountingVisual && stepSpec.visualType !== questionVisualType) {
+            perQ.push('solutionSteps visualSpec: counting visual does not match the question figure.');
           } else {
-            const stepSemanticError = validateVisualSpecAgainstQuestion({
-              text: String(question.text || ''),
-              options: Array.isArray(question.options) ? question.options.map(String) : [],
-              correctAnswerIndex: Number(question.correctAnswerIndex),
-              visualSpec: stepSpec,
-            });
-            if (stepSemanticError) {
-              perQ.push(`solutionSteps visualSpec: ${stepSemanticError}`);
+            const stepSchemaError = validateQuestionVisualSpec(stepSpec);
+            if (stepSchemaError) {
+              perQ.push(`solutionSteps visualSpec: ${stepSchemaError}`);
             } else {
-              next.visualSpec = stepSpec;
+              const stepSemanticError = validateVisualSpecAgainstQuestion({
+                text: String(question.text || ''),
+                options: Array.isArray(question.options) ? question.options.map(String) : [],
+                correctAnswerIndex: Number(question.correctAnswerIndex),
+                visualSpec: stepSpec,
+              });
+              if (stepSemanticError) {
+                perQ.push(`solutionSteps visualSpec: ${stepSemanticError}`);
+              } else {
+                next.visualSpec = stepSpec;
+              }
             }
           }
         }

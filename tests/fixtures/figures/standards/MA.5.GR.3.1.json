@@ -1,0 +1,48 @@
+{
+  "standardCode": "MA.5.GR.3.1",
+  "grade": "5",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction emphasizes the conceptual understanding that volume is an attribute that can be measured for a three-dimensional figure. The measurement unit for volume is the volume of a unit cube, which is a cube with edge length of 1 unit.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [
+      "1 unit"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of cube. Labels: 1 unit.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "figures": [
+      {
+        "shape": "cube",
+        "width": 1,
+        "height": 1,
+        "dimensions": [
+          {
+            "side": "top",
+            "label": "1 unit"
+          }
+        ]
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1043
+  }
+}

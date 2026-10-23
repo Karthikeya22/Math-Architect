@@ -146,6 +146,21 @@ export const toQuestionInsertRow = (
   )
     ? ((cleaned as { _sanitizationWarnings?: string[] })._sanitizationWarnings as string[])
     : [];
+  const rawCoverage =
+    cleaned.figureCoverage && typeof cleaned.figureCoverage === "object"
+      ? (cleaned.figureCoverage as {
+          required?: unknown;
+          present?: unknown;
+          missing?: unknown;
+          leaks?: unknown;
+          pct?: unknown;
+        })
+      : null;
+  const figureMissing = Array.isArray(rawCoverage?.missing)
+    ? rawCoverage.missing.map(String)
+    : [];
+  const figureLeaks = Array.isArray(rawCoverage?.leaks) ? rawCoverage.leaks.map(String) : [];
+  const figurePct = typeof rawCoverage?.pct === "number" ? rawCoverage.pct : null;
   const generation_metadata: Record<string, unknown> = {
     prompt_version: cleaned.promptVersion ?? args.promptVersionFromMeta ?? null,
     source_policy: args.config.sourcePolicy ?? null,
@@ -157,8 +172,16 @@ export const toQuestionInsertRow = (
     strand_code: args.strandCode,
     visual_path: typeof cleaned.visualPath === "string" ? cleaned.visualPath : null,
     visual_type: visualType,
+    figure_status: typeof cleaned.figureStatus === "string" ? cleaned.figureStatus : null,
+    figure_coverage_pct: figurePct,
+    figure_missing_labels: figureMissing.length > 0 ? figureMissing : null,
+    figure_leaks: figureLeaks.length > 0 ? figureLeaks : null,
     geogebra_available: Boolean(cleaned.geogebraImageBase64),
     sanitization_warnings: sanitizationWarnings.length > 0 ? sanitizationWarnings : null,
+    lc_alignment:
+      cleaned && typeof cleaned === "object" && (cleaned as { _lcAlignment?: unknown })._lcAlignment
+        ? (cleaned as { _lcAlignment: unknown })._lcAlignment
+        : null,
   };
 
   const question: Record<string, unknown> = {

@@ -1,0 +1,48 @@
+{
+  "standardCode": "MA.3.NSO.2.1",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "Cameron set a goal of collecting 7,000 stickers this year. In January, he collected 895 stickers, in February, he collected 472 stickers, and in March he collected 927 stickers. How many more stickers does he need to collect to meet his goal for the year? Use rounding to estimate the sum of 4,587 and 926. Then, find the actual sum of the two numbers. Number Sense and Operations Add and subtract multi-digit whole numbers. Build an understanding of multiplication and division operations.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Thousands",
+      "Hundreds",
+      "Tens",
+      "Ones"
+    ],
+    "rows": [
+      [
+        "0",
+        "0",
+        "0",
+        "7"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1648
+  }
+}

@@ -1,4 +1,5 @@
 import type { FigureBrief, FigureInput, GenerateFn } from "./types.ts";
+import { isMeasuringInstrument } from "./instruments.ts";
 
 const OPTION_LETTERS = ["A", "B", "C", "D", "E", "F"];
 
@@ -50,6 +51,9 @@ export const buildFigureBriefPrompt = (input: FigureInput): string => {
       "- mustNotShow lists distracting or wrong things to avoid (max 4).",
       "- needsFigure is true unless a visual would add nothing; then explain in skipReason.",
       "- figureType is \"diagram\" for math models and \"illustration\" for a real-world scene.",
+      ...(isMeasuringInstrument(`${input.title} ${input.visualDescription || ""}`)
+        ? ["- The visual uses a measuring instrument: include its normal printed scale numerals and unit marks so a value can be read from it."]
+        : []),
     ]
       .filter((line) => line !== "")
       .join("\n");
@@ -78,6 +82,9 @@ export const buildFigureBriefPrompt = (input: FigureInput): string => {
     "- needsFigure is false when the question is pure symbolic computation or any faithful figure would give away the answer (for example a place-value chart already filled with the answer digits). Explain in skipReason.",
     "- figureType is \"diagram\" for geometry, graphs, number lines and math models; \"illustration\" for real-world objects and scenes.",
     "- layout is one sentence on composition for a wide landscape image.",
+    ...(isMeasuringInstrument(`${input.text} ${input.visualIntent || ""}`)
+      ? ["- The figure uses a measuring instrument: include its normal printed scale numerals and unit marks so the student can read the value from it."]
+      : []),
   ]
     .filter((line) => line !== "")
     .join("\n");
@@ -122,11 +129,19 @@ export const composeFigureImagePrompt = (
   feedback: string[] = [],
 ): string => {
   const audience = input.kind === "slide" ? "lesson slide" : "assessment question";
-  const textRule = brief.labels.length
-    ? `Text in the image: only these labels, spelled exactly, in a clear sans-serif font: ${brief.labels
+  const instrument = isMeasuringInstrument(
+    `${input.kind === "question" ? input.text : input.title} ${input.kind === "slide" ? input.visualDescription || "" : input.visualIntent || ""} ${brief.subject} ${brief.mustShow.join(" ")}`,
+  );
+  const allowedLabels = brief.labels.length
+    ? `only these labels, spelled exactly, in a clear sans-serif font: ${brief.labels
         .map((label) => `"${label}"`)
-        .join(", ")}. No other words, numbers or letters.`
-    : "Text in the image: none. No words, numbers or letters anywhere.";
+        .join(", ")}`
+    : "no labels";
+  const textRule = instrument
+    ? `Text in the image: the numerals, tick marks and unit symbols printed on the measuring instrument scale, plus ${allowedLabels}. No other words or letters.`
+    : brief.labels.length
+      ? `Text in the image: ${allowedLabels}. No other words, numbers or letters.`
+      : "Text in the image: none. No words, numbers or letters anywhere.";
 
   return [
     `Create one ${brief.figureType === "diagram" ? "math diagram" : "illustration"} for a ${input.grade} math ${audience}.`,

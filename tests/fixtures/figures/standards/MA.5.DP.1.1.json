@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.5.DP.1.1",
+  "grade": "5",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Part A. What is the approximate change in the kitten’s mass, in grams, between Days 3 and 4? Part B. What is the approximate change in the kitten’s mass, in grams, between Days 2 and 5? Data Analysis and Probability Collect, represent and interpret data and find the mean, mode, median or range of a data set.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "standardCode": "MA.4.GR.2.1",
+  "grade": "4",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "The length of a large window is 6 feet. If the area of the window is 252 square feet, what is the width of the window? Geometric Reasoning Solve problems involving the perimeter and area of rectangles.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [
+      "6 feet",
+      "252 square feet"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of rectangle. Labels: 6 feet, 252 square feet.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "figures": [
+      {
+        "shape": "rectangle",
+        "width": 6,
+        "height": 42,
+        "dimensions": [
+          {
+            "side": "top",
+            "label": "6 feet"
+          }
+        ],
+        "areaLabel": "252 square feet"
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1085
+  }
+}

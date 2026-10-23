@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.AR.2.2",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Sharon is ordering tickets for an upcoming basketball game for herself and her friends. The ticket website shows the following table of ticket options. Write a linear two-variable equation to represent the total cost C of t tickets.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

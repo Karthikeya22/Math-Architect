@@ -1,0 +1,42 @@
+{
+  "standardCode": "MA.K.GR.1.1",
+  "grade": "K",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Identify two- and three-dimensional figures regardless of their size or orientation. Figures are limited to circles, triangles, rectangles, squares, spheres, cubes, cones and cylinders.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of triangle and rectangle and square and sphere and cube and cone and cylinder.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "triangle",
+      "rectangle",
+      "square",
+      "sphere",
+      "cube",
+      "cone",
+      "cylinder"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 784
+  }
+}

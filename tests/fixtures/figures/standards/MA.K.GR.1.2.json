@@ -1,0 +1,44 @@
+{
+  "standardCode": "MA.K.GR.1.2",
+  "grade": "K",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Cross out all of the figures that have 4 sides.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1541
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.6.NSO.1.1",
+  "grade": "6",
+  "strand": "Number Sense and Operations",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Within this benchmark, the expectation is to plot, order and compare positive and negative rational numbers when given in the same form and to plot, order and compare positive rational numbers when given in different forms (fraction, decimal, percentage).",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

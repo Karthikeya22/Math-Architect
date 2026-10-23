@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.K.M.1.3",
+  "grade": "K",
+  "strand": "Measurement",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Express the length of an object, up to 20 units long, as a whole number of lengths by laying non-standard objects end to end with no gaps or overlaps.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

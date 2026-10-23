@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.8.AR.3.2",
+  "grade": "8",
+  "strand": "Algebraic Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Instruction includes making connections of slope to the constant of proportionality and to similar triangles represented on the coordinate plane.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of triangle.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "triangle"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 311
+  }
+}

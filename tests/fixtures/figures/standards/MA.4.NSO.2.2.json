@@ -1,0 +1,63 @@
+{
+  "standardCode": "MA.4.NSO.2.2",
+  "grade": "4",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 3",
+  "stem": "Part B: Explain the relationship between the two products from Part A using the words “ten times greater and “ten times less.”",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [
+      "10 red + 10 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 10 red + 10 blue.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "10 red + 10 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 10,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 3459
+  }
+}

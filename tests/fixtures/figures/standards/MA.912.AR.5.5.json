@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.AR.5.5",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "A fisherman illegally introduces some fish into a lake, and they quickly propagate. The growth of the population of this new species (within a period of a few years) is modeled by P(x) = 5bx, where x is the time in weeks following the introduction and b is a positive unknown base. Part A. Exactly how many fish did the fisherman release into the lake? Part B. Find b if you know the lake contains 33 fish after eight weeks. Part C. Instead, now suppose that P(x)= 5bx and b = 2. What is the weekly percent growth rate in this case? What does this mean in everyday language? Part D. How does the weekly percent growth rate compare in Part B and Part C? A fisherman illegally introduces some fish into a lake, and they quickly propagate. The growth of the population of this new species (within a period of a few years) is modeled by , where is the time in weeks following the introduction and is a positive unknown base.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

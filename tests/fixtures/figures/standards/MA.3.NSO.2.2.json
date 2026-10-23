@@ -1,0 +1,44 @@
+{
+  "standardCode": "MA.3.NSO.2.2",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Build 12×9 with place value blocks or counters. There are 32 photos that need to be organized into a photo album. What are all the possible ways to display the photos on the pages of the album? Each page must have an equal number of photos. Use manipulatives, models, or equations to help you figure out all the possible combinations. Tina has 4 shelves on her bookshelf. Each row has 6 books. How many books are on Tina’s bookshelf in all? Draw a model and write an equation to represent your answer. Mateo goes to the grocery store with his dad to buy some fruit. The prices of the fruit are shown above.Part A. Mateo’s dad buys 6 bags of grapes. Write an equation that represents how many grapes he bought.Part B. Mateo’s dad also buys 4 bags of apples and 5 bags of oranges. Did he spend more money on apples or oranges? Explain how you know.Part C. Mateo sees his friend Jeremy at the grocery store. Jeremy’s mom buys 7 bags of grapes and 5 bags of apples. How much more does she spend on apples than grapes? How do you know?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1541
+  }
+}

@@ -1,4 +1,10 @@
-import { CoordinatePoint, GeometricShapeName, VisualSpec } from '../types';
+import {
+  CoordinatePoint,
+  GeometricShapeName,
+  VisualFigure,
+  VisualSpec,
+  isSolidShape,
+} from '../types';
 import { BLOCK_TRAIN_COLOR_HEX, type BlockTrainColor } from './compareLengthVisual';
 
 const GEOMETRIC_SHAPE_NAMES: ReadonlyArray<GeometricShapeName> = [
@@ -10,6 +16,13 @@ const GEOMETRIC_SHAPE_NAMES: ReadonlyArray<GeometricShapeName> = [
   'trapezoid',
   'pentagon',
   'hexagon',
+  'cube',
+  'rectangular_prism',
+  'triangular_prism',
+  'sphere',
+  'cylinder',
+  'cone',
+  'pyramid',
 ];
 
 const esc = (value: string): string =>
@@ -59,12 +72,19 @@ const renderNumberLine = (spec: VisualSpec): string | null => {
   const marks = parseFiniteNumbers(spec.values).filter((v) => v >= min && v <= max);
   const uniqMarks = [...new Set(marks)];
 
+  // Fractional steps (tenths, quarters): label whole numbers only, so a point's
+  // value is counted from the ticks instead of printed under it (it is often the answer).
+  const labelEveryTick = Number.isInteger(step);
   const tickSvg = ticks
     .map((tick) => {
       const x = xAt(tick);
+      const value = Number(tick.toFixed(6));
+      const label = labelEveryTick || Number.isInteger(value)
+        ? `<text x="${x}" y="${axisY + 38}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#334155">${value}</text>`
+        : '';
       return `<g>
         <line x1="${x}" y1="${axisY}" x2="${x}" y2="${axisY + 12}" stroke="#334155" stroke-width="2.5" />
-        <text x="${x}" y="${axisY + 38}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#334155">${Number.isInteger(tick) ? tick : tick.toFixed(1)}</text>
+        ${label}
       </g>`;
     })
     .join('');
@@ -193,6 +213,17 @@ const renderAreaModel = (spec: VisualSpec): string | null => {
   const cellW = gridW / c;
   const cellH = gridH / r;
 
+  const hr = Number.isFinite(spec.highlightRows)
+    ? Math.max(0, Math.min(r, Math.floor(Number(spec.highlightRows))))
+    : 0;
+  const hc = Number.isFinite(spec.highlightCols)
+    ? Math.max(0, Math.min(c, Math.floor(Number(spec.highlightCols))))
+    : 0;
+  const FILL_DEFAULT = '#eef2ff';
+  const FILL_ROW = '#fde68a';
+  const FILL_COL = '#93c5fd';
+  const FILL_OVERLAP = '#86efac';
+
   const rects: string[] = [];
   const inner: string[] = [];
   let idx = 0;
@@ -200,8 +231,12 @@ const renderAreaModel = (spec: VisualSpec): string | null => {
     for (let col = 0; col < c; col++) {
       const x0 = left + col * cellW;
       const y0 = top + labelGutter + row * cellH;
+      const inRow = row < hr;
+      const inCol = col < hc;
+      const fill =
+        inRow && inCol ? FILL_OVERLAP : inRow ? FILL_ROW : inCol ? FILL_COL : FILL_DEFAULT;
       rects.push(
-        `<rect x="${x0}" y="${y0}" width="${cellW}" height="${cellH}" fill="#eef2ff" stroke="#1e3a8a" stroke-width="2.5" />`,
+        `<rect x="${x0}" y="${y0}" width="${cellW}" height="${cellH}" fill="${fill}" stroke="#1e3a8a" stroke-width="2.5" />`,
       );
       const cellText = cellLabels[idx];
       if (cellText) {
@@ -507,8 +542,313 @@ const renderGeometricShapePolygon = (
   return `<polygon points="${pointsAttr}" fill="#dbeafe" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round" />`;
 };
 
+const SOLID_STROKE = 'stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round"';
+const SOLID_FRONT = '#dbeafe';
+const SOLID_TOP = '#eff6ff';
+const SOLID_SIDE = '#bfdbfe';
+
+/**
+ * Pseudo-3D solid rendering (front + top + right faces) so cube/prism/sphere/
+ * cylinder/cone/pyramid standards get an honest figure. Purely deterministic.
+ */
+const solidShapeSvg = (
+  shape: GeometricShapeName,
+  cx: number,
+  cy: number,
+  width: number,
+  height: number,
+): string => {
+  const w = Math.max(width, 12);
+  const h = Math.max(height, 12);
+  const d = Math.min(w, h) * 0.26;
+  const x0 = cx - w / 2;
+  const x1 = cx + w / 2;
+  const y0 = cy - h / 2;
+  const y1 = cy + h / 2;
+  const r = Math.min(w, h) / 2;
+
+  if (shape === 'sphere') {
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${SOLID_FRONT}" ${SOLID_STROKE} />
+      <ellipse cx="${cx - r * 0.32}" cy="${cy - r * 0.34}" rx="${r * 0.42}" ry="${r * 0.26}" fill="#ffffff" opacity="0.65" />`;
+  }
+
+  if (shape === 'cylinder') {
+    const rx = w / 2;
+    const ry = Math.max(6, h * 0.16);
+    return `<rect x="${x0}" y="${y0 + ry}" width="${w}" height="${h - 2 * ry}" fill="${SOLID_FRONT}" ${SOLID_STROKE} />
+      <ellipse cx="${cx}" cy="${y1 - ry}" rx="${rx}" ry="${ry}" fill="${SOLID_SIDE}" ${SOLID_STROKE} />
+      <ellipse cx="${cx}" cy="${y0 + ry}" rx="${rx}" ry="${ry}" fill="${SOLID_TOP}" ${SOLID_STROKE} />`;
+  }
+
+  if (shape === 'cone') {
+    const rx = w / 2;
+    const ry = Math.max(6, h * 0.16);
+    return `<path d="M ${cx} ${y0} L ${x1} ${y1 - ry} A ${rx} ${ry} 0 0 1 ${x0} ${y1 - ry} Z" fill="${SOLID_FRONT}" ${SOLID_STROKE} />
+      <ellipse cx="${cx}" cy="${y1 - ry}" rx="${rx}" ry="${ry}" fill="${SOLID_TOP}" ${SOLID_STROKE} />`;
+  }
+
+  if (shape === 'pyramid') {
+    const baseHalf = w / 2;
+    const baseY = y1;
+    const backY = y1 - h * 0.2;
+    return `<polygon points="${cx},${y0} ${x1},${backY} ${cx},${baseY} ${x0},${backY}" fill="${SOLID_FRONT}" ${SOLID_STROKE} />
+      <polygon points="${cx},${y0} ${x0},${backY} ${cx - baseHalf * 0.5},${backY + h * 0.06}" fill="${SOLID_SIDE}" ${SOLID_STROKE} />
+      <polygon points="${cx},${y0} ${x1},${backY} ${cx + baseHalf * 0.5},${backY + h * 0.06}" fill="${SOLID_TOP}" ${SOLID_STROKE} />`;
+  }
+
+  // Prisms: cube, rectangular_prism, triangular_prism.
+  // A cube's front face must be square whatever box the layout gives it (LC flagged a wide one as a prism).
+  const side = Math.min(w, h);
+  const frontW = (shape === 'cube' ? side : w) - d;
+  const frontH = (shape === 'cube' ? side : h) - d;
+  const fx = x0;
+  const fy = y0 + d;
+  const top = `<polygon points="${fx},${fy} ${fx + d},${y0} ${fx + frontW + d},${y0} ${fx + frontW},${fy}" fill="${SOLID_TOP}" ${SOLID_STROKE} />`;
+  const right = `<polygon points="${fx + frontW},${fy} ${fx + frontW + d},${y0} ${fx + frontW + d},${y0 + frontH} ${fx + frontW},${y0 + frontH + d}" fill="${SOLID_SIDE}" ${SOLID_STROKE} />`;
+  const front =
+    shape === 'triangular_prism'
+      ? `<polygon points="${fx},${fy + frontH} ${fx + frontW},${fy + frontH} ${fx + frontW / 2},${fy}" fill="${SOLID_FRONT}" ${SOLID_STROKE} />`
+      : `<rect x="${fx}" y="${fy}" width="${frontW}" height="${frontH}" fill="${SOLID_FRONT}" ${SOLID_STROKE} />`;
+  return top + right + front;
+};
+
+const DEFAULT_FIGURE_UNITS: Record<GeometricShapeName, { width: number; height: number }> = {
+  triangle: { width: 6, height: 5 },
+  right_triangle: { width: 6, height: 4 },
+  square: { width: 5, height: 5 },
+  rectangle: { width: 6, height: 4 },
+  parallelogram: { width: 6, height: 4 },
+  trapezoid: { width: 6, height: 4 },
+  pentagon: { width: 5, height: 5 },
+  hexagon: { width: 5, height: 5 },
+  cube: { width: 5, height: 5 },
+  rectangular_prism: { width: 6, height: 4 },
+  triangular_prism: { width: 6, height: 5 },
+  sphere: { width: 5, height: 5 },
+  cylinder: { width: 4, height: 6 },
+  cone: { width: 5, height: 6 },
+  pyramid: { width: 6, height: 5 },
+};
+
+const figureDimensions = (figure: VisualFigure): { width: number; height: number; measured: boolean } => {
+  const shape = GEOMETRIC_SHAPE_NAMES.includes(figure.shape) ? figure.shape : 'rectangle';
+  const rawWidth = Number(figure.width);
+  const rawHeight = Number(figure.height);
+  const width = Number.isFinite(rawWidth) && rawWidth > 0 ? rawWidth : undefined;
+  const height = Number.isFinite(rawHeight) && rawHeight > 0 ? rawHeight : undefined;
+  if (shape === 'square') {
+    const side = width ?? height ?? DEFAULT_FIGURE_UNITS.square.width;
+    return { width: side, height: side, measured: width !== undefined || height !== undefined };
+  }
+  const fallback = DEFAULT_FIGURE_UNITS[shape];
+  const outWidth = width ?? (height ? height / 0.7 : fallback.width);
+  const outHeight = height ?? (width ? width * 0.7 : fallback.height);
+  return { width: outWidth, height: outHeight, measured: width !== undefined || height !== undefined };
+};
+
+const figureVertices = (
+  shape: GeometricShapeName,
+  cx: number,
+  cy: number,
+  width: number,
+  height: number,
+): Array<{ x: number; y: number }> => {
+  if (shape === 'triangle') {
+    return [
+      { x: cx, y: cy - height / 2 },
+      { x: cx - width / 2, y: cy + height / 2 },
+      { x: cx + width / 2, y: cy + height / 2 },
+    ];
+  }
+  if (shape === 'right_triangle') {
+    return [
+      { x: cx - width / 2, y: cy + height / 2 },
+      { x: cx + width / 2, y: cy + height / 2 },
+      { x: cx - width / 2, y: cy - height / 2 },
+    ];
+  }
+  if (shape === 'pentagon' || shape === 'hexagon') {
+    return polygonPoints(shape, cx, cy, Math.max(width, height), height / Math.max(width, height));
+  }
+  return polygonPoints(shape, cx, cy, width, height / Math.max(width, 0.001));
+};
+
+type FigurePlacement = {
+  figure: VisualFigure;
+  shape: GeometricShapeName;
+  widthUnits: number;
+  heightUnits: number;
+  measured: boolean;
+};
+
+/**
+ * Render one or more named/measured figures on a shared scale.
+ * Exact label text is drawn as SVG <text>, so the coverage gate can verify it.
+ */
+const renderFigureGroup = (spec: VisualSpec, figures: VisualFigure[]): string | null => {
+  if (!figures.length || figures.length > 4) return null;
+
+  const width = 900;
+  const height = 600;
+  const usableW = width - 140;
+  const usableH = 360;
+  const figureAreaTop = spec.title ? 150 : 125;
+  const gapPx = figures.length > 1 ? 100 : 0;
+
+  const placements: FigurePlacement[] = figures.map((figure) => {
+    const shape = GEOMETRIC_SHAPE_NAMES.includes(figure.shape) ? figure.shape : 'rectangle';
+    const dims = figureDimensions({ ...figure, shape });
+    return {
+      figure,
+      shape,
+      widthUnits: dims.width,
+      heightUnits: dims.height,
+      measured: dims.measured,
+    };
+  });
+
+  const totalUnitsW = placements.reduce((sum, entry) => sum + entry.widthUnits, 0);
+  const maxUnitsH = Math.max(...placements.map((entry) => entry.heightUnits), 0.001);
+  const maxScaleW = (usableW - gapPx * (placements.length - 1)) / Math.max(totalUnitsW, 0.001);
+  const maxScaleH = usableH / maxUnitsH;
+  const scale = Math.min(maxScaleW, maxScaleH, 120);
+  if (!Number.isFinite(scale) || scale <= 0) return null;
+
+  const pixelWidths = placements.map((entry) => Math.max(entry.widthUnits * scale, 24));
+  const pixelHeights = placements.map((entry) => Math.max(entry.heightUnits * scale, 24));
+  const totalPixelW = pixelWidths.reduce((sum, value) => sum + value, 0) + gapPx * (placements.length - 1);
+  let xCursor = (width - totalPixelW) / 2;
+
+  const nameLabels: string[] = [];
+  const shapesSvg: string[] = [];
+  const dimensionSvg: string[] = [];
+  const areaSvg: string[] = [];
+  const angleSvg: string[] = [];
+
+  placements.forEach((entry, index) => {
+    const wPx = pixelWidths[index];
+    const hPx = pixelHeights[index];
+    const cx = xCursor + wPx / 2;
+    const cy = figureAreaTop + (usableH - hPx) / 2;
+    const x0 = cx - wPx / 2;
+    const x1 = cx + wPx / 2;
+    const y0 = cy - hPx / 2;
+    const y1 = cy + hPx / 2;
+
+    const verts = isSolidShape(entry.shape)
+      ? []
+      : figureVertices(entry.shape, cx, cy, wPx, hPx);
+    if (isSolidShape(entry.shape)) {
+      shapesSvg.push(solidShapeSvg(entry.shape, cx, cy, wPx, hPx));
+    } else {
+      const pointsAttr = verts.map((point) => `${point.x},${point.y}`).join(' ');
+      shapesSvg.push(
+        `<polygon points="${pointsAttr}" fill="#dbeafe" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round" />`,
+      );
+    }
+
+    const nameLabel = String(entry.figure.nameLabel || (entry.figure.id ? `${entry.shape} ${entry.figure.id}` : '')).trim();
+    if (nameLabel) {
+      const topDimension = (entry.figure.dimensions || []).some((dimension) => dimension.side === 'top');
+      const labelY = topDimension ? y0 - 58 : y0 - 22;
+      nameLabels.push(
+        `<text x="${cx}" y="${labelY}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">${esc(nameLabel)}</text>`,
+      );
+    }
+
+    const sideCounts = new Map<string, number>();
+    for (const dimension of entry.figure.dimensions || []) {
+      const label = String(dimension?.label || '').trim();
+      if (!label) continue;
+      const side = dimension.side;
+      const sideIndex = sideCounts.get(side) || 0;
+      sideCounts.set(side, sideIndex + 1);
+      const extra = sideIndex * 30;
+      if (side === 'top') {
+        const y = y0 - 26 - extra;
+        dimensionSvg.push(
+          `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#475569" stroke-width="1.6" />`,
+          `<line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<line x1="${x1}" y1="${y0}" x2="${x1}" y2="${y}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<text x="${cx}" y="${y - 10}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">${esc(label)}</text>`,
+        );
+      } else if (side === 'right') {
+        const x = x1 + 26 + extra;
+        dimensionSvg.push(
+          `<line x1="${x}" y1="${y0}" x2="${x}" y2="${y1}" stroke="#475569" stroke-width="1.6" />`,
+          `<line x1="${x1}" y1="${y0}" x2="${x}" y2="${y0}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<line x1="${x1}" y1="${y1}" x2="${x}" y2="${y1}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<text x="${x + 10}" y="${cy + 6}" text-anchor="start" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">${esc(label)}</text>`,
+        );
+      } else if (side === 'bottom') {
+        const y = y1 + 26 + extra;
+        dimensionSvg.push(
+          `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#475569" stroke-width="1.6" />`,
+          `<line x1="${x0}" y1="${y1}" x2="${x0}" y2="${y}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<line x1="${x1}" y1="${y1}" x2="${x1}" y2="${y}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<text x="${cx}" y="${y + 24}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">${esc(label)}</text>`,
+        );
+      } else {
+        const x = x0 - 26 - extra;
+        dimensionSvg.push(
+          `<line x1="${x}" y1="${y0}" x2="${x}" y2="${y1}" stroke="#475569" stroke-width="1.6" />`,
+          `<line x1="${x0}" y1="${y0}" x2="${x}" y2="${y0}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<line x1="${x0}" y1="${y1}" x2="${x}" y2="${y1}" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />`,
+          `<text x="${x - 10}" y="${cy + 6}" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#0f172a">${esc(label)}</text>`,
+        );
+      }
+    }
+
+    const areaLabel = String(entry.figure.areaLabel || '').trim();
+    if (areaLabel) {
+      areaSvg.push(
+        `<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#1e3a8a">${esc(areaLabel)}</text>`,
+      );
+    }
+
+    const angleLabels = (entry.figure.angleLabels || []).map(String).filter(Boolean);
+    angleLabels.slice(0, verts.length).forEach((label, vertexIndex) => {
+      const vertex = verts[vertexIndex];
+      const dx = cx - vertex.x;
+      const dy = cy - vertex.y;
+      const len = Math.max(Math.hypot(dx, dy), 1);
+      const inset = 26;
+      angleSvg.push(
+        `<text x="${vertex.x + (dx / len) * inset}" y="${vertex.y + (dy / len) * inset + 5}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#1d4ed8">${esc(label)}</text>`,
+      );
+    });
+
+    xCursor += wPx + gapPx;
+  });
+
+  const descParts = placements.map((entry) => {
+    const labels = [
+      entry.figure.nameLabel,
+      ...(entry.figure.dimensions || []).map((dimension) => dimension.label),
+      entry.figure.areaLabel,
+    ].filter(Boolean);
+    return labels.length ? labels.join(', ') : entry.shape;
+  });
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
+    <title>${esc(spec.title || 'Geometry diagram')}</title>
+    <desc>${esc(descParts.join('; '))}</desc>
+    <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
+    ${spec.title ? `<text x="50%" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
+    ${shapesSvg.join('')}
+    ${dimensionSvg.join('')}
+    ${areaSvg.join('')}
+    ${angleSvg.join('')}
+    ${nameLabels.join('')}
+  </svg>`;
+};
+
 /** Geometric shape: named polygon with optional side and angle labels (clockwise from first vertex). */
 const renderGeometricShape = (spec: VisualSpec): string | null => {
+  if (Array.isArray(spec.figures) && spec.figures.length > 0) {
+    return renderFigureGroup(spec, spec.figures);
+  }
+
   const shapeList = parseGeometricShapeNames(spec);
   if (!shapeList.length) return null;
 
@@ -524,7 +864,9 @@ const renderGeometricShape = (spec: VisualSpec): string | null => {
     const polygons = shapeList
       .map((shape, index) => {
         const cx = margin + (usable * (index + 0.5)) / count;
-        return renderGeometricShapePolygon(shape, cx, cy, baseSize, 0.7);
+        return isSolidShape(shape)
+          ? solidShapeSvg(shape, cx, cy, baseSize, baseSize * 0.7)
+          : renderGeometricShapePolygon(shape, cx, cy, baseSize, 0.7);
       })
       .join('');
 
@@ -547,8 +889,12 @@ const renderGeometricShape = (spec: VisualSpec): string | null => {
   }
   aspect = Math.min(Math.max(aspect, 0.2), 1.6);
 
-  const verts = polygonPoints(shape, cx, cy, baseSize, aspect);
+  const solid = isSolidShape(shape);
+  const verts = solid ? [] : polygonPoints(shape, cx, cy, baseSize, aspect);
   const pointsAttr = verts.map((p) => `${p.x},${p.y}`).join(' ');
+  const bodySvg = solid
+    ? solidShapeSvg(shape, cx, cy, baseSize, baseSize * aspect)
+    : `<polygon points="${pointsAttr}" fill="#dbeafe" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round" />`;
 
   const sideLabels = (spec.sideLabels || []).map(String);
   const angleLabels = (spec.angleLabels || []).map(String);
@@ -587,7 +933,7 @@ const renderGeometricShape = (spec: VisualSpec): string | null => {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
     <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
     ${spec.title ? `<text x="50%" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
-    <polygon points="${pointsAttr}" fill="#dbeafe" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round" />
+    ${bodySvg}
     ${sideSvg}
     ${angleSvg}
   </svg>`;
@@ -669,7 +1015,7 @@ const renderClockFace = (spec: VisualSpec): string | null => {
     const ny = cy + (r - 30) * Math.sin(a);
     const num = i === 0 ? 12 : i;
     numbers.push(
-      `<text x="${nx}" y="${ny + 7}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">${num}</text>`,
+      `<text x="${nx}" y="${ny + 7}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a" stroke="#ffffff" stroke-width="5" paint-order="stroke">${num}</text>`,
     );
   }
 
@@ -689,16 +1035,17 @@ const renderClockFace = (spec: VisualSpec): string | null => {
     ${spec.title ? `<text x="50%" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
     <circle cx="${cx}" cy="${cy}" r="${r}" fill="#ffffff" stroke="#0f172a" stroke-width="4" />
     ${ticks.join('')}
-    ${numbers.join('')}
     <line x1="${cx}" y1="${cy}" x2="${hx}" y2="${hy}" stroke="#0f172a" stroke-width="6" stroke-linecap="round" />
     <line x1="${cx}" y1="${cy}" x2="${mx}" y2="${my}" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round" />
+    ${numbers.join('')}
     <circle cx="${cx}" cy="${cy}" r="6" fill="#0f172a" />
   </svg>`;
 };
 
 const renderLinePlot = (spec: VisualSpec): string | null => {
   const values = parseFiniteNumbers(spec.values);
-  if (!values.length || !spec.xLabel) return null;
+  // Axis title is optional (the quiz model rarely sends one), as for bar charts.
+  if (!values.length) return null;
   const min = Number.isFinite(spec.min) ? Number(spec.min) : Math.min(...values);
   const max = Number.isFinite(spec.max) ? Number(spec.max) : Math.max(...values);
   if (!(max >= min)) return null;
@@ -738,7 +1085,7 @@ const renderLinePlot = (spec: VisualSpec): string | null => {
         </g>`;
       })
       .join('')}
-    <text x="${(chartLeft + chartRight) / 2}" y="${height - 34}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#0f172a">${esc(spec.xLabel)}</text>
+    ${spec.xLabel ? `<text x="${(chartLeft + chartRight) / 2}" y="${height - 34}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" fill="#0f172a">${esc(spec.xLabel)}</text>` : ''}
     ${xMarks.join('')}
   </svg>`;
 };
@@ -757,6 +1104,11 @@ const renderTable = (spec: VisualSpec): string | null => {
   const rowH = Math.min(54, Math.floor(260 / rowCount));
   const tableH = rowH * rowCount;
   const colW = tableW / columns.length;
+  // Shrink a column's text until its longest entry fits (~0.55em per character), so headers never spill.
+  const fit = (base: number, col: number) => {
+    const longest = Math.max(columns[col]?.length ?? 0, ...rows.map((row) => String(row[col] ?? '').length), 1);
+    return Math.max(12, Math.min(base, Math.floor((colW - 16) / (0.55 * longest))));
+  };
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
     <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
@@ -765,7 +1117,7 @@ const renderTable = (spec: VisualSpec): string | null => {
     ${columns
       .map(
         (column, idx) =>
-          `<text x="${tableX + colW * idx + colW / 2}" y="${tableY + rowH / 2 + 10}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">${esc(column)}</text>`,
+          `<text x="${tableX + colW * idx + colW / 2}" y="${tableY + rowH / 2 + 10}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="${fit(24, idx)}" font-weight="700" fill="#0f172a">${esc(column)}</text>`,
       )
       .join('')}
     ${rows
@@ -774,7 +1126,7 @@ const renderTable = (spec: VisualSpec): string | null => {
           .map((cell, colIdx) => {
             const x = tableX + colW * colIdx + colW / 2;
             const y = tableY + rowH * (rowIdx + 1) + rowH / 2 + 8;
-            return `<text x="${x}" y="${y}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#1f2937">${esc(cell)}</text>`;
+            return `<text x="${x}" y="${y}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="${fit(22, colIdx)}" fill="#1f2937">${esc(cell)}</text>`;
           })
           .join(''),
       )
@@ -849,7 +1201,7 @@ const renderTenFrame = (spec: VisualSpec): string | null => {
     const frames: string[] = [];
     let cursorX = startX;
     for (let frame = 0; frame < tensCount; frame++) {
-      const filled = Array.from({ length: 10 }, () => 1);
+      const filled = Array.from({ length: 10 }, () => true);
       const mini = renderMiniTenFrame(cursorX, startY, cellW, gap, dotR, filled);
       frames.push(mini.rects, mini.dots);
       cursorX += mini.width + frameGap;
@@ -917,7 +1269,7 @@ const renderTenFrame = (spec: VisualSpec): string | null => {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
     <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
     ${spec.title ? `<text x="50%" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
-    <text x="${gridLeft + (2.5 * (cellW + gap) - gap) / 2}" y="${gridTop - 18}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#334155">1 ten</text>
+    ${onesCount > 0 ? `<text x="${gridLeft + (2.5 * (cellW + gap) - gap) / 2}" y="${gridTop - 18}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#334155">1 ten</text>` : ''}
     ${rects.join('')}
     ${dots.join('')}
     ${
@@ -928,41 +1280,109 @@ const renderTenFrame = (spec: VisualSpec): string | null => {
   </svg>`;
 };
 
+/** Smallest friendly step (1, 2, 5, 10, 20, 25, 50, ...) giving at most 10 ticks up to `max`. */
+const niceStep = (max: number): number => {
+  for (const base of [1, 10, 100, 1000]) {
+    for (const m of [1, 2, 5]) if (Math.ceil(max / (m * base)) <= 10) return m * base;
+    if (Math.ceil(max / (25 * base)) <= 10) return 25 * base;
+  }
+  return Math.ceil(max / 10);
+};
+
+const FONT = 'font-family="Inter, Arial, sans-serif"';
+
+/**
+ * Picture graph or tally chart: one row per category. Students count icons / tally
+ * marks, so nothing prints the value itself.
+ */
+const renderCountRows = (spec: VisualSpec, categories: string[], values: number[]): string | null => {
+  const tally = spec.chartStyle === 'tally';
+  const unit = tally ? 1 : Number(spec.iconUnit) > 0 ? Number(spec.iconUnit) : 1;
+  const counts = values.map((v) => v / unit);
+  if (counts.some((c) => !Number.isInteger(c) || c < 0) || Math.max(...counts) > 30) return null;
+  const width = 800;
+  const rowH = 54;
+  const top = spec.title ? 80 : 40;
+  const labelW = 170;
+  const height = top + rowH * categories.length + (tally ? 30 : 80);
+  const rows = categories.map((name, r) => {
+    const y = top + r * rowH;
+    let marks = '';
+    if (tally) {
+      for (let i = 0; i < counts[r]; i++) {
+        const group = Math.floor(i / 5);
+        const k = i % 5;
+        const gx = labelW + 30 + group * 70;
+        marks += k < 4
+          ? `<line class="tally" x1="${gx + k * 12}" y1="${y + 10}" x2="${gx + k * 12}" y2="${y + 44}" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />`
+          : `<line class="tally" x1="${gx - 8}" y1="${y + 38}" x2="${gx + 44}" y2="${y + 16}" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />`;
+      }
+    } else {
+      for (let i = 0; i < counts[r]; i++) {
+        marks += `<circle class="icon" cx="${labelW + 50 + i * 40}" cy="${y + 27}" r="15" fill="#6366f1" />`;
+      }
+    }
+    return `<text x="${labelW}" y="${y + 34}" text-anchor="end" ${FONT} font-size="22" fill="#0f172a">${esc(name)}</text>
+      <line x1="${labelW + 15}" y1="${y + rowH}" x2="${width - 30}" y2="${y + rowH}" stroke="#e2e8f0" stroke-width="2" />${marks}`;
+  });
+  const key = tally ? '' : `<circle cx="${labelW + 50}" cy="${height - 40}" r="15" fill="#6366f1" />
+    <text x="${labelW + 75}" y="${height - 32}" ${FONT} font-size="22" fill="#0f172a">= ${unit}${spec.yLabel ? ` ${esc(spec.yLabel)}` : ''}</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
+    <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
+    ${spec.title ? `<text x="50%" y="48" text-anchor="middle" ${FONT} font-size="28" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
+    ${rows.join('')}
+    ${key}
+  </svg>`;
+};
+
 const renderBarChart = (spec: VisualSpec): string | null => {
   const categories = (spec.categories || []).map(String);
   const values = parseFiniteNumbers(spec.values);
-  if (!categories.length || categories.length !== values.length || !spec.yLabel || !spec.xLabel) return null;
+  // Axis labels are optional: the quiz model often omits them, and a graph without
+  // titles still matches "The bar graph shows..." far better than no graph.
+  if (!categories.length || categories.length !== values.length) return null;
+  if (spec.chartStyle === 'pictures' || spec.chartStyle === 'tally') return renderCountRows(spec, categories, values);
   const width = 800;
   const height = 450;
-  const left = 90;
+  const left = 110;
   const right = width - 50;
-  const top = 80;
+  const top = 60;
   const bottom = height - 90;
-  const maxY = Number.isFinite(spec.yMax) ? Number(spec.yMax) : Math.max(...values);
   const minY = Number.isFinite(spec.yMin) ? Number(spec.yMin) : 0;
+  const step = Number(spec.tickStep) > 0 ? Number(spec.tickStep) : niceStep(Math.max(...values) - minY);
+  const maxY = Math.max(Number.isFinite(spec.yMax) ? Number(spec.yMax) : 0, minY + step * Math.ceil((Math.max(...values) - minY) / step));
   const span = Math.max(maxY - minY, 1);
+  const yAt = (v: number) => bottom - ((v - minY) / span) * (bottom - top);
   const slotW = (right - left) / categories.length;
   const barW = Math.min(56, slotW * 0.55);
+  // Values are read off the numbered axis (that is the skill), never printed on the bars.
+  const ticks: string[] = [];
+  for (let v = minY; v <= maxY + 1e-9; v += step) {
+    const y = yAt(v);
+    const label = Number(v.toFixed(6));
+    ticks.push(`<line x1="${left}" y1="${y}" x2="${right}" y2="${y}" stroke="#e2e8f0" stroke-width="1.5" />
+      <line x1="${left - 8}" y1="${y}" x2="${left}" y2="${y}" stroke="#334155" stroke-width="2" />
+      <text x="${left - 14}" y="${y + 6}" text-anchor="end" ${FONT} font-size="16" fill="#334155">${label}</text>`);
+  }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
     <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
-    ${spec.title ? `<text x="50%" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
+    ${spec.title ? `<text x="50%" y="40" text-anchor="middle" ${FONT} font-size="28" font-weight="700" fill="#0f172a">${esc(spec.title)}</text>` : ''}
+    ${ticks.join('')}
     <line x1="${left}" y1="${bottom}" x2="${right}" y2="${bottom}" stroke="#334155" stroke-width="3" />
     <line x1="${left}" y1="${top}" x2="${left}" y2="${bottom}" stroke="#334155" stroke-width="3" />
     ${values
       .map((value, idx) => {
-        const h = ((value - minY) / span) * (bottom - top);
         const x = left + slotW * idx + (slotW - barW) / 2;
-        const y = bottom - h;
+        const y = yAt(value);
         return `<g>
-          <rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="8" fill="#6366f1" />
-          <text x="${x + barW / 2}" y="${bottom + 30}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#334155">${esc(categories[idx])}</text>
-          <text x="${x + barW / 2}" y="${y - 8}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#1f2937">${value}</text>
+          <rect x="${x}" y="${y}" width="${barW}" height="${bottom - y}" rx="6" fill="#6366f1" />
+          <text x="${x + barW / 2}" y="${bottom + 30}" text-anchor="middle" ${FONT} font-size="18" fill="#334155">${esc(categories[idx])}</text>
         </g>`;
       })
       .join('')}
-    <text x="${(left + right) / 2}" y="${height - 26}" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#0f172a">${esc(spec.xLabel)}</text>
-    <text x="28" y="${(top + bottom) / 2}" transform="rotate(-90 28 ${(top + bottom) / 2})" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#0f172a">${esc(spec.yLabel)}</text>
+    ${spec.xLabel ? `<text x="${(left + right) / 2}" y="${height - 26}" text-anchor="middle" ${FONT} font-size="22" font-weight="600" fill="#0f172a">${esc(spec.xLabel)}</text>` : ''}
+    ${spec.yLabel ? `<text x="30" y="${(top + bottom) / 2}" transform="rotate(-90 30 ${(top + bottom) / 2})" text-anchor="middle" ${FONT} font-size="20" font-weight="600" fill="#0f172a">${esc(spec.yLabel)}</text>` : ''}
   </svg>`;
 };
 
@@ -1075,6 +1495,43 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
         )
     : undefined;
 
+  const figures: VisualFigure[] | undefined = Array.isArray(candidate.figures)
+    ? candidate.figures
+        .map((raw): VisualFigure | null => {
+          if (!raw || typeof raw !== 'object') return null;
+          const source = raw as Record<string, unknown>;
+          const shape = String(source.shape || '').trim() as GeometricShapeName;
+          if (!GEOMETRIC_SHAPE_NAMES.includes(shape)) return null;
+          const dimensions = Array.isArray(source.dimensions)
+            ? source.dimensions
+                .map((entry): { side: 'top' | 'right' | 'bottom' | 'left'; label: string } | null => {
+                  if (!entry || typeof entry !== 'object') return null;
+                  const dimension = entry as Record<string, unknown>;
+                  const side = String(dimension.side || '').trim();
+                  const label = String(dimension.label || '').trim();
+                  if (!['top', 'right', 'bottom', 'left'].includes(side) || !label) return null;
+                  return { side: side as 'top' | 'right' | 'bottom' | 'left', label };
+                })
+                .filter((entry): entry is { side: 'top' | 'right' | 'bottom' | 'left'; label: string } => Boolean(entry))
+            : undefined;
+          const width = Number(source.width);
+          const height = Number(source.height);
+          return {
+            id: typeof source.id === 'string' ? source.id : undefined,
+            shape,
+            nameLabel: typeof source.nameLabel === 'string' ? source.nameLabel : undefined,
+            width: Number.isFinite(width) && width > 0 ? width : undefined,
+            height: Number.isFinite(height) && height > 0 ? height : undefined,
+            unit: typeof source.unit === 'string' ? source.unit : undefined,
+            dimensions: dimensions?.length ? dimensions : undefined,
+            areaLabel: typeof source.areaLabel === 'string' ? source.areaLabel : undefined,
+            angleLabels: stringArray(source.angleLabels),
+          };
+        })
+        .filter((entry): entry is VisualFigure => Boolean(entry))
+        .slice(0, 4)
+    : undefined;
+
   return {
     visualType: visualType as VisualSpec['visualType'],
     title: typeof candidate.title === 'string' ? candidate.title : undefined,
@@ -1089,6 +1546,8 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
     categories: Array.isArray(candidate.categories)
       ? candidate.categories.map((entry) => String(entry))
       : undefined,
+    chartStyle: candidate.chartStyle === 'pictures' || candidate.chartStyle === 'tally' ? candidate.chartStyle : undefined,
+    iconUnit: Number(candidate.iconUnit) > 0 ? Number(candidate.iconUnit) : undefined,
     yMin: Number.isFinite(candidate.yMin) ? Number(candidate.yMin) : undefined,
     yMax: Number.isFinite(candidate.yMax) ? Number(candidate.yMax) : undefined,
     prompt: typeof candidate.prompt === 'string' ? candidate.prompt : undefined,
@@ -1107,6 +1566,12 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
     rowColors: stringArray(candidate.rowColors),
     colLabels: stringArray(candidate.colLabels),
     cellLabels: stringArray(candidate.cellLabels),
+    highlightRows: Number.isFinite(candidate.highlightRows)
+      ? Math.max(0, Math.floor(Number(candidate.highlightRows)))
+      : undefined,
+    highlightCols: Number.isFinite(candidate.highlightCols)
+      ? Math.max(0, Math.floor(Number(candidate.highlightCols)))
+      : undefined,
     xMin: Number.isFinite(candidate.xMin) ? Number(candidate.xMin) : undefined,
     xMax: Number.isFinite(candidate.xMax) ? Number(candidate.xMax) : undefined,
     xTickStep: Number.isFinite(candidate.xTickStep) ? Number(candidate.xTickStep) : undefined,
@@ -1114,6 +1579,7 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
     points,
     shapeName,
     shapes: shapes?.length ? shapes : undefined,
+    figures: figures?.length ? figures : undefined,
     sideLabels: stringArray(candidate.sideLabels),
     angleLabels: stringArray(candidate.angleLabels),
     shapeWidth: Number.isFinite(candidate.shapeWidth) ? Number(candidate.shapeWidth) : undefined,

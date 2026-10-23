@@ -7,7 +7,7 @@ describe('renderPreparedDeterministicVisual', () => {
       text: 'Look at the triangle and the square. How are they alike?',
       options: ['Both have 3 sides', 'Both have 4 sides', 'Both are circles', 'Both are red'],
       correctAnswerIndex: 0,
-      visualSpec: null as { visualType: string; shapes?: string[] } | null,
+      visualSpec: null as any,
     };
     const svg = renderPreparedDeterministicVisual(question);
     expect(svg).toContain('<polygon');
@@ -16,7 +16,7 @@ describe('renderPreparedDeterministicVisual', () => {
   });
 
   it('normalizes hyphenated visual types before rendering', () => {
-    const question = {
+    const question: any = {
       text: 'Which bar shows 3/8 shaded?',
       options: ['3/8', '2/8', '1/8', '4/8'],
       correctAnswerIndex: 0,

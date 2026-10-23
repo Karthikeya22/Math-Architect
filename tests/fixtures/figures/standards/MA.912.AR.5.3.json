@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.AR.5.3",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Given the function f(x) = 125(1 − 0.26)x , does it represent an exponential growth or decay function?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

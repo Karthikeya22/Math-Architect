@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.FL.2.2",
+  "grade": "912",
+  "strand": "Financial Literacy",
+  "source": "instructional_task",
+  "label": "Instructional Task 3",
+  "stem": "A company’s revenue and expense functions are shown. R =−250p2 + 17,500p E = −850p + 150,000 Part A. Discuss with a partner why the expense, E, decreases as the price, p, increases. Create a scenario to justify your reasoning.Part B. Determine the profit function for the company. Part C. Determine a price that maximizes the profit. A company’s revenue and expense functions are shown. R =−250p2 + 17,500p E = −850p + 150,000 =−250 + 17,500 = −850 + 150,000 , decreases as the price, , increases. Create a scenario to justify your reasoning.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Financial Literacy standard uses a table, graph, or financial document."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

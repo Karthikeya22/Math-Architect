@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.C.5.7",
+  "grade": "912",
+  "strand": "Calculus",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Find the volume of a figure with known cross-sectional area, including figures of revolution, by using definite integrals.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Calculus standard uses a graph or area model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

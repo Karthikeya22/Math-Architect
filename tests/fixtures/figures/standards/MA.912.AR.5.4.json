@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.912.AR.5.4",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "A forester has determined that the number of fir trees in a forest is decreasing by 3% per year. In 2010, there were 13,000 fir trees in the forest. Write an equation that represents the number of fir trees, N, in terms of t, the number of years since 2010. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Algebraic Reasoning Write, solve and graph exponential and logarithmic equations and functions in one and two variables.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

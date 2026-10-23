@@ -1,0 +1,39 @@
+{
+  "standardCode": "MA.4.FR.1.3",
+  "grade": "4",
+  "strand": "Fractions",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Divide the number line below into enough equal sections so that you can locate and label the point 2 5 . Divide the same number line with a different color so that you can locate and label the point 4 10 . Discuss what you have learned.",
+  "options": [
+    "4 10"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "number_line",
+    "xLabel": "Number line",
+    "values": [],
+    "min": 2,
+    "max": 10,
+    "tickStep": 1,
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2491
+  }
+}

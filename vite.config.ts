@@ -27,6 +27,11 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, './src'),
         }
-      }
+      },
+      test: {
+        // Worktrees are separate checkouts; running their tests from the parent
+        // tree produces false failures against missing files.
+        exclude: ['**/node_modules/**', '**/dist/**', '**/.worktrees/**'],
+      },
     };
 });

@@ -116,6 +116,19 @@ describe('renderDeterministicVisualSvg', () => {
     expect(svg).toContain('40');
   });
 
+  it('renders area_model overlap shading for fraction products', () => {
+    const svg = renderDeterministicVisualSvg({
+      visualType: 'area_model',
+      gridRows: 3,
+      gridCols: 5,
+      highlightRows: 2,
+      highlightCols: 4,
+    });
+    expect(svg).toContain('#fde68a');
+    expect(svg).toContain('#93c5fd');
+    expect(svg).toContain('#86efac');
+  });
+
   it('renders fraction_circle as pie sectors', () => {
     const svg = renderDeterministicVisualSvg({
       visualType: 'fraction_circle',
@@ -232,6 +245,32 @@ describe('renderDeterministicVisualSvg', () => {
   });
 });
 
+describe('bar_chart without axis labels (audit repro)', () => {
+  // The quiz model often omits xLabel/yLabel; "The bar graph shows..." items then had no graph at all.
+  it('still renders the bars and category names', () => {
+    const svg = renderDeterministicVisualSvg({
+      visualType: 'bar_chart',
+      categories: ['Maya', 'Leo', 'Sam', 'Zoe'],
+      values: [6, 9, 4, 7],
+    });
+    expect(svg).toMatch(/<svg/);
+    expect(svg).toContain('>Leo</text>');
+    expect(svg).toContain('>9</text>');
+  });
+});
+
+describe('ten_frame "1 ten" label (audit repro)', () => {
+  it('does not call a frame with 4 dots "1 ten"', () => {
+    const svg = renderDeterministicVisualSvg({ visualType: 'ten_frame', values: [1, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+    expect(svg).not.toContain('1 ten');
+  });
+
+  it('labels the full frame "1 ten" in a teen-number display', () => {
+    const svg = renderDeterministicVisualSvg({ visualType: 'ten_frame', values: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], onesCount: 3 });
+    expect(svg).toContain('1 ten');
+  });
+});
+
 describe('isDeterministicVisualSpecType', () => {
   it('returns true only for deterministic chart-like visual types', () => {
     expect(isDeterministicVisualSpecType('ten_frame')).toBe(true);
@@ -251,3 +290,35 @@ describe('isDeterministicVisualSpecType', () => {
   });
 });
 
+
+describe('data display fixes (figure audit 2026-10-22)', () => {
+  const bars = { visualType: 'bar_chart' as const, categories: ['Maya', 'Leo', 'Sam'], values: [12, 18, 8] };
+
+  it('reads values off a numbered y-axis instead of printing them on the bars', () => {
+    const svg = renderDeterministicVisualSvg({ ...bars, tickStep: 2 })!;
+    expect(svg).toContain('>16</text>'); // axis tick that is not a data value
+    expect(svg).not.toMatch(/>18<\/text>[^]*>18<\/text>/); // 18 appears once (axis), not again over a bar
+  });
+
+  it('draws a picture graph with a key', () => {
+    const svg = renderDeterministicVisualSvg({ visualType: 'bar_chart', chartStyle: 'pictures', iconUnit: 1, categories: ['Apples', 'Bananas'], values: [6, 4] })!;
+    expect((svg.match(/class="icon"/g) || []).length).toBe(10);
+    expect(svg).toMatch(/= 1/);
+  });
+
+  it('draws tally marks in groups of five', () => {
+    const svg = renderDeterministicVisualSvg({ visualType: 'bar_chart', chartStyle: 'tally', categories: ['Dogs', 'Birds'], values: [7, 3] })!;
+    expect((svg.match(/class="tally"/g) || []).length).toBe(10);
+    expect(svg).toContain('>Dogs</text>');
+  });
+
+  it('shrinks long table headers to fit their column', () => {
+    const svg = renderDeterministicVisualSvg({
+      visualType: 'table',
+      columns: ['', 'participate in clubs', 'do not participate', 'Total'],
+      rows: [['do not play sports', '72', '48', '120']],
+    })!;
+    const size = Number(svg.match(/font-size="(\d+(?:\.\d+)?)"[^>]*>participate in clubs</)![1]);
+    expect(size).toBeLessThan(22);
+  });
+});

@@ -1,0 +1,35 @@
+{
+  "standardCode": "MA.3.FR.1.1",
+  "grade": "3",
+  "strand": "Fractions",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "Select all of the following that show 1/8.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "fraction_bar",
+    "values": [],
+    "rows": [],
+    "shadedParts": 1,
+    "totalParts": 8
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 910
+  }
+}

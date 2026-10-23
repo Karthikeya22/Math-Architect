@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.GR.6.2",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Within the Geometry course, problems are limited to relationships between inscribed angles; central angles; and angles formed by the following intersections: a tangent and a secant through the center, two tangents, and a chord and its perpendicular bisector.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

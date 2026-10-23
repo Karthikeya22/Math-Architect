@@ -1,0 +1,36 @@
+{
+  "standardCode": "MA.4.M.1.2",
+  "grade": "4",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Darren grew a plant from seed. After 3 weeks, the plant grew 8 centimeters. How many millimeters did the plant grow?",
+  "options": [
+    "0.8",
+    "8",
+    "80",
+    "800",
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

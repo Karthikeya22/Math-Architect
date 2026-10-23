@@ -50,6 +50,11 @@ describe('getPreferredVisualPolicy', () => {
       expect(p.preferredTypes).toContain('area_model');
     });
 
+    // Audit repro: MA.5.NSO.1.1 place-value charts (table) were rejected by the figure gate.
+    it.each(['MA.K.NSO.1.1', 'MA.5.NSO.1.1', 'MA.7.NSO.1.1'])('allows place-value charts (table) for %s', (code) => {
+      expect(getPreferredVisualPolicy(code).preferredTypes).toContain('table');
+    });
+
     it('grade 6+ uses upper-band types', () => {
       const p = getPreferredVisualPolicy('MA.7.NSO.1.1');
       expect(p.preferredTypes).not.toContain('array_model');

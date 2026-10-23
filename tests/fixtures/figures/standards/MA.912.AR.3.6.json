@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.AR.3.6",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "A hallway has an arch that is in the shape of a parabola. The arch is modeled by the function y = -5x2 + 12x, where x represents the horizontal measurement, in feet, and y represents the vertical measurement, in feet. What are the zeroes of this function, and what do they represent? The zeroes are (2.4,0) and (1.2, 7.2), which means these are the two places the archway touches the ground. The zeroes are (0,0) and (2.4, 0), which means these are the two places the archway touches the ground. The zeroes are (0,0) and (1.2, 7.2), which means that the maximum height of the arch is 7.2 feet. The zeroes are (2.4, 0) and (1.2, 7.2), which means that the arch is 7.2 feet wide at the base. The zeroes are (2.4,0) and (1.2, 7.2), which means these are the two places the archway touches the ground. The zeroes are (0,0) and (2.4, 0), which means these are the two places the archway touches the ground. The zeroes are (0,0) and (1.2, 7.2), which means that the maximum height of the arch is 7.2 feet. The zeroes are (2.4, 0) and (1.2, 7.2), which means that the arch is 7.2 feet wide at the base. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Algebraic Reasoning Write, solve and graph quadratic equations, functions and inequalities in one and two variables.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

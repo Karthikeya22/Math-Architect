@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.3.M.2.2",
+  "grade": "3",
+  "strand": "Measurement",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Recess began at the time shown on Clock A. Recess ended at the time shown on Clock B. Anthony began reading at the time shown on Clock A. He stopped at the time shown on Clock B. A movie runs for 2 hours, 15 minutes. The movie ends at 2:30 p.m. What time did the movie start?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "clock_face",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

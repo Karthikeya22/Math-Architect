@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.K.M.1.2",
+  "grade": "K",
+  "strand": "Measurement",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Language to compare length includes short, shorter, long, longer, tall, taller, high or higher. Language to compare volume includes has more, has less, holds more, holds less, more full, less full, full, empty, takes up more space or takes up less space. Language to compare weight includes heavy, heavier, light, lighter, weighs more or weighs less.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

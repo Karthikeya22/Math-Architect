@@ -1,0 +1,5 @@
+- Address diagnosed gaps with concrete next instructional moves (representation, sub-skill, or task type), not generic "reteach".
+- Keep teacher talking points actionable: one question to ask the student and what a correct reply sounds like.
+- When remedying misconceptions, show the wrong method beside the fix with correct math only.
+- Prefer one model visual with exact quantities; never leak the try-it answer in the teaching picture.
+- Write to the student at the stated grade reading level; short projected titles, denser notes for the teacher.

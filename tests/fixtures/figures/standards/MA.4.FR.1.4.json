@@ -1,0 +1,39 @@
+{
+  "standardCode": "MA.4.FR.1.4",
+  "grade": "4",
+  "strand": "Fractions",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Use benchmark fractions and the number line below to compare the fractions 12 5 and 2 7 8 . In the space below the number line, record the results of the comparison using the <, > or = symbol.",
+  "options": [
+    "12 5"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "number_line",
+    "xLabel": "Number line",
+    "values": [],
+    "min": 2,
+    "max": 12,
+    "tickStep": 1,
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 3236
+  }
+}

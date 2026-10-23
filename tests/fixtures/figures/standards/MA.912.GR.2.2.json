@@ -1,0 +1,59 @@
+{
+  "standardCode": "MA.912.GR.2.2",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Penelope made the following statement in Geometry class, “Figure A is a rotation of Figure B about the origin.” Chalita disagreed because distance and angle measures are not preserved between the two figures. Figure A has the coordinate points (1, −1), (3, −1) and (1, −2). Figure B has the coordinate points (0.8, 1), (1, 3) and (2, 0.8). Part A. What does “distance and angle measures are not preserved” mean in relation to the two figures? Part B. Determine whether angle measures were preserved from Figure A to Figure B. Part C. Determine whether distance measures were preserved from Figure A to Figure B. Part D. Based on your answers from Part B and Part C, determine which student is correct. Figure A has the coordinate points (1, −1), (3, −1) and (1, −2). Figure B has the coordinate points (0.8, 1), (1, 3) and (2, 0.8). Part A. What does “distance and angle measures are not preserved” mean in relation to the two figures? Part B. Determine whether angle measures were preserved from Figure A to Figure B. Part C. Determine whether distance measures were preserved from Figure A to Figure B. Part D. Based on your answers from Part B and Part C, determine which student is correct.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [
+      "Coordinate plane"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: Coordinate plane.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "coordinate_plane",
+    "title": "Coordinate plane",
+    "values": [],
+    "rows": [],
+    "yMin": -2,
+    "yMax": 5,
+    "xMin": -2,
+    "xMax": 4,
+    "xTickStep": 1,
+    "yTickStep": 1,
+    "points": [
+      {
+        "x": 0.8,
+        "y": 1,
+        "label": ""
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "label": ""
+      },
+      {
+        "x": 2,
+        "y": 0.8,
+        "label": ""
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 4563
+  }
+}

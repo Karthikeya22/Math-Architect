@@ -173,7 +173,59 @@ export const validateQuestionVisualSpec = (
       'trapezoid',
       'pentagon',
       'hexagon',
+      'cube',
+      'rectangular_prism',
+      'triangular_prism',
+      'sphere',
+      'cylinder',
+      'cone',
+      'pyramid',
     ]);
+
+    if (spec.figures !== undefined) {
+      if (!Array.isArray(spec.figures) || spec.figures.length < 1 || spec.figures.length > 4) {
+        return 'geometric_shape figures must contain 1 to 4 figures.';
+      }
+      for (const raw of spec.figures) {
+        if (!raw || typeof raw !== 'object') {
+          return 'geometric_shape figures entries must be objects.';
+        }
+        const figure = raw as Record<string, unknown>;
+        const shape = String(figure.shape || '').trim();
+        if (!allowed.has(shape)) {
+          return `geometric_shape figures[].shape must be one of: ${[...allowed].join(', ')}.`;
+        }
+        for (const key of ['width', 'height'] as const) {
+          if (figure[key] !== undefined) {
+            const value = Number(figure[key]);
+            if (!Number.isFinite(value) || value <= 0) {
+              return `geometric_shape figure ${key} must be a positive number.`;
+            }
+          }
+        }
+        if (figure.dimensions !== undefined) {
+          if (!Array.isArray(figure.dimensions)) {
+            return 'geometric_shape figure dimensions must be an array.';
+          }
+          for (const dimensionRaw of figure.dimensions) {
+            if (!dimensionRaw || typeof dimensionRaw !== 'object') {
+              return 'geometric_shape figure dimensions entries must be objects.';
+            }
+            const dimension = dimensionRaw as Record<string, unknown>;
+            const side = String(dimension.side || '').trim();
+            const label = String(dimension.label || '').trim();
+            if (!['top', 'right', 'bottom', 'left'].includes(side) || !label) {
+              return 'geometric_shape figure dimensions require side (top/right/bottom/left) and a non-empty label.';
+            }
+          }
+        }
+        if (figure.angleLabels !== undefined && !Array.isArray(figure.angleLabels)) {
+          return 'geometric_shape figure angleLabels must be an array.';
+        }
+      }
+      return null;
+    }
+
     const shapes = Array.isArray(spec.shapes)
       ? spec.shapes.map((entry) => String(entry).trim()).filter(Boolean)
       : [];

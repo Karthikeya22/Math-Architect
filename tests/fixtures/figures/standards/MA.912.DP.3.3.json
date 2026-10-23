@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.DP.3.3",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "In 2016, a clinical study in a small town of New Hampshire found that about 13% of its population had the flu and 87% did not. The study also showed that 19% of the people who had the flu tested negative while 8% of the people who did not have the flu tested positive. The relative frequency table below summarizes the data. Determine the ratio of true positives to false positives and interpret that in terms of the context. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Data Analysis and Probability Solve problems involving categorical data.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

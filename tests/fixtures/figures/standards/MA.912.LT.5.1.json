@@ -1,0 +1,47 @@
+{
+  "standardCode": "MA.912.LT.5.1",
+  "grade": "912",
+  "strand": "Logic and Discrete Theory",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Given two sets, determine whether the two sets are equivalent and whether one set is a subset of another. Given one set, determine its power set.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [
+      "2 red + 1 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 2 red + 1 blue.",
+    "reason": "Logic standard uses a Venn diagram, set diagram, or truth table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "2 red + 1 blue",
+    "values": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 2,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 867
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.3.GR.2.4",
+  "grade": "3",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Each rectangle within the composite figure cannot exceed 12 units by 12 units and responses include the appropriate units in word form.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "onesCount": 2,
+    "tensCount": 1
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2082
+  }
+}

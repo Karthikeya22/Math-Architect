@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.F.2.3",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Considering the table below, describe the transformation and determine the value of the real number, k, that defines the transformation from f(x) to g(x). Considering the table below, describe the transformation and determine the value of the real number, k, that defines the transformation from f(x) to g(x). *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Functions Identify and describe the effects of transformations on functions. Create new functions given transformations.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

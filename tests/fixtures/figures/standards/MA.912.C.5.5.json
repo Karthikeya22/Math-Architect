@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.C.5.5",
+  "grade": "912",
+  "strand": "Calculus",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Find the area between a curve and the x-axis or between two curves by using definite integrals.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Calculus standard uses a graph or area model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

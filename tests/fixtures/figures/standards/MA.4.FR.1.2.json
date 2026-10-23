@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.4.FR.1.2",
+  "grade": "4",
+  "strand": "Fractions",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Instruction includes the understanding that a decimal and fraction that are equivalent represent the same point on the number line and that fractions with denominators of 10 or powers of 10 may be called decimal fractions.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "number_line",
+    "xLabel": "Number line",
+    "values": [],
+    "min": 0,
+    "max": 20,
+    "tickStep": 1,
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 5765
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.4.AR.2.2",
+  "grade": "4",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Shernice has 84 comic books which is 12 times as many as Cindy. Which equation below represents how many comic books, C, Cindy has?",
+  "options": [
+    "84=12+C",
+    "84=12×C",
+    "C=12+84",
+    "C=12×84"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

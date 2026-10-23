@@ -17,7 +17,7 @@ describe('normalizeTenFrameCells', () => {
 
 describe('coerceMisclassifiedTenFrameSpec', () => {
   it('converts mis-tagged line_plot with 10 binary values when stem mentions ten-frame', () => {
-    const q = {
+    const q: any = {
       text: 'Look at the dots in the ten-frame. How many more to make 10?',
       visualSpec: {
         visualType: 'line_plot' as const,
@@ -39,7 +39,7 @@ describe('parseFilledDotsCountFromStem', () => {
 
 describe('reconcileMakeTenQuestion', () => {
   it('repairs mangled ten_frame visualType strings emitted by the model', () => {
-    const q = {
+    const q: any = {
       text: 'There are 7 dots on the ten frame. How many more dots do you need to make 10?',
       options: ['2', '3', '4', '5'],
       correctAnswerIndex: 1,
@@ -54,7 +54,7 @@ describe('reconcileMakeTenQuestion', () => {
   });
 
   it('infers ten-frame cells from the stem when the model omits values', () => {
-    const q = {
+    const q: any = {
       text: 'There are 7 dots in the ten frame. How many more dots are needed to make 10?',
       options: ['2', '3', '4', '5'],
       correctAnswerIndex: 1,
@@ -71,7 +71,7 @@ describe('reconcileMakeTenQuestion', () => {
   });
 
   it('aligns answer key and explanation with ten-frame cells', () => {
-    const q = {
+    const q: any = {
       text: 'How many more dots do you need to make 10?',
       options: ['1', '2', '3', '4'],
       correctAnswerIndex: 1,
@@ -98,13 +98,13 @@ describe('reconcilePlaceValueTeensFromStem', () => {
   });
 
   it('builds a full ten-frame plus ones dots for teen place-value items', () => {
-    const q = {
+    const q: any = {
       text: 'Look at the dots. The number 14 is made of 1 ten and how many ones?',
       options: ['4 ones', '1 one', '10 ones', '14 ones'],
       correctAnswerIndex: 3,
       explanation: '',
       imagePrompt: 'draw dots',
-      visualSpec: null as { visualType: string; values: number[]; onesCount?: number } | null,
+      visualSpec: null as any,
     };
     reconcilePlaceValueTeensFromStem(q);
     expect(q.visualSpec?.visualType).toBe('ten_frame');
@@ -117,13 +117,13 @@ describe('reconcilePlaceValueTeensFromStem', () => {
 
 describe('reconcileBlocksMissingAddendToTen', () => {
   it('forces ten_frame from stem and sets answer for blocks-to-10 word problems', () => {
-    const q = {
+    const q: any = {
       text: 'Sarah has 4 red blocks. How many more blocks does she need to have 10 blocks in all?',
       options: ['4', '5', '6', '7'],
       correctAnswerIndex: 0,
       explanation: 'wrong',
       imagePrompt: 'a strip of 8 boxes',
-      visualSpec: null as { visualType: string; values: number[] } | null,
+      visualSpec: null as any,
     };
     reconcileBlocksMissingAddendToTen(q);
     expect(q.visualSpec?.visualType).toBe('ten_frame');

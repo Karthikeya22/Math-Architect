@@ -1,0 +1,44 @@
+{
+  "standardCode": "MA.2.NSO.1.1",
+  "grade": "2",
+  "strand": "Number Sense and Operations",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Read and write numbers from 0 to 1,000 using standard form, expanded form and word form.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1341
+  }
+}

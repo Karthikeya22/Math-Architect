@@ -1,0 +1,48 @@
+{
+  "standardCode": "MA.1.NSO.2.5",
+  "grade": "1",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "To find 32-8, a student used base ten blocks. After removing 2 ones, the student is not sure what else to do. What might the next step be? Number Sense and Operations Develop an understanding of addition and subtraction operations with one- and two-digit numbers.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "onesCount": 2,
+    "tensCount": 3
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 5154
+  }
+}

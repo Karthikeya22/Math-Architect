@@ -1,0 +1,59 @@
+{
+  "standardCode": "MA.3.NSO.1.1",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "What number has 5 hundreds, 6 ones, 8 thousands and 4 tens.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [
+      "8 red + 4 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 8 red + 4 blue.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "8 red + 4 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 8,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2649
+  }
+}

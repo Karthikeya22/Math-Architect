@@ -1,0 +1,58 @@
+{
+  "standardCode": "MA.912.AR.2.7",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "The Drama Club sold sodas and sandwiches in the cafeteria to raise money for costumes. The sodas were sold for $2 each and the sandwiches were sold for $5 each. In order to cover the cost of expenses, the Drama Club needed to raise more than $80. Which inequality represents this situation?",
+  "options": [
+    "2x + 5y < 80",
+    "2x + 5y > 80",
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "2 red + 5 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 2 red + 5 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "2 red + 5 blue",
+    "values": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 5,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1697
+  }
+}

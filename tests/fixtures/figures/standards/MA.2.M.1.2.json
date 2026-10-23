@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.2.M.1.2",
+  "grade": "2",
+  "strand": "Measurement",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Measure the lengths of two objects using the same unit and determine the difference between their measurements.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

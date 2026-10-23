@@ -37,6 +37,13 @@ describe('renderRichMathHtml', () => {
     expect(html).not.toContain('sin^2(theta)');
   });
 
+  // Screenshot repro: "8 x 1/1,000" rendered as 1/1 followed by ",000".
+  it('keeps a comma-grouped denominator inside the fraction (1/1,000)', () => {
+    const html = renderRichMathHtml('(3 × 1/10) + (8 × 1/1,000)');
+    expect(html).not.toContain(String.raw`\frac{1}{1}<`);
+    expect(html).toContain(String.raw`\frac{1}{1{,}000}`);
+  });
+
   it('renders simple fractions in traces (2/5)', () => {
     const html = renderRichMathHtml('selected 2/5 vs 4/5');
     expect(html).toContain('katex');

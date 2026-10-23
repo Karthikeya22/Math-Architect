@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.LT.5.2",
+  "grade": "912",
+  "strand": "Logic and Discrete Theory",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Given a relation on two sets, determine whether the relation is a function, determine the inverse of the relation if it exists and identify if the relation is bijective.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Logic standard uses a Venn diagram, set diagram, or truth table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

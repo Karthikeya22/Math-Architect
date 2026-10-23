@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.8.GR.1.2",
+  "grade": "8",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes making connections between distance on the coordinate plane and right triangles.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of right_triangle.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "right_triangle"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 269
+  }
+}

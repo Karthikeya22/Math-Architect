@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.912.T.2.2",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Define the six basic trigonometric functions for all real numbers by identifying corresponding angle measures and using right triangles drawn in the unit circle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of right_triangle.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "right_triangle"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 269
+  }
+}

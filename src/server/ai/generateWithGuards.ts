@@ -2,6 +2,8 @@ import { sanitizeQuizPayloadVisuals } from "../quizPayloadSanitizer.ts";
 import { repairQuizStructure } from "../quizPayloadStructureRepair.ts";
 import { applyQuestionVisualReconcilers } from "../../utils/reconcileVisualFromStem.ts";
 import { normalizeRemedialDeck } from "../../utils/remedialDeck.ts";
+import { applyLcMathStandardsAlignment } from "../lc/mathStandardsAlignment.ts";
+import { resolveLcEvalMode } from "../lc/config.ts";
 import {
   getDefaultProviderForTask,
   isFallbackEnabled,
@@ -207,13 +209,37 @@ export const generateWithGuards = async (request: GenerateRequest): Promise<Gene
 
   const repair = (resp: GenerateResponse): GenerateResponse => repairIfSlides(sanitizeIfQuiz(resp));
 
+  /** LC Math Standards Alignment after local sanitize; shadow logs, fail may drop weak items. */
+  const alignIfQuiz = async (resp: GenerateResponse): Promise<GenerateResponse> => {
+    if (request.task !== "quiz" || !resp.text) return resp;
+    try {
+      const parsed = JSON.parse(cleanJsonResponse(resp.text));
+      const statementCode =
+        (typeof request.metadata?.standardCode === "string" && request.metadata.standardCode.trim()) ||
+        String(parsed.standardCode || "").trim();
+      await applyLcMathStandardsAlignment({ payload: parsed, statementCode });
+      if (
+        resolveLcEvalMode() === "fail" &&
+        (!Array.isArray(parsed.questions) || parsed.questions.length === 0)
+      ) {
+        throw new Error("LC Math Standards Alignment removed all quiz questions (LC_EVAL_MODE=fail).");
+      }
+      resp.text = JSON.stringify(parsed);
+    } catch (error) {
+      if (error instanceof Error && error.message.includes("LC Math Standards Alignment")) throw error;
+      // Soft: alignment transport errors must not wipe a valid quiz in shadow/off.
+      console.warn("[lc-align] post-process skipped:", error instanceof Error ? error.message : error);
+    }
+    return resp;
+  };
+
   const attemptOnce = async (currentProvider: ProviderName, currentModel: string, withStrictRetry = true) => {
     const initial = await runProvider(currentProvider, request, currentModel);
     console.log(`[attemptOnce] provider=${currentProvider} model=${currentModel} text length=${initial.text?.length}`);
     // Repair FIRST so structural fixes run before validation rejects.
     // Avoids the strict-retry chain when AI emits 3 or 5 options instead of
     // 4 — repair pads/trims and the validator then sees a clean payload.
-    const sanitized = repair(initial);
+    const sanitized = await alignIfQuiz(repair(initial));
     const validation = validateStructuredText(request.task, sanitized.text);
     if (!validation.ok) {
       console.warn(`[attemptOnce] validation failed:`, validation.error);
@@ -230,7 +256,7 @@ export const generateWithGuards = async (request: GenerateRequest): Promise<Gene
       contents: createStricterContents(request.contents, request.task),
     };
     const strictAttempt = await runProvider(currentProvider, strictReq, currentModel);
-    const strictSanitized = repair(strictAttempt);
+    const strictSanitized = await alignIfQuiz(repair(strictAttempt));
     const strictValidation = validateStructuredText(request.task, strictSanitized.text);
     if (!strictValidation.ok) {
       throw new Error(strictValidation.error || "Validation failed after strict retry.");

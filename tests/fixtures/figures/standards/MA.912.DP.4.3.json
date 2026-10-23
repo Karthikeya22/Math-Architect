@@ -1,0 +1,58 @@
+{
+  "standardCode": "MA.912.DP.4.3",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "A special deck of 16 cards has 4 that are green, 4 yellow, 4 blue, and 4 red. The four cards of each color are numbered from one to four. A single card is drawn at random. Find the following probabilities. Part A. The probability that the card drawn is red. Part B. The probability that the card drawn is red, given that it is not blue. Part C. The probability that the card drawn is red, given that it is not a four. Part A. The probability that the card drawn is red. Part B. The probability that the card drawn is red, given that it is not blue. Part C. The probability that the card drawn is red, given that it is not a four. Data Analysis and Probability Use and interpret independence and probability.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [
+      "4 yellow + 4 blue + 4 red"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 4 yellow + 4 blue + 4 red.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "4 yellow + 4 blue + 4 red",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 3,
+    "gridCols": 4,
+    "rowColors": [
+      "yellow",
+      "blue",
+      "red"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2168
+  }
+}

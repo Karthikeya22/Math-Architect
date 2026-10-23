@@ -1,0 +1,39 @@
+{
+  "standardCode": "MA.912.GR.4.1",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Instruction focuses on cross-sections of right cylinders, right prisms, right pyramids and right cones that are parallel or perpendicular to the base.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of cylinder and rectangular_prism and pyramid and cone.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "cylinder",
+      "rectangular_prism",
+      "pyramid",
+      "cone"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1812
+  }
+}

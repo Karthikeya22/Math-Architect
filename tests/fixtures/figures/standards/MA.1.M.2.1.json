@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.1.M.2.1",
+  "grade": "1",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Part A. Robbie went to lunch at eleven-thirty. Show the time that Robbie went to lunch on the analog and digital clock below. Part B. What do you notice about the minute hand on the clock when thirty minutes have passed since 11 o’clock? Measurement Tell time and identify the value of coins and combinations of coins and dollar bills.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "clock_face",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

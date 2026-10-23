@@ -153,7 +153,7 @@ export const prefersDeterministicVisual = (question: QuestionLike): boolean => {
   const text = String(question.text || '');
   if (isTenFrameAdditionQuestion(text)) return true;
   if (parseColoredBlockTrains(question)) return true;
-  if (isExactCountableVisualSpec(question.visualSpec)) return true;
+  if (isExactCountableVisualSpec(question.visualSpec as never)) return true;
   if (stemHasPlottableExactCounts(text)) return true;
   if (extractPartPartWholeFromText(text)) return false;
   if (isSceneWordProblem(text)) return false;
@@ -178,7 +178,7 @@ export const prefersDeterministicVisual = (question: QuestionLike): boolean => {
       return (
         isTenFrameAdditionQuestion(text) ||
         Boolean(parseColoredBlockTrains(question)) ||
-        isExactCountableVisualSpec(vs)
+        isExactCountableVisualSpec(vs as never)
       );
     case 'geometric_shape':
       return Array.isArray(vs.shapes) && vs.shapes.length >= 2;
@@ -191,7 +191,7 @@ export const reconcileSceneImageFromStem = (question: QuestionLike): void => {
   const text = String(question.text || '');
   if (isTenFrameAdditionQuestion(text)) return;
   if (extractPartPartWholeFromText(text)) return;
-  if (stemHasPlottableExactCounts(text) || isExactCountableVisualSpec(question.visualSpec)) return;
+  if (stemHasPlottableExactCounts(text) || isExactCountableVisualSpec(question.visualSpec as never)) return;
   if (!isSceneWordProblem(text) && !extractRightTriangleScene(text)) return;
 
   question.imagePrompt = buildQuestionFocusedImagePrompt(question, 'math');

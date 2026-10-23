@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.912.AR.4.4",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Graph the function f(x) = −0.2|x + 7|. Graph the function f(x) = −0.2|x + 7|. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Algebraic Reasoning Write, solve and graph absolute value equations, functions and inequalities in one and two variables.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

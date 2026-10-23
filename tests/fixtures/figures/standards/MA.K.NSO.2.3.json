@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.K.NSO.2.3",
+  "grade": "K",
+  "strand": "Number Sense and Operations",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "When comparing numbers from 0 to 20, both numbers are plotted on the same number line.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "number_line",
+    "xLabel": "Number line",
+    "values": [],
+    "min": 0,
+    "max": 20,
+    "tickStep": 1,
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 5765
+  }
+}

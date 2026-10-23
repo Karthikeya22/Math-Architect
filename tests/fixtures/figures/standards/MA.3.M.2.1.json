@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.3.M.2.1",
+  "grade": "3",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "_________ a.m./p.m.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "clock_face",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.6.AR.1.2",
+  "grade": "6",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "The graph below describes the altitudes, measured in feet, at which civilian aircraft must provide everyone with supplemental oxygen, according to the U.S. Federal Aviation Regulation. Determine an inequality to represent the situation. How can this be written in another way?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

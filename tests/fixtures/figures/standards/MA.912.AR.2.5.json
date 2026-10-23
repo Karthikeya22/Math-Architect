@@ -1,0 +1,53 @@
+{
+  "standardCode": "MA.912.AR.2.5",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Devon is attending a local festival downtown. He plans to park his car in a parking garage that operates from 7:00 a.m. to 10:00 p.m. and charges $5 for the first hour and $2 for each additional hour of parking. Part A. Create a linear graph that represents the relationship between the price and number of hours parked. Part B. What is an appropriate domain and range for the given situation? Part C. Discuss with a partner whether there are constraints on the domain and range.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "5 red + 2 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 5 red + 2 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "5 red + 2 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 5,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1697
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.912.GR.1.2",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Pentagon ABCDE, as shown below, is a regular pentagon.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of pentagon.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "pentagon"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 403
+  }
+}

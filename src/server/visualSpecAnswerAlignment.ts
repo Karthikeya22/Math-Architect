@@ -48,6 +48,13 @@ const SHAPE_NAME_FORMS: Record<string, string[]> = {
   trapezoid: ['trapezoid', 'trapezium'],
   pentagon: ['pentagon'],
   hexagon: ['hexagon'],
+  cube: ['cube'],
+  rectangular_prism: ['rectangular prism', 'prism'],
+  triangular_prism: ['triangular prism'],
+  sphere: ['sphere'],
+  cylinder: ['cylinder'],
+  cone: ['cone'],
+  pyramid: ['pyramid'],
 };
 
 const normalizeText = (text: string): string => {
@@ -155,8 +162,22 @@ const corpusContainsPhrase = (corpus: string, phrase: string): boolean => {
   const target = normalizeText(phrase);
   if (!target) return false;
   const escaped = target.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-  const re = new RegExp(`(?:^|\\W)${escaped}(?:\\W|$)`);
+  // Plurals count ("2 identical squares" names a square).
+  const re = new RegExp(`(?:^|\\W)${escaped}(?:e?s)?(?:\\W|$)`);
   return re.test(corpus);
+};
+
+/** Whole part W of a mixed number "W n/d" or decimal "W.xx" (W >= 1) whose fractional part equals `part`. */
+const mixedNumberWholeFor = (corpus: string, part: number): number | null => {
+  for (const m of corpus.matchAll(/(\d+)\s+(\d+)\s*\/\s*(\d+)/g)) {
+    const [w, n, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+    if (w >= 1 && d > 0 && Math.abs(n / d - part) < 1e-6) return w;
+  }
+  for (const m of corpus.matchAll(/(?<![\d/])(\d+)\.(\d+)/g)) {
+    const w = Number(m[1]);
+    if (w >= 1 && Math.abs(Number(`0.${m[2]}`) - part) < 1e-6) return w;
+  }
+  return null;
 };
 
 const checkFractionAlignment = (
@@ -167,7 +188,15 @@ const checkFractionAlignment = (
   const total = Number(spec.totalParts);
   const shaded = Number(spec.shadedParts);
   if (!Number.isFinite(total) || !Number.isFinite(shaded)) return null;
+  // One bar showing n/d for "2 n/d" (or 2.07, 2.4) teaches the wrong value: the wholes are missing.
+  if (total > 0 && mixedNumberWholeFor(corpus, shaded / total) !== null) {
+    return `${type} shows only ${shaded}/${total}; the question's mixed number also has whole parts the figure omits.`;
+  }
   const fractions = extractFractionPairs(corpus);
+  // "product of 3/4 and 2/5": one strip shows one factor, not the product (needs an area model).
+  if (/\b(?:product|multiply|multiplied|times|area)\b|×/.test(corpus) && new Set(fractions.map((f) => `${f.n}/${f.d}`)).size >= 2) {
+    return `${type} can show only one fraction, but the stem asks for a product of fractions.`;
+  }
   if (fractions.some((f) => f.n === shaded && f.d === total)) return null;
   const decimal = total > 0 ? shaded / total : NaN;
   if (Number.isFinite(decimal) && corpusContainsNumber(corpus, Number(decimal.toFixed(4)))) return null;
@@ -198,7 +227,13 @@ const checkTenFrameAlignment = (spec: Record<string, unknown>, corpus: string): 
 
 const checkNumberLineAlignment = (spec: Record<string, unknown>, corpus: string): string | null => {
   const values = Array.isArray(spec.values) ? spec.values : [];
-  if (!values.length) return null;
+  const range = corpus.includes('number line') ? corpus.match(/from (-?\d+(?:\.\d+)?) to (-?\d+(?:\.\d+)?)/) : null;
+  if (range && (Number(spec.min) !== Number(range[1]) || Number(spec.max) !== Number(range[2]))) {
+    return `number_line range ${spec.min} to ${spec.max} differs from the stem's ${range[1]} to ${range[2]}.`;
+  }
+  if (!values.length) {
+    return /\bpoints?\b/.test(corpus) ? 'number_line has no marked point but the stem places one.' : null;
+  }
   const fractions = extractFractionPairs(corpus);
   for (const v of values) {
     const n = Number(v);
@@ -280,7 +315,72 @@ const checkCoordinatePlaneAlignment = (spec: Record<string, unknown>, corpus: st
   return null;
 };
 
-const checkGeometricShapeAlignment = (spec: Record<string, unknown>, corpus: string): string | null => {
+/** Drawn lines, folds, overlaps and relative positions: no geometric_shape spec can show these. */
+const SHAPE_SPEC_CANNOT_SHOW =
+  /\blines? (?:is |are )?(?:drawn|goes|go|through|from|down|across)\b|\bdashed\b|\bfold(?:ed)? along\b|\bdiagonals?\b|\boverlap|\bon (?:the )?top\b|\b(?:rests?|sits?|stacked|placed) (?:directly )?on\b|\b(?:beside|behind|next to|in front of)\b|\b(?:above|below|under) the\b/;
+/** Tilings and grids: labelled figures can stand in, a bare outline cannot. */
+const OUTLINE_CANNOT_SHOW = /\btiles?\b|\b(?:rows|columns) of\b/;
+
+const STEM_MEASUREMENT =
+  /\b(\d+(?:\.\d+)?)\s+(inches|inch|feet|foot|ft|yards?|meters?|centimeters?|cm|millimeters?|mm|kilometers?|km|miles?|units?)\b/g;
+
+const checkGeometricShapeAlignment = (spec: Record<string, unknown>, corpus: string, stem: string): string | null => {
+  const figures = Array.isArray(spec.figures) ? spec.figures : [];
+  if (SHAPE_SPEC_CANNOT_SHOW.test(stem)) {
+    return 'geometric_shape cannot draw the lines, folds, overlaps or positions this stem describes.';
+  }
+  // One shape for "which shape ...?" whose answer is that shape just shows the answer.
+  const single = String(spec.shapeName || '').trim();
+  if (!figures.length && single && /\bwhich (?:shape|solid|figure)\b/.test(stem)) {
+    const correct = corpus.slice(stem.length);
+    if ((SHAPE_NAME_FORMS[single] || [single]).some((form) => corpusContainsPhrase(correct, form))) {
+      return `geometric_shape shows only the ${single}, which is the answer.`;
+    }
+  }
+  if (!figures.length && OUTLINE_CANNOT_SHOW.test(stem)) {
+    return 'geometric_shape is a bare outline, but the stem describes tiles or rows it cannot draw.';
+  }
+  if (figures.length) {
+    // Every length the stem gives must be labelled, or the student cannot use the figure.
+    const labels = figures
+      .flatMap((raw) => (raw && typeof raw === 'object' && Array.isArray((raw as Record<string, unknown>).dimensions)
+        ? ((raw as Record<string, unknown>).dimensions as unknown[]) : []))
+      .map((d) => normalizeText(String((d as Record<string, unknown>)?.label ?? '')))
+      .join(' | ');
+    for (const m of stem.matchAll(STEM_MEASUREMENT)) {
+      if (!new RegExp(`(?:^|\\D)${m[1].replace('.', '\\.')}(?:\\D|$)`).test(labels)) {
+        return `geometric_shape is missing the stem measurement "${m[0]}".`;
+      }
+    }
+    for (const raw of figures) {
+      if (!raw || typeof raw !== 'object') continue;
+      const figure = raw as Record<string, unknown>;
+      const shapeName = String(figure.shape || '').trim();
+      if (shapeName) {
+        const forms = SHAPE_NAME_FORMS[shapeName] || [shapeName];
+        if (!forms.some((form) => corpusContainsPhrase(corpus, form))) {
+          return `geometric_shape "${shapeName}" not referenced in stem or correct option.`;
+        }
+      }
+      const nameLabel = String(figure.nameLabel || '').trim();
+      if (nameLabel && !corpusContainsPhrase(corpus, nameLabel)) {
+        return `geometric_shape label "${nameLabel}" not referenced in stem or correct option.`;
+      }
+      for (const dimensionRaw of Array.isArray(figure.dimensions) ? figure.dimensions : []) {
+        if (!dimensionRaw || typeof dimensionRaw !== 'object') continue;
+        const label = String((dimensionRaw as Record<string, unknown>).label || '').trim();
+        if (label && !corpusContainsPhrase(corpus, label)) {
+          return `geometric_shape dimension "${label}" not referenced in stem or correct option.`;
+        }
+      }
+      const areaLabel = String(figure.areaLabel || '').trim();
+      if (areaLabel && !corpusContainsPhrase(corpus, areaLabel)) {
+        return `geometric_shape area label "${areaLabel}" not referenced in stem or correct option.`;
+      }
+    }
+    return null;
+  }
+
   const shapes = (Array.isArray(spec.shapes) ? spec.shapes : [])
     .map((entry) => String(entry).trim())
     .filter(Boolean);
@@ -379,17 +479,70 @@ const checkLinePlotAlignment = (spec: Record<string, unknown>, corpus: string): 
       return 'line_plot values do not appear in stem or correct option.';
     }
   }
+  const nums = values.map(Number).filter(Number.isFinite);
+  // Axis the stem states ("labeled from 5 to 9"): every data point must sit on it.
+  const range = corpus.match(/from (-?\d+(?:\.\d+)?) to (-?\d+(?:\.\d+)?)/);
+  if (range && nums.some((n) => n < Number(range[1]) || n > Number(range[2]))) {
+    return `line_plot values fall outside the stem's axis ${range[1]} to ${range[2]}.`;
+  }
+  // Counts the stem states ("Above 6, there are 4 Xs" / "4 dots at 6"): the plot must have exactly that many.
+  const expected = new Map<number, number>();
+  for (const m of corpus.matchAll(/\babove (-?\d+(?:\.\d+)?),? there (?:are|is) (\d+) (?:x|xs|dots?|marks?)\b/g)) {
+    expected.set(Number(m[1]), Number(m[2]));
+  }
+  for (const m of corpus.matchAll(/\b(\d+) (?:x|xs|dots?|marks?) (?:at|above|over) (-?\d+(?:\.\d+)?)/g)) {
+    expected.set(Number(m[2]), Number(m[1]));
+  }
+  for (const [value, count] of expected) {
+    const got = nums.filter((n) => n === value).length;
+    if (got !== count) return `line_plot has ${got} mark(s) at ${value}; the stem says ${count}.`;
+  }
   return null;
 };
 
+const STRUCTURAL_TABLE_COLUMNS =
+  /^(?:thousands?|ten[-\s]?thousands?|hundred[-\s]?thousands?|millions?|hundreds?|tens?|ones?|tenths?|hundredths?|thousandths?|ten[-\s]?thousandths?|number|numbers|value|values|digit|digits|word form|standard form|expanded form|place|place value|category|categories|frequency|tally|tallies|item|items|data|input|output|x|y|total|count|name|day|days|time|student|students|color|colour|shape|fraction|decimal|percent|hours?|minutes?|miles?|inches?|centimeters?|cm|units?)$/i;
+
+/** "Tickets Sold" is fine when the stem says "tickets sold" in other words: every word (or its plural) appears. */
+const corpusContainsAllWords = (corpus: string, phrase: string): boolean =>
+  normalizeText(phrase)
+    .split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3)
+    .every((w) => new RegExp(`\\b${w.replace(/s$/, '')}(?:s|es)?\\b`).test(corpus));
+
 const checkTableAlignment = (spec: Record<string, unknown>, corpus: string): string | null => {
   const columns = (Array.isArray(spec.columns) ? spec.columns : []) as unknown[];
+  // Only the row-label corner may be blank (audit: two empty headers read as missing labels).
+  if (columns.filter((c) => !String(c).trim()).length > 1) return 'table has more than one blank column header.';
+  // A place-value chart only belongs on a place-value question (audit: one appeared on a function item).
+  if (
+    columns.some((c) => /^(?:ones|tenths|hundredths|thousandths)$/i.test(String(c).trim())) &&
+    !/\b(?:place|digits?|value of the|ones|tens|hundreds|thousands|tenths|hundredths|thousandths|expanded|standard form|word form|decimal)\b/.test(corpus)
+  ) {
+    return 'place value table on a question that is not about place value.';
+  }
   for (const raw of columns) {
     const col = String(raw).trim();
     if (!col) continue;
-    if (!corpusContainsPhrase(corpus, col)) {
+    // Column headers that name the structure of the display (place-value
+    // houses, "Number", "Word form", ...) are given framing, not answer data.
+    if (STRUCTURAL_TABLE_COLUMNS.test(col)) continue;
+    if (!corpusContainsPhrase(corpus, col) && !corpusContainsAllWords(corpus, col)) {
       return `table column "${col}" not referenced in stem or correct option.`;
     }
+  }
+  // A place-value chart for "the 5 in 0.05 vs the 5 in 5.0" must show both numbers.
+  const rows = Array.isArray(spec.rows) ? spec.rows : [];
+  // Word cells must come from the stem (audit: the model once wrote "-2 ancient? wait no" into a cell).
+  for (const cell of rows.flat().map((c) => String(c).trim())) {
+    if (/[a-z]{3,}/i.test(cell) && !corpusContainsPhrase(corpus, cell) && !corpusContainsAllWords(corpus, cell)) {
+      return `table cell "${cell}" not referenced in stem or correct option.`;
+    }
+  }
+  const isPlaceValue = columns.some((c) => /^(?:ones|tenths|hundredths|thousandths)$/i.test(String(c).trim()));
+  const decimals = new Set(corpus.match(/\b\d+\.\d+\b/g) || []);
+  if (isPlaceValue && decimals.size >= 2 && rows.length < decimals.size) {
+    return `place-value table shows ${rows.length} row(s) but the stem compares both numbers (${[...decimals].join(', ')}).`;
   }
   return null;
 };
@@ -406,12 +559,40 @@ export const isFractionReferencedInQuestion = (
   );
 };
 
+export const NAMED_MODELS: Array<[string, RegExp, string[]]> = [
+  ['number line', /\bnumber line\b/, ['number_line', 'line_plot']],
+  ['ten-frame', /\bten[- ]frames?\b/, ['ten_frame']],
+  ['clock', /\bclock\b/, ['clock_face']],
+  ['coordinate plane', /\bcoordinate (?:plane|grid)\b/, ['coordinate_plane']],
+  // Screenshot repro: a 3/20 strip (the answer) stood in for a 4 x 5 area model.
+  ['area model', /\barea model\b/, ['area_model']],
+];
+
 export const validateVisualSpecAgainstQuestion = (q: QuestionLite): string | null => {
   if (!q || !q.visualSpec || typeof q.visualSpec !== 'object') return null;
   const spec = q.visualSpec as Record<string, unknown>;
   const visualType = String(spec.visualType || '').trim();
   if (!visualType) return null;
   const corpus = buildEvidenceCorpus(q);
+
+  // Join/separate stories ("4 cars, gets 3 more", "6 birds, 2 fly away"): a single group of
+  // counters shows only the start, so the figure misstates the problem (LC judged these wrong).
+  const stem = normalizeText(q.text);
+  const oneGroup =
+    (visualType === 'ten_frame' && !(Number(spec.onesCount) > 0) && !(Number(spec.tensCount) > 0)) ||
+    (visualType === 'array_model' && (Number(spec.gridRows) || 1) === 1);
+  const storyNumbers = new Set(stem.match(/\b\d+\b/g) || []);
+  const figureIsTheQuestion = /\bten[- ]?frames?\b|\bmake (?:a )?(?:10|ten)\b/.test(stem);
+  if (oneGroup && !figureIsTheQuestion && storyNumbers.size >= 2 && /\b(?:more|gives?|gave|gets?|got|eats?|ate|fl(?:y|ies|ew) away|takes? away|took|left|joins?|in all|altogether)\b/.test(stem)) {
+    return `${visualType} shows one group, but the story joins or separates two groups.`;
+  }
+
+  // A stem that names its model must get that model, not a look-alike with the same numbers.
+  for (const [name, re, allowed] of NAMED_MODELS) {
+    if (re.test(corpus) && !allowed.includes(visualType)) {
+      return `stem is about a ${name} but the figure is a ${visualType}.`;
+    }
+  }
 
   switch (visualType) {
     case 'fraction_bar':
@@ -420,8 +601,16 @@ export const validateVisualSpecAgainstQuestion = (q: QuestionLite): string | nul
       return checkFractionAlignment(spec, corpus, 'fraction_circle');
     case 'ten_frame':
       return checkTenFrameAlignment(spec, corpus);
-    case 'number_line':
+    case 'number_line': {
+      // A line that stops before (or starts after) a plain-number answer cannot show how to reach it.
+      const raw = String(q.options[q.correctAnswerIndex] ?? '').trim();
+      const answer = raw ? Number(raw) : NaN;
+      const [min, max] = [Number(spec.min), Number(spec.max)];
+      if (Number.isFinite(answer) && Number.isFinite(min) && Number.isFinite(max) && (answer < min || answer > max)) {
+        return `number_line ${min} to ${max} does not reach the answer ${answer}.`;
+      }
       return checkNumberLineAlignment(spec, corpus);
+    }
     case 'array_model':
       return checkArrayModelAlignment(spec, corpus);
     case 'area_model':
@@ -429,7 +618,7 @@ export const validateVisualSpecAgainstQuestion = (q: QuestionLite): string | nul
     case 'coordinate_plane':
       return checkCoordinatePlaneAlignment(spec, corpus);
     case 'geometric_shape':
-      return checkGeometricShapeAlignment(spec, corpus);
+      return checkGeometricShapeAlignment(spec, corpus, normalizeText(q.text));
     case 'bar_model':
       return checkBarModelAlignment(spec, corpus);
     case 'clock_face':

@@ -1,0 +1,45 @@
+{
+  "standardCode": "MA.912.AR.3.5",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "As part of a math project, you are analyzing the profit (P) of a smartphone manufacturing company based on the number of units sold (x). The company's profit can be modeled by a quadratic function. During your research, you discover that the company experiences a break-even point when no profit is made, and this occurs when no smartphones are sold. Additionally, when the company sells 1 smartphone, it makes a profit of $6. Write the quadratic equation that represents the company's profit, using the given information about the break-even point and the profit when selling one smartphone",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "1 red + 1 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 1 red + 1 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "1 red + 1 blue",
+    "values": [
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 1,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 607
+  }
+}

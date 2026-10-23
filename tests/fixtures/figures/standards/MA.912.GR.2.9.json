@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.GR.2.9",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Justify the criteria for triangle similarity using the definition of similarity in terms of non-rigid transformations.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

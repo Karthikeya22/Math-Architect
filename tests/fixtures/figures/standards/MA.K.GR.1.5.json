@@ -1,0 +1,38 @@
+{
+  "standardCode": "MA.K.GR.1.5",
+  "grade": "K",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Combine two-dimensional figures to form a given composite figure. Figures used to form a composite shape are limited to triangles, rectangles and squares.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of triangle and rectangle and square.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "triangle",
+      "rectangle",
+      "square"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 798
+  }
+}

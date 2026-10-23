@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.8.GR.2.3",
+  "grade": "8",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "*The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Geometric Reasoning Understand similarity and congruence using models and transformations.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

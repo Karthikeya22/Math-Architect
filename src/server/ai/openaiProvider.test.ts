@@ -135,6 +135,26 @@ describe('callOpenAIProvider', () => {
     expect(n).toBe(1);
   });
 
+  it('does not retry insufficient_quota 429 so fallback can run immediately', async () => {
+    let n = 0;
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => {
+        n += 1;
+        return new Response(
+          JSON.stringify({
+            error: { message: 'no credits', type: 'insufficient_quota', code: 'credit_balance_exhausted' },
+          }),
+          { status: 429 },
+        );
+      }),
+    );
+    await expect(callOpenAIProvider('k', { task: 'analysis', contents: 'x' }, 'gpt-4o-mini')).rejects.toThrow(
+      /insufficient_quota|credit_balance_exhausted/,
+    );
+    expect(n).toBe(1);
+  });
+
   it('maps image aspect ratio to size and reports the real mime type', async () => {
     const bodies: any[] = [];
     vi.stubGlobal(

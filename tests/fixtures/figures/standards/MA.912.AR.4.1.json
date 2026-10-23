@@ -1,0 +1,55 @@
+{
+  "standardCode": "MA.912.AR.4.1",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Donna and Kayleigh both go to the same high school. Donna lives 21 miles from the school. Kayleigh lives 6 miles from Donna. Part A. Write an absolute value equation to represent the location of Kayleigh’s house in relation to the high school. Part B. How far could Kayleigh live from her school? Donna and Kayleigh both go to the same high school. Donna lives 21 miles from the school. Kayleigh lives 6 miles from Donna.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "6 red + 6 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 6 red + 6 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "6 red + 6 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 6,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2157
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "standardCode": "MA.912.AR.2.3",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Write an equation for the line that passes through (3, 14) and is parallel to the line that passes through (10, 2) and (25, 15).",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [
+      "Coordinate plane"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: Coordinate plane.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "coordinate_plane",
+    "title": "Coordinate plane",
+    "values": [],
+    "rows": [],
+    "yMin": -2,
+    "yMax": 19,
+    "xMin": -3,
+    "xMax": 31,
+    "xTickStep": 1,
+    "yTickStep": 1,
+    "points": [
+      {
+        "x": 3,
+        "y": 14,
+        "label": ""
+      },
+      {
+        "x": 10,
+        "y": 2,
+        "label": ""
+      },
+      {
+        "x": 25,
+        "y": 15,
+        "label": ""
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 15568
+  }
+}

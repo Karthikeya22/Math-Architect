@@ -4,6 +4,7 @@ import { registerAiRoutes } from "./aiRoutes.ts";
 import { registerFigureRoutes } from "./figureRoutes.ts";
 import { registerGapAnalysisRoutes } from "./gapAnalysisRoutes.ts";
 import { registerGeoGebraRoutes } from "./geogebraRoutes.ts";
+import { registerLcRoutes } from "./lcRoutes.ts";
 import { registerPracticeRoutes } from "./practiceRoutes.ts";
 import { registerQuizSessionRoutes } from "./quizSessionRoutes.ts";
 import { registerStandardsRoutes } from "./standardsRoutes.ts";
@@ -19,4 +20,5 @@ export const registerRoutes = (app: Express) => {
   registerQuizSessionRoutes(app);
   registerGapAnalysisRoutes(app);
   registerActivityRoutes(app);
+  registerLcRoutes(app);
 };

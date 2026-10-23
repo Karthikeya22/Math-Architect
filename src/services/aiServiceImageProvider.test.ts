@@ -130,7 +130,7 @@ describe('generateQuiz figures', () => {
     expect(quiz.questions[0].visualPath).toBe('openai_image_retry');
   });
 
-  it('falls back to the deterministic SVG when the figure is rejected and a visualSpec exists', async () => {
+  it('shows no figure and flags review when the figure is rejected even if a visualSpec exists', async () => {
     vi.spyOn(console, 'info').mockImplementation(() => {});
     vi.spyOn(console, 'warn').mockImplementation(() => {});
     installFetch(FRACTION_BAR_QUESTION, {
@@ -141,13 +141,13 @@ describe('generateQuiz figures', () => {
     const quiz = await generateQuiz(STANDARD, QUIZ_CONFIG);
     const q = quiz.questions[0];
     expect(q.generatedImageBase64).toBeUndefined();
-    expect(q.visual).toMatch(/^<svg/);
-    expect(q.visualPath).toBe('fallback_svg');
+    expect(q.visual || '').toBe('');
+    expect(q.visualPath).toBe('figure_needs_review');
     expect(q.figureStatus).toBe('rejected');
     expect(q.figureIssues).toEqual(['Wrong number of parts.']);
   });
 
-  it('shows no figure when the figure is rejected and nothing else can be drawn', async () => {
+  it('shows no figure and flags review when the figure is rejected and nothing else can be drawn', async () => {
     vi.spyOn(console, 'info').mockImplementation(() => {});
     vi.spyOn(console, 'warn').mockImplementation(() => {});
     installFetch(LADDER_QUESTION, {
@@ -159,7 +159,7 @@ describe('generateQuiz figures', () => {
     const q = quiz.questions[0];
     expect(q.generatedImageBase64).toBeUndefined();
     expect(q.visual || '').toBe('');
-    expect(q.visualPath).toBe('figure_rejected');
+    expect(q.visualPath).toBe('figure_needs_review');
     expect(q.figureHints).toEqual([]);
   });
 
@@ -178,31 +178,35 @@ describe('generateQuiz figures', () => {
     expect(q.figureHints).toEqual([]);
   });
 
-  it('treats a failing figure endpoint like a rejection', async () => {
+  it('flags review when the figure endpoint fails', async () => {
     vi.spyOn(console, 'info').mockImplementation(() => {});
     vi.spyOn(console, 'warn').mockImplementation(() => {});
     installFetch(FRACTION_BAR_QUESTION, { status: 500, body: { error: 'boom' } });
 
     const quiz = await generateQuiz(STANDARD, QUIZ_CONFIG);
     const q = quiz.questions[0];
-    expect(q.visualPath).toBe('fallback_svg');
+    expect(q.visualPath).toBe('figure_needs_review');
     expect(q.figureStatus).toBe('error');
   });
 
-  it('attaches GeoGebra PNG without changing primary visual path', async () => {
-    vi.stubEnv('VITE_GEOGEBRA_VISUALS_ENABLED', 'true');
+  it('prefers SVG from the figure API when present', async () => {
     vi.spyOn(console, 'info').mockImplementation(() => {});
-    installFetch(
-      FRACTION_BAR_QUESTION,
-      { status: 200, body: { status: 'verified', image: FAKE_IMAGE, attempts: 1, issues: [], elapsedMs: 10 } },
-      (url) =>
-        url.includes('/api/geogebra/render')
-          ? jsonResponse({ base64: Buffer.from('ggb-png').toString('base64') })
-          : null,
-    );
+    installFetch(FRACTION_BAR_QUESTION, {
+      status: 200,
+      body: {
+        status: 'verified',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
+        visualPath: 'deterministic_svg',
+        attempts: 0,
+        issues: [],
+        elapsedMs: 5,
+      },
+    });
 
     const quiz = await generateQuiz(STANDARD, QUIZ_CONFIG);
-    expect(quiz.questions[0].visualPath).toBe('openai_image');
-    expect(quiz.questions[0].geogebraImageBase64).toMatch(/^data:image\/png;base64,/);
+    expect(quiz.questions[0].visualPath).toBe('deterministic_svg');
+    expect(quiz.questions[0].visual).toMatch(/<svg/i);
+    expect(quiz.questions[0].generatedImageBase64).toBeUndefined();
+    expect(quiz.questions[0].geogebraImageBase64).toBeUndefined();
   });
 });

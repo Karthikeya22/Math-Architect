@@ -1,0 +1,73 @@
+{
+  "standardCode": "MA.4.FR.2.2",
+  "grade": "4",
+  "strand": "Fractions",
+  "source": "instructional_task",
+  "label": "Instructional Task 4",
+  "stem": "David and Paul decide to meet at the park on Saturday morning to play basketball. David’s house is 8 twelfths mile from the park and Paul’s house is 15 twelfths miles from the park.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [
+      "8 red + 15 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 8 red + 15 blue.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "8 red + 15 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 15,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 4667
+  }
+}

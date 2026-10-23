@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.6.DP.1.6",
+  "grade": "6",
+  "strand": "Data Analysis and Probability",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Given a real-world scenario, determine and describe how changes in data values impact measures of center and variation.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

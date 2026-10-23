@@ -1,0 +1,40 @@
+{
+  "standardCode": "MA.912.GR.4.6",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Solve mathematical and real-world problems involving the surface area of three-dimensional figures limited to cylinders, pyramids, prisms, cones and spheres.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of cylinder and pyramid and rectangular_prism and cone and sphere.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "cylinder",
+      "pyramid",
+      "rectangular_prism",
+      "cone",
+      "sphere"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1812
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.912.AR.3.7",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "A company plans to build a large multiplex theater. The financial analyst told her manager that the profit function for their theater was P(x) = −x2+ 48x −512, where x is the number of movie screens, and P(x) is the profit earned in thousands of dollars. Part A. Determine the range of production of movie screens that will guarantee that the company will not lose money. Part B. What is the optimal number of movie screens the theater should have?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Thousands",
+      "Hundreds",
+      "Tens",
+      "Ones"
+    ],
+    "rows": [
+      [
+        "0",
+        "5",
+        "1",
+        "2"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1648
+  }
+}

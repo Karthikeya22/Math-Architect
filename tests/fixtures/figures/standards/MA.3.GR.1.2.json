@@ -1,0 +1,39 @@
+{
+  "standardCode": "MA.3.GR.1.2",
+  "grade": "3",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Identify and draw quadrilaterals based on their defining attributes. Quadrilaterals include parallelograms, rhombi, rectangles, squares and trapezoids.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of parallelogram and rectangle and square and trapezoid.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "parallelogram",
+      "rectangle",
+      "square",
+      "trapezoid"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 703
+  }
+}

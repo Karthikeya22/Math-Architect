@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.3.FR.2.1",
+  "grade": "3",
+  "strand": "Fractions",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "Which point shows 63 plotted correctly?",
+  "options": [
+    "Point AB. Point BC. Point CD. Point D",
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

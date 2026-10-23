@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.8.DP.2.2",
+  "grade": "8",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "*The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Data Analysis and Probability Represent and find probabilities of repeated experiments.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

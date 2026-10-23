@@ -1,0 +1,45 @@
+{
+  "standardCode": "MA.1.NSO.1.4",
+  "grade": "1",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Ask a student to think of a two digit number that has 3 tens in it. Write that number on an index card. Ask another student to place the number anywhere on the piece of string (open number line) using a clothespin. Ask a student to think of a two digit number that has 5 tens in it. Write that number on an index card. Ask another student to place the number on the piece of string (open number line) using a clothespin. Ask the class if it should be placed to the right or the left of the first number. Ask “Is this number more or less than our first number?” Ask a student to think of a two digit number that has 9 ones in it that would come after the 5 tens number. Write that number on an index card. Ask another student to place the number on the piece of string using a clothespin. Ask the class if it is greater than, less than, or equal to the first number on the number line. Ask the class if adjustments are needed to make room for the new number on the open number line (string). Make adjustments as needed. Ask a student to think of a number that would come between the first and second number. Write that number on an index card. Ask the class “Should this number be placed closer to the first number or second number? How do you know?” Ask the class if adjustments are needed to the number line more accurate now that they have all the numbers placed. Make adjustments as needed. Ask students to independently come up with at least three different true statements from the numbers on the class number line using >, < or = symbols. After giving students time to come up with statements, call on students and write their findings and ask students to evaluate if they are in fact true statements. Remind students to come up with both greater than and less than statements.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [
+      "Count: 3"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: Count: 3.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "Count: 3",
+    "values": [
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 1,
+    "gridCols": 3,
+    "rowColors": [
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 756
+  }
+}

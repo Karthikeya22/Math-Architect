@@ -1,0 +1,35 @@
+{
+  "standardCode": "MA.5.M.2.1",
+  "grade": "5",
+  "strand": "Measurement",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Jordan was saving his money to buy a remote control motorcycle. He saved $37.81 from his allowance and received two checks worth $10.00 each for his birthday. Jordan also has a half dollar coin collection with 30 coins in it. If the motorcycle costs $72.29, does Jordan have enough money to buy the motorcycle?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": {
+    "visualType": "fraction_bar",
+    "values": [],
+    "rows": [],
+    "shadedParts": 1,
+    "totalParts": 2
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 336
+  }
+}

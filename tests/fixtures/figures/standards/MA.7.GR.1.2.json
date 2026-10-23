@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.7.GR.1.2",
+  "grade": "7",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Within this benchmark, the expectation is not to find areas of figures on the coordinate plane or to find missing dimensions.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

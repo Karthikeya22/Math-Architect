@@ -1,0 +1,39 @@
+{
+  "standardCode": "MA.1.GR.1.3",
+  "grade": "1",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Provide pattern blocks to students; be sure students get at least six triangles, two squares, two trapezoids and one hexagon. Read the directions to students and give students time to explore to find possible solutions. After students have come up with solutions, have discussion around whether all students found the same solution or if they had different solutions. Ask students if they could come up with a different response.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of triangle and square and trapezoid and hexagon.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "triangle",
+      "square",
+      "trapezoid",
+      "hexagon"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 792
+  }
+}

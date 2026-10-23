@@ -1,0 +1,49 @@
+{
+  "standardCode": "MA.912.FL.2.1",
+  "grade": "912",
+  "strand": "Financial Literacy",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "A start-up company that develops online games is working with their accountant to begin a budget for the next three years. Develop a list of items that the company could consider to be their capital assets and their liquid assets, and include potential values that would represent each item. A start-up company that develops online games is working with their accountant to begin a budget for the next three years. Develop a list of items that the company could consider to be their capital assets and their liquid assets, and include potential values that would represent each item.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [
+      "3 red + 3 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 3 red + 3 blue.",
+    "reason": "Financial Literacy standard uses a table, graph, or financial document."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "3 red + 3 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 3,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1227
+  }
+}

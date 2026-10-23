@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.3.GR.2.2",
+  "grade": "3",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes covering the figure with unit squares, a rectangular array or applying a formula.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of square.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapeName": "square"
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 277
+  }
+}

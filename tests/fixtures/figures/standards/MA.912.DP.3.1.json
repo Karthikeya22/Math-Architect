@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.DP.3.1",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Complete the frequency table below based on data collected randomly from 1000 people at the local county fair. Is there an association between being a man and owning a motorcycle? *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Data Analysis and Probability Solve problems involving categorical data.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "bar_chart",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

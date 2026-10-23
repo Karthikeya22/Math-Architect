@@ -1,0 +1,64 @@
+{
+  "standardCode": "MA.912.AR.2.8",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Fred has $9 in his pocket and wants to buy chips and candy for a movie he is going to watch. Chips cost $1.50 per bag and candy is $1 a box. Graph the solution set that represents the amount of chips and candy Fred can buy. Fred has $9 in his pocket and wants to buy chips and candy for a movie he is going to watch. Chips cost $1.50 per bag and candy is $1 a box. Graph the solution set that represents the amount of chips and candy Fred can buy. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Algebraic Reasoning Write, solve and graph linear equations, functions and inequalities in one and two variables.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "9 red + 1 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 9 red + 1 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "9 red + 1 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 9,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 2903
+  }
+}

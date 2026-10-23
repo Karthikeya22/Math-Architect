@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.F.3.4",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Let f be the function that assigns to a temperature in degrees Celsius its equivalent in degrees Fahrenheit. Let g be the function that assigns to a temperature in degrees Kelvin its equivalent in degrees Celsius. Part A. Explain what x and f(g(x)) represent in terms of temperatures, or explain why there is no reasonable representation. Part B. Explain what x and g(f(x)) represent in terms of temperatures, or explain why there is no reasonable representation. Part C. Given that f(x) = 95x + 32 and g(x) = x − 273, find an expression for f(g(x)). Part D. Find an expression for the function h which assigns to a temperature in degrees Fahrenheit its equivalent in degrees Kelvin. Let f be the function that assigns to a temperature in degrees Celsius its equivalent in degrees Fahrenheit. Let g be the function that assigns to a temperature in degrees Kelvin its equivalent in degrees Celsius.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

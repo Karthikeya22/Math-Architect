@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.912.F.1.3",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Jorge invests an amount of $5,000 in a money market account at an annual interest rate of 5%, compounded monthly. The function f(x) = 5000(1 + 0.0512)12x, represents the value of the investment after x years. Part A. Find the average rate of change in the value of Jorge’s investment between year 5 and year 7, between year 10 and year 12, and between year 15 and year 17. Part B. What do you notice about the change in value of the investment over each interval?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Ones",
+      "Tenths",
+      "Hundredths",
+      "Thousandths"
+    ],
+    "rows": [
+      [
+        "0",
+        "0",
+        "5",
+        "1"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1654
+  }
+}

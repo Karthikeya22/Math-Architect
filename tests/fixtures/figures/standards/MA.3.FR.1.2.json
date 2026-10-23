@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.3.FR.1.2",
+  "grade": "3",
+  "strand": "Fractions",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction emphasizes conceptual understanding through the use of manipulatives or visual models, including circle graphs, to represent fractions.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

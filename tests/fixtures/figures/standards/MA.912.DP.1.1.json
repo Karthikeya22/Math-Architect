@@ -1,0 +1,33 @@
+{
+  "standardCode": "MA.912.DP.1.1",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "The number of cars sold in a week at a large car dealership over a 20-week period is given below.",
+  "options": [
+    "16 12 8 7 26 32 15 51 29 45 19 11 6 15 32 18 43 31 23 23",
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

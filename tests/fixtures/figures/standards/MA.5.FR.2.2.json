@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.5.FR.2.2",
+  "grade": "5",
+  "strand": "Fractions",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Extend previous understanding of multiplication to multiply a fraction by a fraction, including mixed numbers and fractions greater than 1, with procedural reliability.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.3.DP.1.1",
+  "grade": "3",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Matthew surveyed his classmates' favorite animals and displayed the data using a pictograph. The favorite animals are displayed below. Which pictograph correctly displays the data Matthew collected? Data Analysis and Probability Collect, represent and interpret numerical and categorical data.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

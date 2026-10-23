@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.4.DP.1.3",
+  "grade": "4",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "The last 5 putt lengths, in feet, for the 18th hole of a golf tournament are shown below.",
+  "options": [
+    "8 feet",
+    "9 feet",
+    "12 feet",
+    "15 feet"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

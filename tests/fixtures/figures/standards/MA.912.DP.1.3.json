@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.912.DP.1.3",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Data from a certain city shows that the size of an individual’s home is positively correlated with the individual's life expectancy. Which of the following factors would best explain why this correlation does not necessarily imply that the size of an individual’s home is the main cause of increased life expectancy? a. Larger homes have more safety features and amenities, which lead to increased life expectancy. b. The ability to afford a larger home and better healthcare is a direct effect of having more wealth. c. The citizens were not selected at random for the study. d. There are more people living in small homes than large homes in the city. Some responses may have been lost during the data collection process.",
+  "options": [
+    "Larger homes have more safety features and amenities, which lead to increased life expectancy.",
+    "The ability to afford a larger home and better healthcare is a direct effect of having more wealth.",
+    "The citizens were not selected at random for the study.",
+    "There are more people living in small homes than large homes in the city. Some responses may have been lost during the data collection process."
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "bar_chart",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

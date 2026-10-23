@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.AR.2.6",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "The expression 45h + 225 represents the total cost in dollars of renting a large party tent from a local rental store for h hours. Jamal’s parents are willing to spend between $500 and $750 for the tent. Part A. Write an inequality to represent the possible lengths of time the tent can be rented. Part B. Using your inequality in Part A, what is one possible length of time the tent could be rented? Give your answer in number of hours. Part A. Write an inequality to represent the possible lengths of time the tent can be rented. Part B. Using your inequality in Part A, what is one possible length of time the tent could be rented? Give your answer in number of hours.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

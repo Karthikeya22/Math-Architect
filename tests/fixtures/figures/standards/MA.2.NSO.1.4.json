@@ -1,0 +1,48 @@
+{
+  "standardCode": "MA.2.NSO.1.4",
+  "grade": "2",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "Select the numbers that would round to 50 when rounded to the nearest 10.? 42? 49? 44? 45? 58? 51 Number Sense and Operations Understand the place value of three-digit numbers.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "onesCount": 0,
+    "tensCount": 5
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 8019
+  }
+}

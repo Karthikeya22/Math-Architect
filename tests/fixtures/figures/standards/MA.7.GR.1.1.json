@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.7.GR.1.1",
+  "grade": "7",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Within this benchmark, the expectation is not to memorize area formulas for trapezoids, parallelograms and rhombi.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of trapezoid and parallelogram.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "trapezoid",
+      "parallelogram"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 396
+  }
+}

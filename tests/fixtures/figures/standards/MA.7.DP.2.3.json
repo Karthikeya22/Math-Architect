@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.7.DP.2.3",
+  "grade": "7",
+  "strand": "Data Analysis and Probability",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Simple experiments include tossing a fair coin, rolling a fair die, picking a card randomly from a deck, picking marbles randomly from a bag and spinning a fair spinner.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

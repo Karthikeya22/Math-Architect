@@ -1,0 +1,44 @@
+{
+  "standardCode": "MA.3.NSO.1.4",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Use the following digits to create two different 3-digit numbers. Then, round each of your numbers to the nearest ten and the nearest hundred. Daniel’s mom says she spent about $600 on groceries this month. Isabella practices her guitar every week. She tracked how many minutes she practiced each month in her journal. This table lists the total minutes she practiced this school year so far.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1491
+  }
+}

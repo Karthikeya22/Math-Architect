@@ -1,0 +1,45 @@
+{
+  "standardCode": "MA.1.GR.1.1",
+  "grade": "1",
+  "strand": "Geometric Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Identify, compare and sort two- and three-dimensional figures based on their defining attributes. Figures are limited to circles, semi-circles, triangles, rectangles, squares, trapezoids, hexagons, spheres, cubes, rectangular prisms, cones and cylinders.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of triangle and rectangle and square and trapezoid and hexagon and sphere and cube and rectangular_prism and cone and cylinder.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "triangle",
+      "rectangle",
+      "square",
+      "trapezoid",
+      "hexagon",
+      "sphere",
+      "cube",
+      "rectangular_prism",
+      "cone",
+      "cylinder"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 716
+  }
+}

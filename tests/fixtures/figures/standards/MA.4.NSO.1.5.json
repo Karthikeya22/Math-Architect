@@ -1,0 +1,35 @@
+{
+  "standardCode": "MA.4.NSO.1.5",
+  "grade": "4",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Select all the values that would make the comparison 0.6 > __ a true statement.",
+  "options": [
+    "0.06",
+    "0.70",
+    "0.8",
+    "0.5",
+    "0.4"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

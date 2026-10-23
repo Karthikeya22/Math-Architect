@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.1.M.1.1",
+  "grade": "1",
+  "strand": "Measurement",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Provide students with several objects to measure, such as a bouncy ball, paper clip, toy car or pencil. Use a table, like the one below to record answers for each part. Enrichment Task 1 (MTR.7.1) Extend Instructional Task 2 Part D by having students estimate centimeters before measuring.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

@@ -166,6 +166,192 @@ const FIXTURES: Fixture[] = [
   },
 ];
 
+type StandardFixtureJson = {
+  standardCode: string;
+  grade: string;
+  strand: string;
+  label: string;
+  stem: string;
+  options: string[];
+  expected: {
+    figureRequired: boolean;
+    family: string;
+    labels: string[];
+  };
+  visualSpec: VisualSpec | null;
+  render: {
+    status: string;
+    coveragePct: number | null;
+    missing: string[];
+    leaks: string[];
+    svgLength: number;
+  };
+};
+
+const STANDARD_FIXTURE_MODULES = import.meta.glob<{ default: StandardFixtureJson }>(
+  '../../tests/fixtures/figures/standards/*.json',
+  { eager: true },
+);
+
+const STANDARD_FIXTURES: StandardFixtureJson[] = Object.values(STANDARD_FIXTURE_MODULES).map(
+  (module) => module.default,
+);
+
+const STATUS_COLORS: Record<string, string> = {
+  pass: '#059669',
+  no_spec: '#d97706',
+  missing_labels: '#dc2626',
+  leak: '#dc2626',
+  fail: '#dc2626',
+};
+
+const StandardFixtureGallery: React.FC = () => {
+  const [status, setStatus] = useState('all');
+  const [family, setFamily] = useState('all');
+  const [query, setQuery] = useState('');
+
+  const families = useMemo(
+    () => [...new Set(STANDARD_FIXTURES.map((fixture) => fixture.expected.family))].sort(),
+    [],
+  );
+
+  const summary = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const fixture of STANDARD_FIXTURES) {
+      counts[fixture.render.status] = (counts[fixture.render.status] || 0) + 1;
+    }
+    return counts;
+  }, []);
+
+  const filtered = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    return STANDARD_FIXTURES.filter((fixture) => {
+      if (status !== 'all' && fixture.render.status !== status) return false;
+      if (family !== 'all' && fixture.expected.family !== family) return false;
+      if (!needle) return true;
+      return `${fixture.standardCode} ${fixture.stem} ${fixture.expected.family}`
+        .toLowerCase()
+        .includes(needle);
+    }).slice(0, 120);
+  }, [status, family, query]);
+
+  return (
+    <section style={{ marginTop: 32, padding: 16, border: '1px solid #cbd5e1', borderRadius: 12 }}>
+      <h2 style={{ margin: 0, marginBottom: 8 }}>Standard example fixtures</h2>
+      <p style={{ color: '#475569', marginTop: 0 }}>
+        Replays every official B.E.S.T. example fixture through the deterministic renderer. Cards
+        marked <strong>no_spec</strong> are standards whose official example has no concrete model
+        for the reconcilers to build.
+      </p>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+        <span style={{ fontSize: 13, color: '#334155' }}>
+          {STANDARD_FIXTURES.length} fixtures ·{' '}
+          {Object.entries(summary)
+            .sort()
+            .map(([key, value]) => `${key} ${value}`)
+            .join(' · ')}
+        </span>
+        <label style={{ fontSize: 13 }}>
+          Status{' '}
+          <select value={status} onChange={(event) => setStatus(event.target.value)}>
+            <option value="all">all</option>
+            {Object.keys(summary)
+              .sort()
+              .map((key) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+          </select>
+        </label>
+        <label style={{ fontSize: 13 }}>
+          Family{' '}
+          <select value={family} onChange={(event) => setFamily(event.target.value)}>
+            <option value="all">all</option>
+            {families.map((key) => (
+              <option key={key} value={key}>
+                {key}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label style={{ fontSize: 13 }}>
+          Search{' '}
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="MA.4.GR.2.2 or phrase"
+            style={{ padding: '4px 8px' }}
+          />
+        </label>
+      </div>
+      <p style={{ fontSize: 12, color: '#64748b' }}>
+        Showing {filtered.length} of {STANDARD_FIXTURES.length} filtered fixtures.
+      </p>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+          gap: 16,
+        }}
+      >
+        {filtered.map((fixture) => {
+          const normalized = fixture.visualSpec ? normalizeVisualSpec(fixture.visualSpec) : null;
+          const svg = normalized ? renderDeterministicVisualSvg(normalized) : null;
+          return (
+            <article
+              key={fixture.standardCode}
+              style={{ border: '1px solid #cbd5e1', borderRadius: 12, padding: 12, background: '#fff' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
+                <strong>{fixture.standardCode}</strong>
+                <span
+                  style={{
+                    color: STATUS_COLORS[fixture.render.status] || '#334155',
+                    fontWeight: 600,
+                    fontSize: 13,
+                  }}
+                >
+                  {fixture.render.status}
+                  {fixture.render.coveragePct === null ? '' : ` · ${fixture.render.coveragePct}%`}
+                </span>
+              </div>
+              <div style={{ fontSize: 12, color: '#64748b', margin: '4px 0' }}>
+                grade {fixture.grade} · {fixture.expected.family} · {fixture.label}
+              </div>
+              <div style={{ fontSize: 12, color: '#475569', marginBottom: 8 }}>
+                <em>{fixture.stem}</em>
+              </div>
+              <div
+                style={{ background: '#f8fafc', borderRadius: 8, minHeight: 80 }}
+                dangerouslySetInnerHTML={{
+                  __html: svg || '<div style="padding:16px;color:#94a3b8">no spec</div>',
+                }}
+              />
+              {fixture.render.missing.length ? (
+                <div style={{ marginTop: 8, fontSize: 12, color: '#dc2626' }}>
+                  missing: {fixture.render.missing.join(', ')}
+                </div>
+              ) : null}
+              {fixture.render.leaks.length ? (
+                <div style={{ marginTop: 4, fontSize: 12, color: '#dc2626' }}>
+                  leaks: {fixture.render.leaks.join(', ')}
+                </div>
+              ) : null}
+              <details>
+                <summary style={{ cursor: 'pointer', fontSize: 12 }}>spec JSON</summary>
+                <pre style={{ fontSize: 11, overflowX: 'auto' }}>
+                  {JSON.stringify(fixture.visualSpec, null, 2)}
+                </pre>
+              </details>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
 const PolicyDemo: React.FC = () => {
   const [code, setCode] = useState('MA.4.FR.2.1');
   const policy = useMemo(() => getPreferredVisualPolicy(code), [code]);
@@ -328,6 +514,7 @@ const VisualGalleryRoute: React.FC = () => {
 
       <PolicyDemo />
       <SpecTester />
+      <StandardFixtureGallery />
     </main>
   );
 };

@@ -1,0 +1,47 @@
+{
+  "standardCode": "MA.912.AR.3.4",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Within the Algebra 1 course, a graph, written description or table of values must include the vertex and two points that are equidistant from the vertex.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [
+      "1 red + 2 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 1 red + 2 blue.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "1 red + 2 blue",
+    "values": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 2,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 867
+  }
+}

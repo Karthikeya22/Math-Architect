@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.1.NSO.1.2",
+  "grade": "1",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Kourtney wrote a number in expanded form: 90 + 4. What is the standard form of her number?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "onesCount": 0,
+    "tensCount": 9
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 14299
+  }
+}

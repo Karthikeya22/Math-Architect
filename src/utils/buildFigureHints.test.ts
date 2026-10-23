@@ -50,6 +50,22 @@ describe('buildFigureHints', () => {
     expect(hints.join(' ')).not.toMatch(/\b13\b/);
   });
 
+  it('builds place-value hints (not "category labels") for a place-value chart', () => {
+    const hints = buildFigureHints(
+      {
+        text: 'In the number 3.38, how does the value of the 3 in the ones place compare to the 3 in the tenths place?',
+        options: ['10 times', '1/10', '100 times', 'equal'],
+        correctAnswerIndex: 0,
+        visualSpec: { visualType: 'table', columns: ['Ones', 'Tenths', 'Hundredths', 'Thousandths'], rows: [['3', '3', '8', '0']] },
+      },
+      'Grade 5',
+    );
+    const text = hints.join(' ');
+    expect(text).toMatch(/place/i);
+    expect(text).not.toMatch(/category/i);
+    expect(text).not.toMatch(/10 times/);
+  });
+
   it('builds fraction hints without naming the correct option', () => {
     const hints = buildFigureHints(
       {

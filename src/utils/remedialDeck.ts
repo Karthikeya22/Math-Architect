@@ -1,4 +1,6 @@
 import type { RemedialSlide, RemedialSlideLayout, RemedialVocabEntry } from '../types';
+import { formatLcLearningComponentsForPrompt } from '../lc/learningComponents';
+import { getLcSkillPromptPack } from '../lc/skills';
 
 export const SLIDE_LAYOUTS: readonly RemedialSlideLayout[] = [
   'gap_overview',
@@ -124,6 +126,9 @@ export const buildRemedialDeckPrompt = ({
         .join('\n')
     : 'No individual answers available. Work from the gaps above.';
 
+  const lcSkills = formatLcLearningComponentsForPrompt(String(standard.code || ''));
+  const lcPedagogy = getLcSkillPromptPack('slides');
+
   return `You are an experienced ${standard.grade} math interventionist writing a short reteach deck that a teacher will project and talk through with one student or a small group.
 
 STANDARD: ${standard.code} (${standard.grade})
@@ -134,6 +139,9 @@ Teaching strategies that work for this standard:
 ${bulletList(standard.purposeAndStrategies)}
 Known misconceptions:
 ${bulletList(standard.misconceptions)}
+Skill targets for this standard (use silently; do not name any external source):
+${lcSkills || 'None listed — stay faithful to the standard description and clarifications.'}
+${lcPedagogy}
 
 DIAGNOSED GAPS:
 ${gaps || 'No gaps listed.'}

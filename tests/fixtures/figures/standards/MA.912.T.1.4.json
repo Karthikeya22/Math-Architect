@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.912.T.1.4",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Problems include right triangles, heights inside of a triangle and heights outside of a triangle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of right_triangle and triangle.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "right_triangle",
+      "triangle"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 419
+  }
+}

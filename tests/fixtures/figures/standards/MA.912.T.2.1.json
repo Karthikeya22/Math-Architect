@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.T.2.1",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Given any positive or negative angle measure in degrees or radians, identify its corresponding angle measure between 0&deg; and 360&deg; or between 0 and 2&pi;. Convert between degrees and radians.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

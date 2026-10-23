@@ -1,0 +1,83 @@
+{
+  "standardCode": "MA.912.DP.1.2",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "The histogram below shows the efficiency level (in miles per gallons) of 110 cars. Part A. Does this display univariate or bivariate data? Part B. Is the data numerical or categorical? Part C. What do the different quantities within the data display mean in terms of the context of the situational data? Part D. How many cars have an efficiency between 15 and 20 miles per gallon? How many cars have an efficiency more than 20 miles per gallon? What percentage of cars have an efficiency less than 20 miles per gallon? How many cars have an efficiency between 15 and 20 miles per gallon? How many cars have an efficiency more than 20 miles per gallon? What percentage of cars have an efficiency less than 20 miles per gallon?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [
+      "20 red + 20 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 20 red + 20 blue.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "20 red + 20 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 20,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 6579
+  }
+}

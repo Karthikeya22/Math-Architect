@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.8.NSO.1.1",
+  "grade": "8",
+  "strand": "Number Sense and Operations",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes the use of number line and rational number approximations, and recognizing pi (π) as an irrational number.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

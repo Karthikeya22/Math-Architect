@@ -1,0 +1,86 @@
+{
+  "standardCode": "MA.4.NSO.2.5",
+  "grade": "4",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Marianela bought 33 packages of pink erasers and 25 packages of glow-in-the-dark erasers for the school store. Packages of pink erasers cost $12 each and packages of glow-in-the-dark erasers cost $19 each. Marianela says she spent about $850, is her answer reasonable? Explain.",
+  "options": [
+    "Yes, because (30 × $10) + (25 × $20) = $800.",
+    "Yes, because (30 × 25) + ($10 × $20) = $950.",
+    "No, because (30 × 30) + ($10 × $20) = $1,100.",
+    "No, because (30 + 30) × ($10 × $20) = $1,200."
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [
+      "12 red + 19 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 12 red + 19 blue.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "12 red + 19 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 19,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 6039
+  }
+}

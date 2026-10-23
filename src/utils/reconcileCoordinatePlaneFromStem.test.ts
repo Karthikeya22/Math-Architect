@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { applyQuestionVisualReconcilers } from './reconcileVisualFromStem';
 import {
+  extractAllCoordinatesFromText,
+  extractBareCoordinatesFromText,
   extractLabeledCoordinatesFromText,
   reconcileCoordinatePlaneFromStem,
 } from './reconcileCoordinatePlaneFromStem';
@@ -26,8 +28,38 @@ describe('extractLabeledCoordinatesFromText', () => {
 });
 
 describe('reconcileCoordinatePlaneFromStem', () => {
+  it('extracts bare coordinate pairs only when the stem asks to graph or pass through them', () => {
+    expect(extractBareCoordinatesFromText('A line passes through (0, 3) and (2, 7).')).toEqual([
+      { label: '', x: 0, y: 3 },
+      { label: '', x: 2, y: 7 },
+    ]);
+    expect(extractBareCoordinatesFromText('Which interval is (2, 5)?')).toEqual([]);
+  });
+
+  it('merges labeled and bare points without duplicating positions', () => {
+    const points = extractAllCoordinatesFromText(
+      'Plot A(2, 3) and the points (4, -1) and (2, 3).',
+    );
+    expect(points).toEqual([
+      { label: 'A', x: 2, y: 3 },
+      { label: '', x: 4, y: -1 },
+    ]);
+  });
+
+  it('builds a coordinate plane for unlabeled points on a line', () => {
+    const q: any = {
+      text: 'A line passes through (0, 3) and (2, 7). What is the slope of the line?',
+      visualSpec: null as any,
+      imagePrompt: 'draw a line',
+    };
+    reconcileCoordinatePlaneFromStem(q);
+    expect(q.visualSpec?.visualType).toBe('coordinate_plane');
+    expect(q.visualSpec?.points).toHaveLength(2);
+    expect(q.imagePrompt).toBe('');
+  });
+
   it('builds coordinate_plane and clears imagePrompt', () => {
-    const q = {
+    const q: any = {
       text: 'Rectangle JKLM has vertices J(-3, -1), K(-1, -1), L(-1, -4), and M(-3, -4). If the rectangle is reflected across the y-axis, what are the coordinates of vertex L\'?',
       visualSpec: { visualType: 'geometric_shape', shapeName: 'rectangle' },
       imagePrompt: 'Draw a rectangle on a white background',
@@ -41,11 +73,11 @@ describe('reconcileCoordinatePlaneFromStem', () => {
   });
 
   it('prefers deterministic SVG after full reconciler pass', () => {
-    const q = {
+    const q: any = {
       text: 'Rectangle JKLM has vertices J(-3, -1), K(-1, -1), L(-1, -4), and M(-3, -4).',
       options: ['(1, -4)', '(-1, 4)', '(1, 4)', '(-4, -1)'],
       correctAnswerIndex: 0,
-      visualSpec: null as { visualType: string } | null,
+      visualSpec: null as any,
       imagePrompt: 'generic rectangle',
     };
     applyQuestionVisualReconcilers(q);

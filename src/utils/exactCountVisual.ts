@@ -14,6 +14,33 @@ const blocksExactCountReconcile = (visualType: string | undefined): boolean =>
 const COLOR_NAMES = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'] as const;
 type ColorName = (typeof COLOR_NAMES)[number];
 
+/**
+ * Structural / geometry nouns are never countable objects. When one appears
+ * after a count, the stem is about fractions, measurement or shapes — not a
+ * colored-addend counting story — so the addend heuristics must not fire.
+ * (Regression: "divided into 3 equal rows … and 5 equal columns" was parsed as
+ * "3 red + 5 blue + 4 green".)
+ */
+const STRUCTURAL_NOUNS = new Set([
+  'equal', 'equals', 'equally',
+  'row', 'rows', 'column', 'columns',
+  'part', 'parts', 'portion', 'portions',
+  'side', 'sides',
+  'whole', 'half', 'halves',
+  'third', 'thirds', 'fourth', 'fourths', 'quarter', 'quarters',
+  'fifth', 'fifths', 'sixth', 'sixths', 'seventh', 'sevenths',
+  'eighth', 'eighths', 'ninth', 'ninths', 'tenth', 'tenths',
+  'shaded', 'shade', 'shading',
+  'square', 'squares', 'rectangle', 'rectangles', 'triangle', 'triangles',
+  'area', 'perimeter', 'region', 'regions', 'overlap', 'overlaps',
+  'fraction', 'fractions', 'product', 'factors',
+  'grid', 'cell', 'cells', 'length', 'width', 'height',
+]);
+
+/** Fraction, multiplication or geometry context: never a plain colored-addend story. */
+const FRACTION_GEOMETRY_STEM =
+  /\d+\s*\/\s*\d+|\d\s*[×x*]\s*\d|\bmultiply\w*\b|\bproduct\b|\bfraction\w*\b|\barea\b|\bperimeter\b|\bshad(?:e|ed|ing)\b|\boverlap\w*\b|\bequal\w*\b|\bcolumns?\b|\brows?\b|\bsquares?\b|\brectangles?\b|\btriangles?\b|\bwhole\b/i;
+
 export type ColoredQuantityGroup = {
   count: number;
   color: ColorName;
@@ -161,6 +188,7 @@ const parseCountToken = (token: string): number | null => {
 
 export const extractColoredQuantityGroups = (text: string): ColoredQuantityGroup[] | null => {
   const stem = String(text || '');
+  if (FRACTION_GEOMETRY_STEM.test(stem)) return null;
   const groups: ColoredQuantityGroup[] = [];
   const seen = new Set<string>();
 
@@ -219,6 +247,71 @@ const MEASUREMENT_NOUNS = new Set([
   'mm',
 ]);
 
+/**
+ * Units and quantities that cannot be added across different nouns:
+ * "5 containers and 3 quarts" is a conversion problem, not a counting problem.
+ */
+const UNIT_NOUNS = new Set([
+  ...MEASUREMENT_NOUNS,
+  'gallon',
+  'gallons',
+  'quart',
+  'quarts',
+  'pint',
+  'pints',
+  'cup',
+  'cups',
+  'liter',
+  'liters',
+  'litre',
+  'litres',
+  'milliliter',
+  'milliliters',
+  'ounce',
+  'ounces',
+  'pound',
+  'pounds',
+  'kilogram',
+  'kilograms',
+  'gram',
+  'grams',
+  'hour',
+  'hours',
+  'minute',
+  'minutes',
+  'second',
+  'seconds',
+  'dollar',
+  'dollars',
+  'cent',
+  'cents',
+]);
+
+/** "each container holds 3 quarts" is a rate, not two groups to add. */
+const CONTAINER_RATE_STEM =
+  /\b(?:each|per)\b[^.!?]*\b(?:holds?|contains?|has|weighs?|measures?|carries?)\b/i;
+
+const UNIT_WORD_PATTERN =
+  /\b(?:gallons?|quarts?|pints?|cups?|liters?|litres?|milliliters?|millilitres?|ounces?|pounds?|kilograms?|grams?|feet|foot|inches?|yards?|meters?|metres?|centimeters?|centimetres?|millimeters?|millimetres?|hours?|minutes?|seconds?|days?|weeks?|dollars?|cents?)\b/gi;
+
+/** Two different measurement units in one stem signal a conversion task. */
+const hasMixedUnits = (stem: string): boolean => {
+  const found = (stem.match(UNIT_WORD_PATTERN) ?? []).map((word) =>
+    word.toLowerCase().replace(/s$/, ''),
+  );
+  return new Set(found).size >= 2;
+};
+
+/**
+ * "each/per/every" plus two quantities is a rate or multiplication story
+ * ("5 trays with 3 cookies each"), not two groups to add. A dots picture of
+ * the two numbers would imply the wrong operation.
+ */
+const hasRateContext = (stem: string): boolean => {
+  if (!/\b(?:each|per|every)\b/i.test(stem)) return false;
+  return (stem.match(/\b\d+(?:\.\d+)?\b/g) ?? []).length >= 2;
+};
+
 const SCENE_MEASUREMENT_STEM =
   /\b(ladder|wall|ground|floor|roof|hypotenuse|pythagor|right angle|right-angle|right triangle|feet away|meters away)\b/i;
 
@@ -236,6 +329,7 @@ const extractCountNounFromSegment = (segment: string): { count: number; noun: st
   if (count === null || !noun) return null;
   if (COLOR_NAMES.includes(noun as ColorName)) return null;
   if (MEASUREMENT_NOUNS.has(noun)) return null;
+  if (STRUCTURAL_NOUNS.has(noun)) return null;
   return { count, noun };
 };
 
@@ -244,6 +338,8 @@ export const extractUncoloredAddendGroups = (text: string): ColoredQuantityGroup
   const stem = String(text || '');
   if (extractColoredQuantityGroups(stem)) return null;
   if (SCENE_MEASUREMENT_STEM.test(stem)) return null;
+  if (FRACTION_GEOMETRY_STEM.test(stem)) return null;
+  if (CONTAINER_RATE_STEM.test(stem) || hasRateContext(stem)) return null;
   if (!/\b(and|plus|altogether|in all|how many|total|together)\b/i.test(stem)) return null;
 
   const pairMatch = stem.match(
@@ -255,7 +351,10 @@ export const extractUncoloredAddendGroups = (text: string): ColoredQuantityGroup
   if (pairMatch) {
     const countA = parseCountToken(pairMatch[1]);
     const countB = parseCountToken(pairMatch[3]);
+    const nounA = String(pairMatch[2] || '').toLowerCase();
+    const nounB = String(pairMatch[4] || '').toLowerCase();
     if (countA !== null && countB !== null) {
+      if (nounA !== nounB && (UNIT_NOUNS.has(nounA) || UNIT_NOUNS.has(nounB))) return null;
       return [
         { count: countA, color: UNCOLORED_ADDEND_COLORS[0] },
         { count: countB, color: UNCOLORED_ADDEND_COLORS[1] },
@@ -272,6 +371,12 @@ export const extractUncoloredAddendGroups = (text: string): ColoredQuantityGroup
     .filter((entry): entry is { count: number; noun: string } => entry !== null);
   if (parsed.length < 2) return null;
   if (parsed.every((entry) => entry.noun === parsed[0].noun) && MEASUREMENT_NOUNS.has(parsed[0].noun)) {
+    return null;
+  }
+  // Mixing a unit with another noun ("5 containers and 3 quarts") means the
+  // student must convert or multiply, not add the two counts as objects.
+  const nouns = new Set(parsed.map((entry) => entry.noun));
+  if (nouns.size > 1 && parsed.some((entry) => UNIT_NOUNS.has(entry.noun))) {
     return null;
   }
 
@@ -460,10 +565,19 @@ export const buildExactCountImagePrompt = (
   return null;
 };
 
+const DATA_DISPLAY_STEM = /\b(?:bar graph|bar chart|line plot|dot plot|picture graph|pictograph|tally|table|frequency)\b/i;
+
 export const reconcileExactCountObjectsFromStem = (question: QuestionVisualFields): void => {
   const stem = String(question.text || '');
   const vs = question.visualSpec;
   if (blocksExactCountReconcile(vs?.visualType)) return;
+  // Rate and conversion problems are not countable-object stories. A ten-frame
+  // of the first number (or an array of container and quart counts) would show
+  // a picture that has nothing to do with the question.
+  if (CONTAINER_RATE_STEM.test(stem) || hasRateContext(stem)) return;
+  if (hasMixedUnits(stem)) return;
+  // Data-display items need the display itself (bar_chart / line_plot / table), not counting dots.
+  if (DATA_DISPLAY_STEM.test(stem)) return;
 
   const coloredGroups = extractColoredQuantityGroups(stem) ?? extractUncoloredAddendGroups(stem);
   if (coloredGroups) {
@@ -534,6 +648,8 @@ export const reconcileWordPlaceValueFromStem = (question: QuestionVisualFields):
     /\bplace value\b|\bexpanded form\b|\bstandard form\b|\bword form\b|\bnumber\s+word\b|\bwritten in\b|\bdigit\b/i;
   if (!trigger.test(stem)) return;
   if (/\b\d+\.\d+\b/.test(stem)) return;
+  // "7/2 in word form" is about fractions; ten-frames of the numerator would mislead.
+  if (/\d\s*\/\s*\d|\bfractions?\b|\b(?:halves|thirds|fourths|fifths|sixths|sevenths|eighths|ninths|tenths|twelfths|hundredths)\b/i.test(stem)) return;
 
   const prefersWordNumber =
     /\bnumber\s+word\b|\bstandard\s+form\b|\bword\s+form\b/i.test(stem);

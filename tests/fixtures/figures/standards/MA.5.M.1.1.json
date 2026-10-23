@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.5.M.1.1",
+  "grade": "5",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "Using the ruler provided, what is the length of the pencil to the nearest 1/8 inch? Measurement Convert measurement units to solve multi-step problems.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": {
+    "visualType": "fraction_bar",
+    "values": [],
+    "rows": [],
+    "shadedParts": 1,
+    "totalParts": 8
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 910
+  }
+}

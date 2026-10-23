@@ -1,0 +1,49 @@
+{
+  "standardCode": "MA.4.NSO.1.1",
+  "grade": "4",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "The clues below describe the 4 digits of a mystery number that contains the digits 3,4,7,8. The value of the 8 is 10 times the value of the 8 in 3,518. The value of the 7 is 100 times the value of the 7 in 1,273. The value of the 4 is 100 times the value of the 4 in 7,284. The missing place value is the 3. What is the number?",
+  "options": [
+    "7,483",
+    "8,743",
+    "7,834",
+    "4,738"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1541
+  }
+}

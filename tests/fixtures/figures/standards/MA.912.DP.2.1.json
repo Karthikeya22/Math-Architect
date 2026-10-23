@@ -1,0 +1,47 @@
+{
+  "standardCode": "MA.912.DP.2.1",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Two companies are posting job openings for entry level workers. Both companies post their average salary as $35,000. Company A has a mean of $35,000 and a median of $17,000. Company B has a mean of $35,000 and a median of $35,000. Which company would be a better company to work for and why? Two companies are posting job openings for entry level workers. Both companies post their average salary as $35,000. Company A has a mean of $35,000 and a median of $17,000. Company B has a mean of $35,000 and a median of $35,000. Which company would be a better company to work for and why?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [
+      "2 red + 2 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 2 red + 2 blue.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "2 red + 2 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 2,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 917
+  }
+}

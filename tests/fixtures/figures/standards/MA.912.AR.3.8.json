@@ -1,0 +1,49 @@
+{
+  "standardCode": "MA.912.AR.3.8",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 3",
+  "stem": "A startup tech company aims to optimize its quarterly revenue during the initial year of operation. They have identified the function R(x) = -2x2 + 150x - 200, representing the revenue they can generate in thousands of dollars based on the price per software license, denoted in dollars. Graph the function and determine at what price per software license maximizes the company's quarterly revenue? *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Algebraic Reasoning Write, solve and graph quadratic equations, functions and inequalities in one and two variables.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Thousands",
+      "Hundreds",
+      "Tens",
+      "Ones"
+    ],
+    "rows": [
+      [
+        "0",
+        "2",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1648
+  }
+}

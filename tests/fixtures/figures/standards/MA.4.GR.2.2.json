@@ -1,0 +1,45 @@
+{
+  "standardCode": "MA.4.GR.2.2",
+  "grade": "4",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Two rectangles have area measurements of 48 square units. They have different perimeters.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [
+      "48 square units"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of rectangle and rectangle. Labels: 48 square units.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "figures": [
+      {
+        "shape": "rectangle",
+        "areaLabel": "48 square units"
+      },
+      {
+        "shape": "rectangle",
+        "areaLabel": "48 square units"
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 796
+  }
+}

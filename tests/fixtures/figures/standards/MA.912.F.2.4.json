@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.912.F.2.4",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "In the graph below, function g is obtained from function f through a sequence of transformations. Find an equation for g. In the graph below, function g is obtained from function f through a sequence of transformations. Find an equation for g. In the graph below, function is obtained from function through a sequence of transformations. Find an equation for Functions Identify and describe the effects of transformations on functions. Create new functions given transformations.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

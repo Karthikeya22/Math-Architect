@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.K.M.1.1",
+  "grade": "K",
+  "strand": "Measurement",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Identify the attributes of a single object that can be measured such as length, volume or weight.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

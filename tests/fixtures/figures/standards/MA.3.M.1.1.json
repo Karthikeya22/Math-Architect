@@ -1,0 +1,44 @@
+{
+  "standardCode": "MA.3.M.1.1",
+  "grade": "3",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Gina and Maurice have same-sized containers filled with different amounts of water, as shown. Gina’s container has 4 liters (L) of water. About how much water, in liters (L), does Maurice’s container have?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": {
+    "visualType": "ten_frame",
+    "values": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1541
+  }
+}

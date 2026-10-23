@@ -1,0 +1,35 @@
+{
+  "standardCode": "MA.5.FR.2.3",
+  "grade": "5",
+  "strand": "Fractions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Fill in the blank. The product of the expression 6365× 20 will be _____________ 20.",
+  "options": [
+    "less than",
+    "equal to",
+    "greater than",
+    "half of",
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "area_model",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Fraction standard references a fraction model, strip, circle, or number line."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

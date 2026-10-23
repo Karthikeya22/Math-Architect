@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.F.3.2",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Given f(x) = x2 +2x + 4 and f(x) = −2x + 5, find f(x) + g(x), f(x) − g(x), f(x) · g(x) and f(x)g(x). Determine the domain for each function. *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Functions Create new functions from existing functions.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

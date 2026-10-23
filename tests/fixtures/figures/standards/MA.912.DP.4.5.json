@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.912.DP.4.5",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "The table below represents dropout rates in 1970 for children between 16 and 24 years old. Are sex and dropping out of high school approximately independent? The table below represents dropout rates in 1970 for children between 16 and 24 years old. Are sex and dropping out of high school approximately independent? Data Analysis and Probability Use and interpret independence and probability.",
+  "options": [
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

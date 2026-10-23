@@ -1,0 +1,47 @@
+{
+  "standardCode": "MA.912.DP.5.8",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Draw inferences about two populations using data and statistical analysis from two random samples.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "bar_chart",
+    "labels": [
+      "2 red + 2 blue"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram. Labels: 2 red + 2 blue.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": {
+    "visualType": "array_model",
+    "title": "2 red + 2 blue",
+    "values": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "rows": [],
+    "gridRows": 2,
+    "gridCols": 2,
+    "rowColors": [
+      "red",
+      "blue"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 917
+  }
+}

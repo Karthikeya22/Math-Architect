@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.T.2.3",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Determine the values of the six basic trigonometric functions for 0,, and and their multiples using special triangles.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

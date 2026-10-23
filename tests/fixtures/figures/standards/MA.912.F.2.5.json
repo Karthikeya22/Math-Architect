@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.F.2.5",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Given the function f(x) = log x, graph the function f(x) and the transformation g(x) = 3f(x) on the same axes. Describe the transformed function, g(x), as it relates to the graph of f(x). Given the function f(x) = log x, graph the function f(x) and the transformation g(x) = 3f(x) on the same axes. Describe the transformed function, g(x), as it relates to the graph of f(x).",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

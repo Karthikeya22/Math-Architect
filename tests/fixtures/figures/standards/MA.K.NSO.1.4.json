@@ -1,0 +1,31 @@
+{
+  "standardCode": "MA.K.NSO.1.4",
+  "grade": "K",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Which number is greater? How do you know? Which number is less? How do you know? What’s the total number of objects? How many more is in one group than the other? How far away from ten is each number? How far away from twenty is each number?",
+  "options": [
+    "9 is greater than 5, because when I count, 9 comes after 5."
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

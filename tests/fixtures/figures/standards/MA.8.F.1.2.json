@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.8.F.1.2",
+  "grade": "8",
+  "strand": "Functions",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes recognizing that a table may not determine a function.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

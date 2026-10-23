@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.F.2.2",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Identify the effect on the graph of a given function of two or more transformations defined by adding a real number to the x- or y- values or multiplying the x- or y- values by a real number.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

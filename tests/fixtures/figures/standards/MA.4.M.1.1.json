@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.4.M.1.1",
+  "grade": "4",
+  "strand": "Measurement",
+  "source": "instructional_item",
+  "label": "Instructional Item 2",
+  "stem": "Matt, Sara, Jamie, and Alex measured the length of their classroom with different units. Matt measured in feet, Sara measured in centimeters, Jamie measured in inches, and Alex measured in yards. Whose unit of measure would be the most appropriate to use when measuring the length of the classroom?",
+  "options": [
+    "Alex",
+    "Jamie",
+    "Matt",
+    "Sara"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Measurement standards use instruments, units, or measured figures."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

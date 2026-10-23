@@ -1,0 +1,32 @@
+{
+  "standardCode": "MA.912.DP.2.6",
+  "grade": "912",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Based on the data and the use of technology, we know that the line of best fit for the relationship between grams of fat and the total calories in fast food using the given data below can be represented by y = 11.44x + 219.89. Part A. Calculate the residuals and plot them on a residual plot where grams of fat are the x-variable. Part B. Which sandwiches have the residuals with the largest and smallest absolute values? Part C. Is a linear model reasonable for this data set? *The strategies, tasks and items included in the B1G-M are examples and should not be considered comprehensive. Data Analysis and Probability Solve problems involving univariate and bivariate numerical data.",
+  "options": [
+    "08/20",
+    "00/00"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "line_plot",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

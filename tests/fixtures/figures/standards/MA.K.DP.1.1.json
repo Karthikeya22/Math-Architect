@@ -1,0 +1,38 @@
+{
+  "standardCode": "MA.K.DP.1.1",
+  "grade": "K",
+  "strand": "Data Analysis and Probability",
+  "source": "instructional_task",
+  "label": "Instructional Task 2",
+  "stem": "Ask students to sort the figures into groups of circles, rectangles and triangles. Which shape appears the most? How many more triangles are there than circles? How many squares are there? How many figures have straight sides?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of rectangle and triangle and square.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "rectangle",
+      "triangle",
+      "square"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 785
+  }
+}

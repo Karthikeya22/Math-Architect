@@ -1,0 +1,48 @@
+{
+  "standardCode": "MA.3.GR.2.1",
+  "grade": "3",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction emphasizes the conceptual understanding that area is an attribute that can be measured for a two-dimensional figure. The measurement unit for area is the area of a unit square, which is a square with side length of 1 unit.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [
+      "1 unit"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of square. Labels: 1 unit.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "figures": [
+      {
+        "shape": "square",
+        "width": 1,
+        "height": 1,
+        "dimensions": [
+          {
+            "side": "top",
+            "label": "1 unit"
+          }
+        ]
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 776
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.4.GR.1.1",
+  "grade": "4",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Which statement correctly describes the figure?",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "clock_face",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

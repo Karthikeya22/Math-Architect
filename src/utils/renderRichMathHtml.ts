@@ -26,9 +26,10 @@ const GREEK_PAREN = new Map<string, string>([
 /** Plain-text quiz strings often use sin^2(theta); convert to TeX without requiring $ delimiters. */
 function asciiExprToTex(expr: string): string {
   let t = expr.trim();
-  const fracOnly = /^(\d+)\s*\/\s*(\d+)$/;
+  // Comma-grouped parts (1/1,000) must stay one fraction; {,} keeps KaTeX from spacing the comma.
+  const fracOnly = /^(\d{1,3}(?:,\d{3})+|\d+)\s*\/\s*(\d{1,3}(?:,\d{3})+|\d+)$/;
   const fm = t.match(fracOnly);
-  if (fm) return `\\frac{${fm[1]}}{${fm[2]}}`;
+  if (fm) return `\\frac{${fm[1].replace(/,/g, '{,}')}}{${fm[2].replace(/,/g, '{,}')}}`;
 
   const varPow = /^([A-Za-z])\^(\d+|\{[^}]+\})$/;
   const vp = t.match(varPow);
@@ -48,7 +49,7 @@ function asciiExprToTex(expr: string): string {
 
 function shouldRenderAsciiMathSpan(span: string): boolean {
   const t = span.trim();
-  if (/^\d+\s*\/\s*\d+$/.test(t)) return true;
+  if (/^\d+\s*\/\s*(?:\d{1,3}(?:,\d{3})+|\d+)$/.test(t)) return true;
   if (/^[A-Za-z]\^(\d+|\{[^}]+\})$/.test(t)) return true;
   return /(sin|cos|tan|sec|csc|cot)|theta|\^/i.test(t);
 }
@@ -76,7 +77,7 @@ function renderPlainSegmentWithAsciiMath(plain: string): string {
   /** Non-capturing wrapper so `\b…(?:…)*\b` applies to the whole expression, not only the last `|` branch. */
   const piece = String.raw`(?:${trigPiece}|${numWithPow}|${varWithPow}|\d+)`;
   const eqn = String.raw`\b${piece}(?:\s*[+\-=]\s*${piece})*\b`;
-  const frac = String.raw`\d+\s*\/\s*\d+`;
+  const frac = String.raw`\d+\s*\/\s*(?:\d{1,3}(?:,\d{3})+|\d+)`;
   const asciiMathRe = new RegExp(String.raw`(?:${frac}|${eqn}|${varWithPow})`, 'gi');
 
   const out: string[] = [];

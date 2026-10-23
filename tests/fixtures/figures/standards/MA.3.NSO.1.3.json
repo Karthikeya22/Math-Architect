@@ -1,0 +1,43 @@
+{
+  "standardCode": "MA.3.NSO.1.3",
+  "grade": "3",
+  "strand": "Number Sense and Operations",
+  "source": "instructional_item",
+  "label": "Instructional Item 4",
+  "stem": "Which point is located at number 1,045 on the number line?",
+  "options": [
+    "Point A",
+    "Point B",
+    "Point C",
+    "Point D",
+    "08/20"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "fraction_bar",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "number_line",
+    "xLabel": "Number line",
+    "values": [],
+    "min": 993,
+    "max": 1097,
+    "tickStep": 9,
+    "rows": []
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 3701
+  }
+}

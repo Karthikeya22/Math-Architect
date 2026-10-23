@@ -1,0 +1,46 @@
+{
+  "standardCode": "MA.1.NSO.2.4",
+  "grade": "1",
+  "strand": "Number Sense and Operations",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Explore the addition of a two-digit number and a one-digit number with sums to 100.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "ten_frame",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Number Sense standard uses place-value, counting, array, or number-line models."
+  },
+  "visualSpec": {
+    "visualType": "table",
+    "values": [],
+    "columns": [
+      "Thousands",
+      "Hundreds",
+      "Tens",
+      "Ones"
+    ],
+    "rows": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1648
+  }
+}

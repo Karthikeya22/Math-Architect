@@ -1,0 +1,35 @@
+{
+  "standardCode": "MA.6.GR.1.3",
+  "grade": "6",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 1",
+  "stem": "Instruction includes finding distances between points, computing dimensions of a rectangle or determining a fourth vertex of a rectangle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "fraction_bar",
+    "values": [],
+    "rows": [],
+    "shadedParts": 1,
+    "totalParts": 4
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 530
+  }
+}

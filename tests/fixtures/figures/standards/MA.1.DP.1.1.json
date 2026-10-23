@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.1.DP.1.1",
+  "grade": "1",
+  "strand": "Data Analysis and Probability",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Collect data into categories and represent the results using tally marks or pictographs.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Data Analysis and Probability standards use displays, grids, or experiment models."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

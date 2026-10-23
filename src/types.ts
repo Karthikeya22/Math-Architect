@@ -44,6 +44,7 @@ export type VisualType =
   | 'scene_only';
 
 export type GeometricShapeName =
+  // 2D polygons
   | 'triangle'
   | 'right_triangle'
   | 'square'
@@ -51,12 +52,73 @@ export type GeometricShapeName =
   | 'parallelogram'
   | 'trapezoid'
   | 'pentagon'
-  | 'hexagon';
+  | 'hexagon'
+  // 3D solids
+  | 'cube'
+  | 'rectangular_prism'
+  | 'triangular_prism'
+  | 'sphere'
+  | 'cylinder'
+  | 'cone'
+  | 'pyramid';
+
+/** 3D solids render as pseudo-3D bodies instead of flat polygons. */
+export const SOLID_SHAPE_NAMES: ReadonlyArray<GeometricShapeName> = [
+  'cube',
+  'rectangular_prism',
+  'triangular_prism',
+  'sphere',
+  'cylinder',
+  'cone',
+  'pyramid',
+];
+
+export const isSolidShape = (shape: GeometricShapeName): boolean =>
+  SOLID_SHAPE_NAMES.includes(shape);
 
 export interface CoordinatePoint {
   x: number;
   y: number;
   label?: string;
+}
+
+export type VisualFigureSide = 'top' | 'right' | 'bottom' | 'left';
+
+export interface VisualFigureDimension {
+  /** Which side of the figure the label belongs to. */
+  side: VisualFigureSide;
+  /** Exact text to draw, e.g. "9 inches". Never a derived value unless it was given. */
+  label: string;
+}
+
+/**
+ * One named figure inside a geometric_shape spec.
+ * Width/height are used for drawing scale; dimension labels are only printed
+ * when they were given in the stem (derived values stay internal).
+ */
+export interface VisualFigure {
+  /** Entity id such as "A" or "B" when the stem names the figure. */
+  id?: string;
+  shape: GeometricShapeName;
+  /** Entity label drawn above the figure, e.g. "Rectangle A". */
+  nameLabel?: string;
+  width?: number;
+  height?: number;
+  unit?: string;
+  dimensions?: VisualFigureDimension[];
+  /** Given area label, drawn inside the figure, e.g. "36 square inches". */
+  areaLabel?: string;
+  angleLabels?: string[];
+}
+
+export interface FigureCoverage {
+  required: string[];
+  present: string[];
+  missing: string[];
+  /** Forbidden text found in the figure (answers, derived values). */
+  leaks?: string[];
+  /** 0-100. A figure may publish only at 100. */
+  pct: number;
 }
 
 export interface VisualSpec {
@@ -89,6 +151,12 @@ export interface VisualSpec {
   rowColors?: string[];
   colLabels?: string[];
   cellLabels?: string[];
+  /**
+   * area_model: shade the first N rows (yellow) and first M columns (blue).
+   * Cells in both are the overlap (green) — the fraction-product region.
+   */
+  highlightRows?: number;
+  highlightCols?: number;
   /** coordinate_plane bounds (x-axis); yMin/yMax above are reused for the y-axis. */
   xMin?: number;
   xMax?: number;
@@ -100,6 +168,11 @@ export interface VisualSpec {
   shapeName?: GeometricShapeName;
   /** geometric_shape: two or more named figures shown side by side for compare/classify items. */
   shapes?: GeometricShapeName[];
+  /**
+   * geometric_shape: full per-entity figures with labels and dimensions.
+   * Preferred over `shapes` when the stem names or measures the figures.
+   */
+  figures?: VisualFigure[];
   sideLabels?: string[];
   angleLabels?: string[];
   /** geometric_shape rectangle/parallelogram aspect; ignored for regular polygons. */
@@ -109,6 +182,9 @@ export interface VisualSpec {
   segmentLabels?: string[];
   segmentWeights?: number[];
   segmentShaded?: number[];
+  /** bar_chart: draw as a picture graph (icons, each worth iconUnit) or a tally chart instead of bars. */
+  chartStyle?: 'pictures' | 'tally';
+  iconUnit?: number;
   /** clock_face: hour 0-23 (mod 12 used for hour hand) and minute 0-59. */
   hour?: number;
   minute?: number;
@@ -144,6 +220,8 @@ export interface Question {
   /** Optional GeoGebra PNG (toggle in QuizTaker vs primary figure). */
   geogebraImageBase64?: string;
   visual?: string; // Legacy SVG fallback
+  /** Required-label coverage for the attached figure. 100 = safe to publish. */
+  figureCoverage?: FigureCoverage;
   difficulty: Difficulty;
   sourceType?: 'bank' | 'rewrite' | 'novel';
   sourceProvider?: 'IXL' | 'CPALMS_MFAS' | 'KHAN' | 'UNKNOWN';
@@ -174,9 +252,10 @@ export interface Question {
     | 'fallback_svg'
     | 'figure_rejected'
     | 'figure_skipped'
+    | 'figure_needs_review'
     | 'no_visual'
     | 'sanitized_no_visual';
-  figureStatus?: 'verified' | 'unverified' | 'rejected' | 'skipped' | 'error';
+  figureStatus?: 'verified' | 'unverified' | 'rejected' | 'skipped' | 'needs_review' | 'error';
   /** Reviewer notes from the figure pipeline (teacher/debug only). */
   figureIssues?: string[];
 }
@@ -323,7 +402,7 @@ export interface RemedialSlide {
   /** Teacher script shown in presenter notes and PowerPoint speaker notes. */
   talkingPoints?: string[];
   gapAddressed?: string;
-  imageStatus?: 'verified' | 'unverified' | 'rejected' | 'skipped' | 'error' | 'none';
+  imageStatus?: 'verified' | 'unverified' | 'rejected' | 'skipped' | 'needs_review' | 'error' | 'none';
 }
 
 export type QuizMode = 'item-bank' | 'topic-based';

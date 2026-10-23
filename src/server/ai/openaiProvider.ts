@@ -167,7 +167,10 @@ const postJsonWithRetry = async (
     if (res.ok) return res.json();
     const errorBody = await res.text();
     lastError = `OpenAI ${label} error: ${res.status} ${errorBody}`;
-    if (!RETRYABLE_STATUS.has(res.status) || attempt === maxAttempts - 1) break;
+    // Quota/credit exhaustion is not a transient rate limit — fail fast so Gemini fallback can run.
+    const exhausted =
+      /insufficient_quota|credit_balance_exhausted|billing/i.test(errorBody);
+    if (!RETRYABLE_STATUS.has(res.status) || exhausted || attempt === maxAttempts - 1) break;
     await sleep(retryDelayMs(res, attempt));
   }
   throw new Error(lastError);

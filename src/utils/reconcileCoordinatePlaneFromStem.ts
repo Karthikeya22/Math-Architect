@@ -9,11 +9,54 @@ type QuestionVisualFields = {
     xMax?: number;
     yMin?: number;
     yMax?: number;
+    xTickStep?: number;
+    yTickStep?: number;
+    title?: string;
   } | null;
   imagePrompt?: string;
 };
 
 export type LabeledCoordinate = { label: string; x: number; y: number };
+
+const COORDINATE_CONTEXT =
+  /\b(?:plot|graph|graphed|point|points|coordinate|coordinates|passes?\s+through|passing\s+through|vertex|vertices|located\s+at|lies\s+at|at\s+the\s+points?)\b/i;
+
+/**
+ * Parse bare coordinate pairs such as "(3, -2)" when the stem talks about
+ * plotting or passing through points. Labeled pairs are handled separately so
+ * "A(3, -2)" never gets counted twice. Returns [] without a plot/graph cue to
+ * avoid treating answer intervals or option text as points.
+ */
+export const extractBareCoordinatesFromText = (text: string): LabeledCoordinate[] => {
+  const stem = String(text || '');
+  if (!COORDINATE_CONTEXT.test(stem)) return [];
+  const found: LabeledCoordinate[] = [];
+  const seen = new Set<string>();
+  for (const match of stem.matchAll(/\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)/g)) {
+    const x = Number(match[1]);
+    const y = Number(match[2]);
+    if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+    const key = `${x}:${y}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    found.push({ label: '', x, y });
+  }
+  return found;
+};
+
+/** Labeled + bare coordinates, labeled first and de-duplicated by position. */
+export const extractAllCoordinatesFromText = (text: string): LabeledCoordinate[] => {
+  const labeled = extractLabeledCoordinatesFromText(text);
+  const out: LabeledCoordinate[] = [...labeled];
+  const seen = new Set(labeled.map((point) => `${point.x}:${point.y}`));
+  for (const point of extractBareCoordinatesFromText(text)) {
+    const key = `${point.x}:${point.y}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(point);
+  }
+  return out;
+};
 
 /** Parse J(-3, -1), P at (4, -8), etc. Skips primed labels (J', P'). */
 export const extractLabeledCoordinatesFromText = (text: string): LabeledCoordinate[] => {
@@ -86,7 +129,7 @@ export const reconcileCoordinatePlaneFromStem = (question: QuestionVisualFields)
   const stem = String(question.text || '');
   if (!stem) return;
 
-  const coords = extractLabeledCoordinatesFromText(stem);
+  const coords = extractAllCoordinatesFromText(stem);
   if (coords.length < 1) return;
 
   const vs = question.visualSpec;

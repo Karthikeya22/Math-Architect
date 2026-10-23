@@ -1,0 +1,47 @@
+{
+  "standardCode": "MA.912.AR.4.2",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 4",
+  "stem": "Tom is a machinist at Ancient City Choppers. To ensure the highest reliability of the motorcycle engines produced at the shop, Tom machines each cylinder to a 4.01’ diameter with a tolerance of 0.002”. Part A. Write an absolute value inequality that could be used to determine the acceptable range of each cylinder’s diameter. Part B. Express that range graphically.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [
+      "0.002"
+    ],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of cylinder. Labels: 0.002.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "figures": [
+      {
+        "shape": "cylinder",
+        "width": 0.002,
+        "dimensions": [
+          {
+            "side": "top",
+            "label": "0.002"
+          }
+        ]
+      }
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1017
+  }
+}

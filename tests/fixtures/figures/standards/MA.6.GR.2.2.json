@@ -1,0 +1,37 @@
+{
+  "standardCode": "MA.6.GR.2.2",
+  "grade": "6",
+  "strand": "Geometric Reasoning",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Within this benchmark, the expectation is to know from memory a formula for the area of a rectangle and triangle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of rectangle and triangle.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "rectangle",
+      "triangle"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 427
+  }
+}

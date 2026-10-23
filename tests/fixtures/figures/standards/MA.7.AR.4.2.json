@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.7.AR.4.2",
+  "grade": "7",
+  "strand": "Algebraic Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Determine the constant of proportionality within a mathematical or real-world context given a table, graph or written description of a proportional relationship.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.T.1.1",
+  "grade": "912",
+  "strand": "Trigonometry",
+  "source": "clarification",
+  "label": "Clarification 2",
+  "stem": "Within the Geometry course, instruction includes using the coordinate plane to make connections to the unit circle.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Trigonometry standard uses a triangle, angle, unit circle, or graph."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

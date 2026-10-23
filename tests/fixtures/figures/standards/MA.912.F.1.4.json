@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.F.1.4",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Write an algebraic expression that represents the difference quotient of a function. Calculate the numerical value of the difference quotient at a given pair of points.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

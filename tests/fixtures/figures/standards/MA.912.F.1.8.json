@@ -1,0 +1,34 @@
+{
+  "standardCode": "MA.912.F.1.8",
+  "grade": "912",
+  "strand": "Functions",
+  "source": "instructional_item",
+  "label": "Instructional Item 1",
+  "stem": "Sarah is spending the summer at her grandmother’s house. The table below shows the amount of money in her bank account at the end of each week. What type of function could be used to model the total amount of money in Sarah’s bank account as a function of time? A rectangular garden is being expanded by planting additional rows of flowers along one of its sides. The length of the garden is currently 10 feet, and each week it is increased by 3 feet. Which type of function best models the situation?",
+  "options": [
+    "Linear",
+    "Quadratic",
+    "Exponential",
+    "None of the above"
+  ],
+  "expected": {
+    "figureRequired": true,
+    "family": "dimensioned_rectangles",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Functions standard uses a graph, table, or coordinate model."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

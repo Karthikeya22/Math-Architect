@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.AR.6.3",
+  "grade": "912",
+  "strand": "Algebraic Reasoning",
+  "source": "description",
+  "label": "Standard description",
+  "stem": "Explain and apply theorems for polynomials to solve mathematical and real-world problems.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "coordinate_plane",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Algebraic Reasoning standard references a model, pattern, graph, or table."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

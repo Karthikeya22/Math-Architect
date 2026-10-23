@@ -88,21 +88,22 @@ export const getPreferredVisualPolicy = (code: string | undefined | null): Prefe
     };
   }
 
+  // 'table' = place-value charts, the core NSO model; the figure gate enforces this list.
   if (strand === 'NSO') {
     if (inBand(grade, 0, 2)) {
       return {
-        preferredTypes: ['ten_frame', 'number_line', 'array_model', 'bar_model'],
+        preferredTypes: ['ten_frame', 'number_line', 'array_model', 'bar_model', 'table'],
         forbidGeminiFallback: false,
       };
     }
     if (inBand(grade, 3, 5)) {
       return {
-        preferredTypes: ['number_line', 'array_model', 'area_model', 'bar_model'],
+        preferredTypes: ['number_line', 'array_model', 'area_model', 'bar_model', 'table'],
         forbidGeminiFallback: false,
       };
     }
     return {
-      preferredTypes: ['number_line', 'area_model', 'bar_model'],
+      preferredTypes: ['number_line', 'area_model', 'bar_model', 'table'],
       forbidGeminiFallback: false,
     };
   }

@@ -28,4 +28,31 @@ describe('hasUsableQuizFigure', () => {
       true,
     );
   });
+
+  it('hides figures flagged for review or below full label coverage', () => {
+    expect(
+      hasUsableQuizFigure({
+        visual: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
+        figureStatus: 'needs_review',
+      }),
+    ).toBe(false);
+    expect(
+      hasUsableQuizFigure({
+        visual: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
+        figureCoverage: { pct: 80 },
+      }),
+    ).toBe(false);
+    expect(
+      hasUsableQuizFigure({
+        visual: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
+        figureCoverage: { pct: 100 },
+      }),
+    ).toBe(true);
+    expect(
+      hasUsableQuizFigure({
+        visual: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
+        figureCoverage: { pct: 100, missing: ['9 inches'] },
+      }),
+    ).toBe(false);
+  });
 });

@@ -1,0 +1,29 @@
+{
+  "standardCode": "MA.912.GR.1.6",
+  "grade": "912",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "An artist rendering for the Hapbee Honey Company logo is on a 24” x 36” canvas. The company wants to use the logo on a postcard and is determining the size of the logo based on the different mailing costs. According to the United States Postal Service, mailing costs are determined using the following information.",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "geometric_shape",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Math diagram for this question.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": null,
+  "render": {
+    "status": "no_spec",
+    "coveragePct": null,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 0
+  }
+}

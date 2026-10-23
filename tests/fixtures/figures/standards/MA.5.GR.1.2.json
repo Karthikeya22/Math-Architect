@@ -1,0 +1,40 @@
+{
+  "standardCode": "MA.5.GR.1.2",
+  "grade": "5",
+  "strand": "Geometric Reasoning",
+  "source": "instructional_task",
+  "label": "Instructional Task 1",
+  "stem": "Right pyramids Spheres Right circular cylinders Right prisms Right circular cones",
+  "options": [],
+  "expected": {
+    "figureRequired": true,
+    "family": "named_shapes",
+    "labels": [],
+    "mustNotShow": [
+      "the number that is the correct answer as a label",
+      "option letters A B C D",
+      "words that name the correct choice"
+    ],
+    "altText": "Diagram of pyramid and sphere and cylinder and rectangular_prism and cone.",
+    "reason": "Geometric Reasoning standards describe figures, their attributes, or their measurements."
+  },
+  "visualSpec": {
+    "visualType": "geometric_shape",
+    "values": [],
+    "rows": [],
+    "shapes": [
+      "pyramid",
+      "sphere",
+      "cylinder",
+      "rectangular_prism",
+      "cone"
+    ]
+  },
+  "render": {
+    "status": "pass",
+    "coveragePct": 100,
+    "missing": [],
+    "leaks": [],
+    "svgLength": 1738
+  }
+}

@@ -1,0 +1,6 @@
+- Scope items to one clear learning component / skill within the pinned standard.
+- Prefer 1–3 formative probes over sprawling battery; each distractor should map to a documented misconception or prerequisite gap when possible.
+- Use asset-based language: name the specific student thinking, never labels like "weak" or "behind".
+- Keep stems grade-appropriate in length; numbers and representations must stay on-grade for the standard.
+- Every option (including wrong ones) must be mathematically coherent as a choice a real student might reach.
+- Do not invent curriculum publisher attributions in student-facing text.
