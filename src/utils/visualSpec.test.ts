@@ -306,6 +306,27 @@ describe('data display fixes (figure audit 2026-10-22)', () => {
     expect(svg).toMatch(/= 1/);
   });
 
+  it('draws the icon the stem names, in the rows and the key', () => {
+    const svg = renderDeterministicVisualSvg({ visualType: 'bar_chart', chartStyle: 'pictures', iconShape: 'star', categories: ['Blue', 'Red'], values: [6, 2] })!;
+    expect((svg.match(/<polygon class="icon"/g) || []).length).toBe(8);
+    expect(svg).not.toMatch(/<circle/);
+    expect((svg.match(/<polygon/g) || []).length).toBe(9); // + key
+  });
+
+  it('joins coordinate points only as the spec says', () => {
+    const base = { visualType: 'coordinate_plane' as const, xMin: -4, xMax: 4, yMin: 0, yMax: 8 };
+    const points = [{ x: 0, y: 3 }, { x: 2, y: 7 }, { x: -3, y: 3 }, { x: -1, y: 7 }];
+    const lines = renderDeterministicVisualSvg({ ...base, points, connect: 'lines' })!;
+    expect((lines.match(/<polyline[^>]*fill="none"/g) || []).length).toBe(2);
+    expect(lines).not.toMatch(/rgba\(37, 99, 235/);
+    const dots = renderDeterministicVisualSvg({ ...base, points, connect: 'none' })!;
+    expect(dots).not.toMatch(/<polyline/);
+    const shape = renderDeterministicVisualSvg({ ...base, points: points.slice(0, 3), connect: 'polygon' })!;
+    expect((shape.match(/<polyline[^>]*rgba\(37, 99, 235/g) || []).length).toBe(1);
+    const collinear = renderDeterministicVisualSvg({ ...base, points: [{ x: 0, y: 1 }, { x: 2, y: 5 }, { x: 1, y: 3 }], connect: 'lines' })!;
+    expect((collinear.match(/<polyline/g) || []).length).toBe(1);
+  });
+
   it('draws tally marks in groups of five', () => {
     const svg = renderDeterministicVisualSvg({ visualType: 'bar_chart', chartStyle: 'tally', categories: ['Dogs', 'Birds'], values: [7, 3] })!;
     expect((svg.match(/class="tally"/g) || []).length).toBe(10);

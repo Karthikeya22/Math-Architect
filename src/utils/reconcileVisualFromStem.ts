@@ -1,4 +1,4 @@
-import { GeometricShapeName, VisualFigure, isSolidShape } from '../types';
+import { GeometricShapeName, VisualFigure, VisualSpec, isSolidShape } from '../types';
 import { reconcileColoredBlockTrainsFromStem } from './compareLengthVisual';
 import { reconcileSceneImageFromStem } from './questionFocusedImagePrompt';
 import { reconcilePartPartWholeFromStem } from './partPartWholeVisual';
@@ -48,6 +48,7 @@ type QuestionVisualFields = {
     categories?: string[];
     chartStyle?: 'pictures' | 'tally';
     iconUnit?: number;
+    iconShape?: VisualSpec['iconShape'];
   } | null;
   imagePrompt?: string;
 };
@@ -786,7 +787,8 @@ const buildFigureFromMention = (
  * drawing scale only and never added as labels.
  */
 export const reconcileGeometricVisualFromStem = (question: QuestionVisualFields): void => {
-  const corpus = stemCorpus(question);
+  // Stem only: shapes named by the answer ("2 triangles") would draw the answer into the figure.
+  const corpus = String(question.text || '');
   const mentions = extractNamedShapeMentions(corpus);
   if (!mentions.length) return;
 
@@ -839,11 +841,20 @@ const DATA_PAIR =
   /\b([A-Z][a-zA-Z]+(?: [A-Z][a-zA-Z]*)?) (?:has|have|had|read|found|picked|collected|sold|got|scored|saw|ate|earned|received|with)? ?(\d{1,4})(?: ([a-z]+))?/g;
 
 /** Tally charts and picture graphs are drawn as tally marks / icons (bar_chart chartStyle), never a number table. */
-export const countDisplayStyle = (stem: string): { chartStyle: 'pictures' | 'tally'; iconUnit?: number } | null => {
+export const countDisplayStyle = (
+  stem: string,
+): { chartStyle: 'pictures' | 'tally'; iconUnit?: number; iconShape?: VisualSpec['iconShape'] } | null => {
   if (/\btally\b/i.test(stem)) return { chartStyle: 'tally' };
   if (!/\b(?:picture graph|pictograph)\b|\beach (?:picture|symbol|icon)\b/i.test(stem)) return null;
   const unit = stem.match(/\beach (?:picture|symbol|icon|\w+) (?:stands for|represents|equals|is worth|=) (\d+)/i)?.[1];
-  return { chartStyle: 'pictures', iconUnit: unit ? Number(unit) : 1 };
+  // shortcut: one icon per chart, only shapes we can draw; "each apple" or rows of different icons keep the circle.
+  const icons = new Set(
+    [...stem.matchAll(/\b(star|heart|square|circle|smiley|smile|happy face)s?\b/gi)].map((m) =>
+      /^(?:smile|happy face)$/i.test(m[1]) ? 'smiley' : m[1].toLowerCase(),
+    ),
+  );
+  const iconShape = icons.size === 1 ? ([...icons][0] as VisualSpec['iconShape']) : undefined;
+  return { chartStyle: 'pictures', iconUnit: unit ? Number(unit) : 1, ...(iconShape ? { iconShape } : {}) };
 };
 
 /**

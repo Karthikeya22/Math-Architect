@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyQuestionVisualReconcilers,
+  countDisplayStyle,
   extractFractionAreaModel,
   reconcileFractionAreaModelFromStem,
   reconcileFractionVisualFromStem,
@@ -357,4 +358,22 @@ describe('applyQuestionVisualReconcilers', () => {
     expect(q.visualSpec?.onesCount).toBe(4);
     expect(q.correctAnswerIndex).toBe(0);
   });
+});
+
+describe('countDisplayStyle', () => {
+  it('picks up the picture-graph icon the stem names', () => {
+    expect(countDisplayStyle('A picture graph shows favorite colors where each star equals 1 vote.')).toEqual({
+      chartStyle: 'pictures',
+      iconUnit: 1,
+      iconShape: 'star',
+    });
+    expect(countDisplayStyle('In the pictograph, each smiley face stands for 2 students.')?.iconShape).toBe('smiley');
+    expect(countDisplayStyle('In the picture graph, each apple stands for 1 vote.')?.iconShape).toBeUndefined();
+  });
+});
+
+it('keeps the default icon when rows use different icons (2026-10-26 MA.1.DP.1.2 audit)', () => {
+  expect(
+    countDisplayStyle('A picture graph shows shapes drawn on a poster. Each picture stands for 1 shape. There are 6 star pictures and 4 circle pictures.')?.iconShape,
+  ).toBeUndefined();
 });

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { applyQuestionVisualReconcilers } from './reconcileVisualFromStem';
 import {
+  connectionFromStem,
   extractAllCoordinatesFromText,
   extractBareCoordinatesFromText,
   extractLabeledCoordinatesFromText,
@@ -24,6 +25,19 @@ describe('extractLabeledCoordinatesFromText', () => {
         'Square PQRS has a vertex P at (4, -8). If the square is dilated by a scale factor of 0.5 centered at the origin, what are the coordinates of vertex P\'?',
       ),
     ).toEqual([{ label: 'P', x: 4, y: -8 }]);
+  });
+});
+
+describe('connectionFromStem', () => {
+  it('draws lines, polygons or dots from what the stem says', () => {
+    expect(
+      connectionFromStem(
+        'The graph of a linear function f(x) passes through the points (0, 3) and (2, 7). The line representing h(x) passes through the points (-3, 3) and (-1, 7).',
+        4,
+      ),
+    ).toBe('lines');
+    expect(connectionFromStem('Triangle ABC has vertices A(1, 1), B(4, 1), and C(1, 5). What is its area?', 3)).toBe('polygon');
+    expect(connectionFromStem('Points (1, 2), (3, -1) and (-2, 4) are plotted. Which point is in Quadrant II?', 3)).toBe('none');
   });
 });
 

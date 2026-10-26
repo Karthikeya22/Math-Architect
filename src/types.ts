@@ -164,6 +164,11 @@ export interface VisualSpec {
   xTickStep?: number;
   yTickStep?: number;
   points?: CoordinatePoint[];
+  /**
+   * coordinate_plane: how points are joined. `polygon` = closed shaded figure, `lines` = line segments
+   * (one line if collinear, else consecutive pairs), `none` = dots only. Unset = polygon at 3+ points.
+   */
+  connect?: 'polygon' | 'lines' | 'none';
   /** geometric_shape: which polygon to draw, plus optional labels (cw order from top/left). */
   shapeName?: GeometricShapeName;
   /** geometric_shape: two or more named figures shown side by side for compare/classify items. */
@@ -185,6 +190,8 @@ export interface VisualSpec {
   /** bar_chart: draw as a picture graph (icons, each worth iconUnit) or a tally chart instead of bars. */
   chartStyle?: 'pictures' | 'tally';
   iconUnit?: number;
+  /** bar_chart pictures: the icon the stem names ("each star"); defaults to a circle. */
+  iconShape?: 'circle' | 'star' | 'heart' | 'square' | 'smiley';
   /** clock_face: hour 0-23 (mod 12 used for hour hand) and minute 0-59. */
   hour?: number;
   minute?: number;

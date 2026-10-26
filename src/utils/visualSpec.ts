@@ -420,14 +420,20 @@ const renderCoordinatePlane = (spec: VisualSpec): string | null => {
     })
     .join('');
 
+  const connect = spec.connect ?? (points.length >= 3 ? 'polygon' : 'lines');
+  const ptsAttr = (ps: CoordinatePoint[]) => ps.map((p) => `${xAt(p.x)},${yAt(p.y)}`).join(' ');
+  const stroke = 'stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round"';
   let polygonSvg = '';
-  if (points.length >= 2) {
-    const pathPts = points
-      .map((p) => `${xAt(p.x)},${yAt(p.y)}`)
-      .join(' ');
-    const closedPts =
-      points.length >= 3 ? `${pathPts} ${xAt(points[0].x)},${yAt(points[0].y)}` : pathPts;
-    polygonSvg = `<polyline points="${closedPts}" fill="rgba(37, 99, 235, 0.12)" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" />`;
+  if (connect === 'polygon' && points.length >= 3) {
+    polygonSvg = `<polyline points="${ptsAttr([...points, points[0]])}" fill="rgba(37, 99, 235, 0.12)" ${stroke} />`;
+  } else if (connect !== 'none' && points.length >= 2) {
+    const [a, b] = points;
+    const collinear = points.every((p) => Math.abs((b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x)) < 1e-9);
+    // Several points on one line: one segment end to end. Otherwise each consecutive pair is its own line.
+    const segments = collinear
+      ? [[...points].sort((p, q) => p.x - q.x || p.y - q.y)]
+      : Array.from({ length: Math.floor(points.length / 2) }, (_, i) => points.slice(2 * i, 2 * i + 2));
+    polygonSvg = segments.map((s) => `<polyline points="${ptsAttr(s)}" fill="none" ${stroke} />`).join('');
   }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
@@ -1295,6 +1301,25 @@ const FONT = 'font-family="Inter, Arial, sans-serif"';
  * Picture graph or tally chart: one row per category. Students count icons / tally
  * marks, so nothing prints the value itself.
  */
+const pictureIcon = (shape: VisualSpec['iconShape'], cx: number, cy: number, r = 15): string => {
+  const fill = 'fill="#6366f1"';
+  if (shape === 'square') return `<rect class="icon" x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" rx="3" ${fill} />`;
+  if (shape === 'star') {
+    const pts = Array.from({ length: 10 }, (_, i) => {
+      const a = -Math.PI / 2 + (i * Math.PI) / 5;
+      const d = i % 2 ? r * 0.45 : r * 1.1;
+      return `${(cx + d * Math.cos(a)).toFixed(1)},${(cy + d * Math.sin(a)).toFixed(1)}`;
+    });
+    return `<polygon class="icon" points="${pts.join(' ')}" ${fill} />`;
+  }
+  if (shape === 'heart') {
+    return `<path class="icon" d="M${cx} ${cy + r} C${cx - 2 * r} ${cy - r * 0.2} ${cx - r * 0.9} ${cy - r * 1.4} ${cx} ${cy - r * 0.45} C${cx + r * 0.9} ${cy - r * 1.4} ${cx + 2 * r} ${cy - r * 0.2} ${cx} ${cy + r}Z" ${fill} />`;
+  }
+  const circle = `<circle class="icon" cx="${cx}" cy="${cy}" r="${r}" ${fill} />`;
+  if (shape !== 'smiley') return circle;
+  return `${circle}<circle cx="${cx - r * 0.35}" cy="${cy - r * 0.25}" r="${r * 0.13}" fill="#fff" /><circle cx="${cx + r * 0.35}" cy="${cy - r * 0.25}" r="${r * 0.13}" fill="#fff" /><path d="M${cx - r * 0.5} ${cy + r * 0.2} Q${cx} ${cy + r * 0.7} ${cx + r * 0.5} ${cy + r * 0.2}" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" />`;
+};
+
 const renderCountRows = (spec: VisualSpec, categories: string[], values: number[]): string | null => {
   const tally = spec.chartStyle === 'tally';
   const unit = tally ? 1 : Number(spec.iconUnit) > 0 ? Number(spec.iconUnit) : 1;
@@ -1319,13 +1344,13 @@ const renderCountRows = (spec: VisualSpec, categories: string[], values: number[
       }
     } else {
       for (let i = 0; i < counts[r]; i++) {
-        marks += `<circle class="icon" cx="${labelW + 50 + i * 40}" cy="${y + 27}" r="15" fill="#6366f1" />`;
+        marks += pictureIcon(spec.iconShape, labelW + 50 + i * 40, y + 27);
       }
     }
     return `<text x="${labelW}" y="${y + 34}" text-anchor="end" ${FONT} font-size="22" fill="#0f172a">${esc(name)}</text>
       <line x1="${labelW + 15}" y1="${y + rowH}" x2="${width - 30}" y2="${y + rowH}" stroke="#e2e8f0" stroke-width="2" />${marks}`;
   });
-  const key = tally ? '' : `<circle cx="${labelW + 50}" cy="${height - 40}" r="15" fill="#6366f1" />
+  const key = tally ? '' : `${pictureIcon(spec.iconShape, labelW + 50, height - 40).replace(' class="icon"', '')}
     <text x="${labelW + 75}" y="${height - 32}" ${FONT} font-size="22" fill="#0f172a">= ${unit}${spec.yLabel ? ` ${esc(spec.yLabel)}` : ''}</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">
     <rect width="${width}" height="${height}" rx="18" fill="#ffffff" />
@@ -1548,6 +1573,9 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
       : undefined,
     chartStyle: candidate.chartStyle === 'pictures' || candidate.chartStyle === 'tally' ? candidate.chartStyle : undefined,
     iconUnit: Number(candidate.iconUnit) > 0 ? Number(candidate.iconUnit) : undefined,
+    iconShape: ['circle', 'star', 'heart', 'square', 'smiley'].includes(candidate.iconShape as string)
+      ? (candidate.iconShape as VisualSpec['iconShape'])
+      : undefined,
     yMin: Number.isFinite(candidate.yMin) ? Number(candidate.yMin) : undefined,
     yMax: Number.isFinite(candidate.yMax) ? Number(candidate.yMax) : undefined,
     prompt: typeof candidate.prompt === 'string' ? candidate.prompt : undefined,
@@ -1577,6 +1605,9 @@ export const normalizeVisualSpec = (value: unknown): VisualSpec | null => {
     xTickStep: Number.isFinite(candidate.xTickStep) ? Number(candidate.xTickStep) : undefined,
     yTickStep: Number.isFinite(candidate.yTickStep) ? Number(candidate.yTickStep) : undefined,
     points,
+    connect: ['polygon', 'lines', 'none'].includes(candidate.connect as string)
+      ? (candidate.connect as VisualSpec['connect'])
+      : undefined,
     shapeName,
     shapes: shapes?.length ? shapes : undefined,
     figures: figures?.length ? figures : undefined,

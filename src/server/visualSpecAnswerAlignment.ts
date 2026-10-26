@@ -329,12 +329,23 @@ const checkGeometricShapeAlignment = (spec: Record<string, unknown>, corpus: str
   if (SHAPE_SPEC_CANNOT_SHOW.test(stem)) {
     return 'geometric_shape cannot draw the lines, folds, overlaps or positions this stem describes.';
   }
-  // One shape for "which shape ...?" whose answer is that shape just shows the answer.
+  // "Which/what shape ...?": drawing the answer's shape gives it away — as the only shape, or as one
+  // the stem never names (two squares drawn as square + rectangle).
   const single = String(spec.shapeName || '').trim();
-  if (!figures.length && single && /\bwhich (?:shape|solid|figure)\b/.test(stem)) {
+  if (/\b(?:which|what)(?: \w+){0,2} (?:shapes?|solids?|figures?)\b/.test(stem)) {
     const correct = corpus.slice(stem.length);
-    if ((SHAPE_NAME_FORMS[single] || [single]).some((form) => corpusContainsPhrase(correct, form))) {
-      return `geometric_shape shows only the ${single}, which is the answer.`;
+    const drawn = [
+      single,
+      ...(Array.isArray(spec.shapes) ? spec.shapes : []),
+      ...figures.map((f) => (f && typeof f === 'object' ? (f as Record<string, unknown>).shape : '')),
+    ].map((s) => String(s || '').trim()).filter(Boolean);
+    for (const name of drawn) {
+      const forms = SHAPE_NAME_FORMS[name] || [name];
+      const inAnswer = forms.some((form) => corpusContainsPhrase(correct, form));
+      const inStem = forms.some((form) => corpusContainsPhrase(stem, form));
+      if (inAnswer && (drawn.length === 1 || !inStem)) {
+        return `geometric_shape draws the ${name}, which is the answer.`;
+      }
     }
   }
   if (!figures.length && OUTLINE_CANNOT_SHOW.test(stem)) {

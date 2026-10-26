@@ -12,6 +12,7 @@ type QuestionVisualFields = {
     xTickStep?: number;
     yTickStep?: number;
     title?: string;
+    connect?: 'polygon' | 'lines' | 'none';
   } | null;
   imagePrompt?: string;
 };
@@ -125,6 +126,18 @@ const computeBounds = (
   };
 };
 
+/** Join points only when the stem says they form a figure or lie on a line; otherwise plot dots. */
+export const connectionFromStem = (stem: string, count: number): 'polygon' | 'lines' | 'none' => {
+  if (
+    count >= 3 &&
+    /\b(?:vertex|vertices|polygon|triangle|quadrilateral|rectangle|square|parallelogram|trapezoid|rhombus|kite|pentagon|hexagon|area|perimeter)\b/i.test(stem)
+  ) {
+    return 'polygon';
+  }
+  if (/\b(?:pass(?:es|ing)?\s+through|line\s+(?:through|connecting|segment)|segment|slope|graph\s+of)\b/i.test(stem)) return 'lines';
+  return 'none';
+};
+
 export const reconcileCoordinatePlaneFromStem = (question: QuestionVisualFields): void => {
   const stem = String(question.text || '');
   if (!stem) return;
@@ -159,6 +172,7 @@ export const reconcileCoordinatePlaneFromStem = (question: QuestionVisualFields)
     xTickStep: 1,
     yTickStep: 1,
     points,
+    connect: connectionFromStem(stem, points.length),
     title: coords.length >= 3 ? 'Coordinate plane' : undefined,
   };
   question.imagePrompt = '';

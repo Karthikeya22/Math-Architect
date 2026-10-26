@@ -63,7 +63,7 @@ export const buildVerifierPrompt = (input: FigureInput, brief: FigureBrief): str
     "- relationshipsCorrect: every position and geometric relationship the question or brief requires is drawn exactly (for example alternate interior angles are between the parallel lines on opposite sides of the transversal; a segment label sits on that segment). Judge from the drawing, not from the labels.",
     "- labelsCorrect: required labels are present, correctly placed and spelled.",
     input.kind === "question"
-      ? `- revealsAnswer: the figure states or shows the answer outright (a written answer value, a filled-in result, a marked choice). ${instrumentScale ? "A numeral printed on the instrument scale is the data being read, not the answer written out." : ""}`
+      ? `- revealsAnswer: the figure states or shows the answer outright (a written answer value, a filled-in result, a marked choice), or it depicts the finished result the question asks the student to work out (the shape the pieces make, the figure after the fold/cut/transformation, the object it becomes). Counting pictures where the student counts objects to solve are not a reveal. ${instrumentScale ? "A numeral printed on the instrument scale is the data being read, not the answer written out." : ""}`
       : "- revealsAnswer: always false for lesson slides.",
     `- hasExtraOrGarbledText: there is text that is not in the allowed labels${instrumentScale ? " and not part of the instrument scale" : ""}, or any text is misspelled or garbled.`,
     "List each concrete problem in `issues` as a short fix instruction (empty when everything is right).",

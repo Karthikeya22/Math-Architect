@@ -79,7 +79,8 @@ export const buildFigureBriefPrompt = (input: FigureInput): string => {
     "- If the student must count, measure or read something from the figure, the figure must contain exactly that quantity (it is given data), drawn so it can be counted, but never write the total as a number.",
     "- labels lists every piece of text allowed in the image, spelled exactly as in the question (point names, given measurements, axis labels). Never include the answer. Use [] for no text.",
     "- mustNotShow always includes the correct answer value, option letters, the question sentence, and any equation with its result.",
-    "- needsFigure is false when the question is pure symbolic computation or any faithful figure would give away the answer (for example a place-value chart already filled with the answer digits). Explain in skipReason.",
+    "- Show the starting situation, never the finished result the student must work out: when the question asks what shape pieces make, what a figure looks like after a fold/cut/transformation, or what an object becomes, draw only the separate pieces or the original object. Counting pictures for K-2 joining/separating stories are fine, because counting the objects is the strategy being assessed.",
+    "- needsFigure is false when the question is pure symbolic computation or any faithful figure would give away the answer (for example a place-value chart already filled with the answer digits, or the composed shape when the question asks which shape the pieces make and the pieces cannot be shown apart). Explain in skipReason.",
     "- figureType is \"diagram\" for geometry, graphs, number lines and math models; \"illustration\" for real-world objects and scenes.",
     "- layout is one sentence on composition for a wide landscape image.",
     ...(isMeasuringInstrument(`${input.text} ${input.visualIntent || ""}`)

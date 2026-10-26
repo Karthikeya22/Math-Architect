@@ -414,6 +414,14 @@ describe('validateVisualSpecAgainstQuestion', () => {
       expect(validateVisualSpecAgainstQuestion(q(text, { visualType: 'geometric_shape', ...fields }))).toMatch(/cannot draw|outline/);
     });
 
+    it('rejects a figure that draws the answer shape (2026-10-26 MA.1.GR.1.3 audit)', () => {
+      const text = 'Maya puts two same-sized squares side by side so their edges touch with no gaps. What new shape do the two squares make?';
+      expect(validateVisualSpecAgainstQuestion(q(text, { visualType: 'geometric_shape', shapes: ['square', 'rectangle'] }, 'A rectangle'))).toMatch(/which is the answer/);
+      expect(validateVisualSpecAgainstQuestion(q('Which shape has 4 equal sides?', { visualType: 'geometric_shape', shapeName: 'square' }, 'square'))).toMatch(/which is the answer/);
+      // Shapes the stem names are the given pieces, not the answer.
+      expect(validateVisualSpecAgainstQuestion(q('Ava has a square and a triangle. Which shape has more sides?', { visualType: 'geometric_shape', shapes: ['square', 'triangle'] }, 'The square'))).toBeNull();
+    });
+
     it('rejects labelled figures when the stem is about overlapping tiles', () => {
       expect(
         validateVisualSpecAgainstQuestion(
