@@ -88,7 +88,9 @@ export const resolveLcAlignLlm = (env: NodeJS.ProcessEnv = process.env): LcAlign
   if (prefer === "openai") return useOpenAi() || useAnthropic() || useGoogle();
   if (prefer === "gemini" || prefer === "google") return useGoogle() || useAnthropic() || useOpenAi();
 
-  return useAnthropic() || useOpenAi() || useGoogle();
+  // Platform default is Gemini-first; keep OpenAI as last resort so a stale key
+  // does not win over a working GEMINI_API_KEY.
+  return useAnthropic() || useGoogle() || useOpenAi();
 };
 
 export const isLcAlignmentConfigured = (env: NodeJS.ProcessEnv = process.env): boolean =>

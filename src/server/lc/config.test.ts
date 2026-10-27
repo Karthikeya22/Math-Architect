@@ -13,11 +13,20 @@ describe("resolveLcAlignLlm", () => {
     expect(llm?.modelOverride).toBeUndefined();
   });
 
-  it("falls back to OpenAI override without Anthropic", () => {
+  it("prefers Gemini over OpenAI when Anthropic is missing", () => {
     const llm = resolveLcAlignLlm({
       OPENAI_API_KEY: "o",
       OPENAI_ANALYSIS_MODEL: "gpt-5.4-mini",
       GEMINI_API_KEY: "g",
+    });
+    expect(llm?.label).toBe("gemini-override");
+    expect(llm?.modelOverride?.provider).toBe(Provider.Google);
+  });
+
+  it("falls back to OpenAI when only OpenAI key exists", () => {
+    const llm = resolveLcAlignLlm({
+      OPENAI_API_KEY: "o",
+      OPENAI_ANALYSIS_MODEL: "gpt-5.4-mini",
     });
     expect(llm?.label).toBe("openai-override");
     expect(llm?.modelOverride).toEqual({

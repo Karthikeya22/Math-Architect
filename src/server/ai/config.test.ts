@@ -2,11 +2,13 @@ import { describe, expect, it } from 'vitest';
 import { getDefaultProviderForTask, isFallbackEnabled, resolveDefaultModel } from './config';
 
 describe('AI config defaults', () => {
-  it('routes every task to OpenAI unless a task is explicitly set to gemini', () => {
-    expect(getDefaultProviderForTask('quiz', {})).toBe('openai');
-    expect(getDefaultProviderForTask('slides', {})).toBe('openai');
-    expect(getDefaultProviderForTask('image', {})).toBe('openai');
-    expect(getDefaultProviderForTask('vision', {})).toBe('openai');
+  it('routes every task to Gemini unless a task is explicitly set to openai', () => {
+    expect(getDefaultProviderForTask('quiz', {})).toBe('gemini');
+    expect(getDefaultProviderForTask('slides', {})).toBe('gemini');
+    expect(getDefaultProviderForTask('image', {})).toBe('gemini');
+    expect(getDefaultProviderForTask('vision', {})).toBe('gemini');
+    expect(getDefaultProviderForTask('figure_brief', {})).toBe('gemini');
+    expect(getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'openai' })).toBe('openai');
     expect(getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'gemini' })).toBe('gemini');
   });
 

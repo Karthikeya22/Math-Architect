@@ -22,7 +22,7 @@ Steps:
 
 ## Provider Configuration
 
-Default stack is **OpenAI-first** (quiz, analysis, slides, figures). Gemini remains selectable per task via env.
+Default stack is **Gemini-first** (quiz, analysis, slides, figures). Set any `AI_PROVIDER_*=openai` to opt a task back to OpenAI; cross-provider fallback stays off unless `AI_FALLBACK_ENABLED=true`.
 
 Text/image routing goes through `/api/genai/generate-content`. Quiz and slide figures go through `/api/figures/question` and `/api/figures/slide` (director brief → gpt-image → vision check → one retry).
 

@@ -91,8 +91,11 @@ export const getDefaultProviderForTask = (
     slides: env.AI_PROVIDER_SLIDES,
     image: env.AI_PROVIDER_IMAGES,
     vision: env.AI_PROVIDER_VISION ?? env.AI_PROVIDER_ANALYSIS,
-    figure_brief: env.AI_PROVIDER_VISION ?? env.AI_PROVIDER_ANALYSIS,
+    figure_brief: env.AI_PROVIDER_FIGURE_BRIEF ?? env.AI_PROVIDER_VISION ?? env.AI_PROVIDER_ANALYSIS,
   }[task];
-  if (String(byTask || "").trim().toLowerCase() === "gemini") return "gemini";
-  return "openai";
+  const raw = String(byTask || "").trim().toLowerCase();
+  if (raw === "openai") return "openai";
+  // Gemini-first: unset / unknown / "gemini" all stay on Gemini. OpenAI remains
+  // available when a task explicitly sets AI_PROVIDER_*=openai.
+  return "gemini";
 };
