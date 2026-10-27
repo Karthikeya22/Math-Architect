@@ -156,7 +156,10 @@ function App() {
       };
     }
 
-    if (import.meta.env.DEV && details && !isQuotaError) {
+    // Always surface the server/provider message (no secrets). Production was
+    // hiding "OPENAI_API_KEY is not configured" / Gemini auth failures behind
+    // the generic banner, which made Render env mistakes impossible to diagnose.
+    if (details && !isQuotaError) {
       next = { ...next, message: `${next.message}\n\nDetails: ${details}` };
     }
 
