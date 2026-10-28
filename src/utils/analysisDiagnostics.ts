@@ -1,5 +1,14 @@
 import { FLORIDA_STANDARDS } from '../constants';
-import type { AnalysisAttemptRow, DiagnosticConfidenceLabel, Difficulty, Question, QuestionDiagnostic, QuizResult, Standard } from '../types';
+import type {
+  AnalysisAttemptRow,
+  DiagnosticConfidenceLabel,
+  Difficulty,
+  Question,
+  QuestionDiagnostic,
+  QuizResult,
+  Standard,
+  SubSkill,
+} from '../types';
 import { parseStandardCodeMeta } from './parseStandardCode';
 
 const LOW_TIME_SECONDS = 8;
@@ -191,5 +200,34 @@ export const buildRoleAwareActions = (diagnostics: QuestionDiagnostic[]) => {
       ? [`${lowReliabilityCount} response(s) have low-confidence diagnosis; collect more evidence.`]
       : [];
   return { studentActions, teacherActions, reliabilityFlags };
+};
+
+/**
+ * Models often invent sub-skill tallies (e.g. 0/240). Clamp each skill to the
+ * quiz size so the Skill breakdown always shows countable question fractions.
+ */
+export const normalizeAnalysisSubSkills = (
+  raw: unknown,
+  questionCount: number,
+): SubSkill[] => {
+  const maxTotal = Math.max(1, Math.round(Number(questionCount)) || 1);
+  if (!Array.isArray(raw)) return [];
+
+  return raw
+    .map((item): SubSkill | null => {
+      if (!item || typeof item !== 'object') return null;
+      const row = item as Record<string, unknown>;
+      const name = String(row.name || '').trim();
+      if (!name) return null;
+      const description = String(row.description || '').trim();
+      let totalCount = Math.round(Number(row.totalCount));
+      let correctCount = Math.round(Number(row.correctCount));
+      if (!Number.isFinite(totalCount) || totalCount < 1) totalCount = 1;
+      if (totalCount > maxTotal) totalCount = maxTotal;
+      if (!Number.isFinite(correctCount) || correctCount < 0) correctCount = 0;
+      if (correctCount > totalCount) correctCount = totalCount;
+      return { name, description, correctCount, totalCount };
+    })
+    .filter((skill): skill is SubSkill => skill !== null);
 };
 

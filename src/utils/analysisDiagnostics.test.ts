@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import type { Question, QuizResult, Standard } from '../types';
-import { buildAnalysisAttemptRows, buildQuestionDiagnostics } from './analysisDiagnostics';
+import {
+  buildAnalysisAttemptRows,
+  buildQuestionDiagnostics,
+  normalizeAnalysisSubSkills,
+} from './analysisDiagnostics';
 
 const standard: Standard = {
   code: 'MA.8.AR.1.1',
@@ -81,6 +85,21 @@ describe('analysisDiagnostics', () => {
     expect(diagnostics[0].misconception.length).toBeGreaterThan(0);
     expect(diagnostics[0].confidenceScore).toBeGreaterThan(0);
     expect(['standard', 'strand', 'adjacent_grade', 'inferred']).toContain(diagnostics[0].evidenceSource);
+  });
+
+  it('clamps invented sub-skill tallies to the quiz size', () => {
+    const skills = normalizeAnalysisSubSkills(
+      [
+        { name: 'Equal groups', description: 'Arrays', correctCount: '', totalCount: 240 },
+        { name: 'Fact recall', description: 'Products', correctCount: 5, totalCount: 3 },
+        { name: '  ', description: 'skip', correctCount: 1, totalCount: 1 },
+      ],
+      5,
+    );
+    expect(skills).toEqual([
+      { name: 'Equal groups', description: 'Arrays', correctCount: 0, totalCount: 5 },
+      { name: 'Fact recall', description: 'Products', correctCount: 3, totalCount: 3 },
+    ]);
   });
 });
 

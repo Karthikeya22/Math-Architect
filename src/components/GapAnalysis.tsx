@@ -244,8 +244,15 @@ const GapAnalysis: React.FC<Props> = ({ analysis, onStartRemediation, isLoadingS
           </h2>
           <div className="analysis-skill-grid">
             {analysis.subSkills.map((skill, idx) => {
-              const tone = skillTone(skill.correctCount, skill.totalCount);
-              const pct = skill.totalCount > 0 ? (skill.correctCount / skill.totalCount) * 100 : 0;
+              const quizSize = Math.max(1, attemptRows.length || 1);
+              let total = Math.round(Number(skill.totalCount));
+              if (!Number.isFinite(total) || total < 1) total = 1;
+              if (total > quizSize) total = quizSize;
+              let correct = Math.round(Number(skill.correctCount));
+              if (!Number.isFinite(correct) || correct < 0) correct = 0;
+              if (correct > total) correct = total;
+              const tone = skillTone(correct, total);
+              const pct = (correct / total) * 100;
               return (
                 <div key={idx} className="app-inset analysis-skill">
                   <div className="analysis-skill-head">
@@ -254,16 +261,16 @@ const GapAnalysis: React.FC<Props> = ({ analysis, onStartRemediation, isLoadingS
                       <p className="analysis-note">{skill.description}</p>
                     </div>
                     <span className={`analysis-skill-score analysis-skill-score--${tone} tabular-nums`}>
-                      {skill.correctCount}/{skill.totalCount}
+                      {correct}/{total}
                     </span>
                   </div>
                   <div
                     className="analysis-meter"
                     role="meter"
-                    aria-label={`${skill.name}: ${skill.correctCount} of ${skill.totalCount} correct`}
+                    aria-label={`${skill.name}: ${correct} of ${total} correct`}
                     aria-valuemin={0}
-                    aria-valuemax={skill.totalCount}
-                    aria-valuenow={skill.correctCount}
+                    aria-valuemax={total}
+                    aria-valuenow={correct}
                   >
                     <div className={`analysis-meter-fill analysis-meter-fill--${tone}`} style={{ width: `${pct}%` }} />
                   </div>

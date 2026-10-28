@@ -1,6 +1,11 @@
 import { fetchQuestionMaterials } from './questionMaterialsService';
 import { enforceStrictRewriteGrounding } from '../utils/strictRewriteGrounding';
-import { buildAnalysisAttemptRows, buildQuestionDiagnostics, buildRoleAwareActions } from '../utils/analysisDiagnostics';
+import {
+  buildAnalysisAttemptRows,
+  buildQuestionDiagnostics,
+  buildRoleAwareActions,
+  normalizeAnalysisSubSkills,
+} from '../utils/analysisDiagnostics';
 import { buildFigureHints } from '../utils/buildFigureHints';
 import { normalizeQuizMathCopy } from '../utils/normalizeQuizMathCopy';
 import { normalizeVisualSpec } from '../utils/visualSpec';
@@ -804,7 +809,7 @@ export const analyzeGaps = async (standard: any, questions: any[], results: any[
     Common Misconceptions: ${(standard.misconceptions || []).slice(0, 5).join(' | ') || 'N/A'}
     Tiered Instruction: ${(standard.tieredInstruction || []).slice(0, 5).join(' | ') || 'N/A'}
 
-    PERFORMANCE DATA:
+    PERFORMANCE DATA (${attemptRows.length} questions):
     ${detailedAnalysis}
 
     Return JSON with:
@@ -812,6 +817,10 @@ export const analyzeGaps = async (standard: any, questions: any[], results: any[
     - sub-skills,
     - confidence score,
     - summary.
+
+    For each subSkill, totalCount is how many of these ${attemptRows.length} questions assessed that skill
+    (integer from 1 to ${Math.max(1, attemptRows.length)}). correctCount is how many of those the student
+    got right (0..totalCount). Never invent large totals (e.g. 100 or 240).
   `;
 
   const gapSchema: Schema = {
@@ -863,6 +872,7 @@ export const analyzeGaps = async (standard: any, questions: any[], results: any[
   const roleAware = buildRoleAwareActions(diagnostics);
   return {
     ...parsed,
+    subSkills: normalizeAnalysisSubSkills(parsed.subSkills, attemptRows.length),
     attemptRows,
     questionDiagnostics: diagnostics,
     studentActions: roleAware.studentActions,
