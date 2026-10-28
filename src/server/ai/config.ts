@@ -42,6 +42,10 @@ export const resolveDefaultModel = (
 export const isFallbackEnabled = (env: NodeJS.ProcessEnv = process.env) =>
   (env.AI_FALLBACK_ENABLED || "false").toLowerCase() === "true";
 
+/** OpenAI is opt-in. Default false so a stale OPENAI_API_KEY cannot be selected or used as fallback. */
+export const isOpenAiEnabled = (env: NodeJS.ProcessEnv = process.env) =>
+  (env.AI_OPENAI_ENABLED || "false").toLowerCase() === "true";
+
 export const resolveProviderTimeoutMs = (task: AiTask): number => {
   if (task === "quiz" || task === "slides") {
     const raw = process.env.GENAI_QUIZ_TIMEOUT_MS ?? process.env.GENAI_PROVIDER_TIMEOUT_MS;
@@ -94,8 +98,7 @@ export const getDefaultProviderForTask = (
     figure_brief: env.AI_PROVIDER_FIGURE_BRIEF ?? env.AI_PROVIDER_VISION ?? env.AI_PROVIDER_ANALYSIS,
   }[task];
   const raw = String(byTask || "").trim().toLowerCase();
-  if (raw === "openai") return "openai";
-  // Gemini-first: unset / unknown / "gemini" all stay on Gemini. OpenAI remains
-  // available when a task explicitly sets AI_PROVIDER_*=openai.
+  if (raw === "openai" && isOpenAiEnabled(env)) return "openai";
+  // Gemini-only unless AI_OPENAI_ENABLED=true and a task opts into openai.
   return "gemini";
 };

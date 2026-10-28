@@ -23,8 +23,15 @@ describe("resolveLcAlignLlm", () => {
     expect(llm?.modelOverride?.provider).toBe(Provider.Google);
   });
 
-  it("falls back to OpenAI when only OpenAI key exists", () => {
+  it("falls back to OpenAI only when AI_OPENAI_ENABLED=true and only OpenAI key exists", () => {
+    expect(
+      resolveLcAlignLlm({
+        OPENAI_API_KEY: "o",
+        OPENAI_ANALYSIS_MODEL: "gpt-5.4-mini",
+      }),
+    ).toBeNull();
     const llm = resolveLcAlignLlm({
+      AI_OPENAI_ENABLED: "true",
       OPENAI_API_KEY: "o",
       OPENAI_ANALYSIS_MODEL: "gpt-5.4-mini",
     });
@@ -52,7 +59,14 @@ describe("resolveLcAlignLlm", () => {
   });
 
   it("alignment configured needs LC key plus any LLM", () => {
-    expect(isLcAlignmentConfigured({ LEARNING_COMMONS_API_KEY: "lc", OPENAI_API_KEY: "o" })).toBe(true);
+    expect(
+      isLcAlignmentConfigured({
+        LEARNING_COMMONS_API_KEY: "lc",
+        AI_OPENAI_ENABLED: "true",
+        OPENAI_API_KEY: "o",
+      }),
+    ).toBe(true);
+    expect(isLcAlignmentConfigured({ LEARNING_COMMONS_API_KEY: "lc", GEMINI_API_KEY: "g" })).toBe(true);
     expect(isLcAlignmentConfigured({ OPENAI_API_KEY: "o" })).toBe(false);
   });
 });

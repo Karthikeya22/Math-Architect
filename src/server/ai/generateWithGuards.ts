@@ -7,6 +7,7 @@ import { resolveLcEvalMode } from "../lc/config.ts";
 import {
   getDefaultProviderForTask,
   isFallbackEnabled,
+  isOpenAiEnabled,
   resolveDefaultModel,
   resolveProviderTimeoutMs,
   withProviderTimeout,
@@ -104,10 +105,17 @@ const createStricterContents = (originalContents: any, task: AiTask): any => {
 };
 
 const resolveProviderAndModel = (request: GenerateRequest): { provider: ProviderName; model: string } => {
-  const provider =
+  let provider: ProviderName =
     request.provider && request.provider !== "auto"
       ? request.provider
       : getDefaultProviderForTask(request.task);
+  // Hard gate: never call OpenAI while AI_OPENAI_ENABLED is unset/false (keeps stale keys inert).
+  if (provider === "openai" && !isOpenAiEnabled()) {
+    console.warn(
+      `[ai] ignoring openai for task=${request.task}; set AI_OPENAI_ENABLED=true to use OpenAI`,
+    );
+    provider = "gemini";
+  }
   const model = request.model || resolveDefaultModel(request.task, provider);
   return { provider, model };
 };
@@ -142,7 +150,11 @@ const runProvider = async (
 export const generateWithGuards = async (request: GenerateRequest): Promise<GenerateResponse> => {
   const { provider, model } = resolveProviderAndModel(request);
   const fallbackProvider: ProviderName = provider === "gemini" ? "openai" : "gemini";
-  const fallbackEnabled = request.metadata?.disableFallback ? false : isFallbackEnabled();
+  const fallbackEnabled =
+    !request.metadata?.disableFallback &&
+    isFallbackEnabled() &&
+    // Never fall back onto OpenAI when it is disabled.
+    !(fallbackProvider === "openai" && !isOpenAiEnabled());
 
   /**
    * Quiz post-processing pipeline. Runs in this order so the user only ever

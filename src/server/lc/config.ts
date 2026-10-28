@@ -50,7 +50,8 @@ export const resolveLcAlignLlm = (env: NodeJS.ProcessEnv = process.env): LcAlign
   const prefer = envValue(env, "LC_ALIGN_PROVIDER").toLowerCase(); // anthropic|openai|gemini|google
   const overrideModel = envValue(env, "LC_ALIGN_MODEL");
   const anthropic = resolveAnthropicApiKey(env);
-  const openai = resolveOpenAiApiKey(env);
+  const openaiEnabled = (envValue(env, "AI_OPENAI_ENABLED") || "false").toLowerCase() === "true";
+  const openai = openaiEnabled ? resolveOpenAiApiKey(env) : "";
   const google = resolveGoogleApiKey(env);
 
   const useAnthropic = () =>

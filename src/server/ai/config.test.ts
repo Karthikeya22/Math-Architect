@@ -1,15 +1,23 @@
 import { describe, expect, it } from 'vitest';
-import { getDefaultProviderForTask, isFallbackEnabled, resolveDefaultModel } from './config';
+import { getDefaultProviderForTask, isFallbackEnabled, isOpenAiEnabled, resolveDefaultModel } from './config';
 
 describe('AI config defaults', () => {
-  it('routes every task to Gemini unless a task is explicitly set to openai', () => {
+  it('routes every task to Gemini; openai only when AI_OPENAI_ENABLED=true', () => {
     expect(getDefaultProviderForTask('quiz', {})).toBe('gemini');
     expect(getDefaultProviderForTask('slides', {})).toBe('gemini');
     expect(getDefaultProviderForTask('image', {})).toBe('gemini');
     expect(getDefaultProviderForTask('vision', {})).toBe('gemini');
     expect(getDefaultProviderForTask('figure_brief', {})).toBe('gemini');
-    expect(getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'openai' })).toBe('openai');
+    expect(getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'openai' })).toBe('gemini');
+    expect(
+      getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'openai', AI_OPENAI_ENABLED: 'true' }),
+    ).toBe('openai');
     expect(getDefaultProviderForTask('quiz', { AI_PROVIDER_QUIZ: 'gemini' })).toBe('gemini');
+  });
+
+  it('keeps OpenAI opt-in off by default', () => {
+    expect(isOpenAiEnabled({})).toBe(false);
+    expect(isOpenAiEnabled({ AI_OPENAI_ENABLED: 'true' })).toBe(true);
   });
 
   it('uses the balanced OpenAI tier by default', () => {
